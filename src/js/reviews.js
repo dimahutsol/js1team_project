@@ -13,6 +13,7 @@ const refs = {
 };
 
 let reviews;
+let theHighestCard;
 
 const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   slidesPerView: 1,
@@ -34,10 +35,29 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
     },
   },
 });
+
 reviewsSwiper.on('transitionStart', checkSwiperStatus);
 
+document.addEventListener('DOMContentLoaded', onDocumentLoaded);
+document.addEventListener('keydown', onKeyDown);
+refs.prevSlideButton.addEventListener('click', onPrevSlideButtonClick);
+refs.nextSlideButton.addEventListener('click', onNextSlideButtonClick);
+
+async function onDocumentLoaded() {
+  try {
+    reviews = await getReviews();
+    renderReviews(reviews);
+    setCardsHeight();
+  } catch (error) {
+    iziToast.show({
+      title: ':(',
+      message: error.message,
+    });
+    refs.reviewsWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
+  }
+}
+
 function checkSwiperStatus() {
-  console.log('1', reviewsSwiper.isBeginning);
   if (reviewsSwiper.isBeginning) {
     refs.prevSlideButton.classList.add('reviews-pagination-btn-disabled');
     refs.prevSlideButton.firstElementChild.classList.add(
@@ -63,27 +83,9 @@ function checkSwiperStatus() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', onDocumentLoaded);
-document.addEventListener('keydown', onKeyDown);
-refs.prevSlideButton.addEventListener('click', onPrevSlideButtonClick);
-refs.nextSlideButton.addEventListener('click', onNextSlideButtonClick);
-
-async function onDocumentLoaded() {
-  try {
-    reviews = await getReviews();
-    renderReviews(reviews);
-  } catch (error) {
-    iziToast.show({
-      title: ':(',
-      message: error.message,
-    });
-    refs.reviewsWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
-  }
-}
-
 function onKeyDown(e) {
-  const action = e.code;
-  switch (action) {
+  const keyPressed = e.code;
+  switch (keyPressed) {
     case 'ArrowLeft':
       reviewsSwiper.slidePrev();
       break;
@@ -102,6 +104,23 @@ function onPrevSlideButtonClick() {
 
 function onNextSlideButtonClick() {
   reviewsSwiper.slideNext();
+}
+
+function setCardsHeight() {
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.reviews-card');
+    theHighestCard = getTheHighestElement(cards);
+    cards.forEach(el => (el.style.minHeight = `${theHighestCard}px`));
+  }, 50);
+}
+
+function getTheHighestElement(elements) {
+  if (elements.length === 0) return;
+  const elementsHeights = [];
+  elements.forEach(el =>
+    elementsHeights.push(el.getBoundingClientRect().height)
+  );
+  return Math.max(...elementsHeights);
 }
 
 function createSingleReviewTemplate({ author, avatar_url, review }) {

@@ -4,6 +4,12 @@
 
 .header {
     position: absolute;
+    padding-top: 32px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-logo {

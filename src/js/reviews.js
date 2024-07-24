@@ -1,13 +1,18 @@
 import Swiper from 'swiper';
 import 'swiper/css/bundle';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 import { getReviews } from './requests';
 
 const refs = {
+  reviewsWrapper: document.querySelector('.reviews-wrapper'),
   sliderWrapper: document.querySelector('.reviews-wrapper'),
   reviewsList: document.querySelector('.reviews-cards'),
   prevSlideButton: document.querySelector('.reviews-pagination-prev'),
   nextSlideButton: document.querySelector('.reviews-pagination-next'),
 };
+
+let reviews;
 
 const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   slidesPerView: 1,
@@ -29,6 +34,34 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
     },
   },
 });
+reviewsSwiper.on('transitionStart', checkSwiperStatus);
+
+function checkSwiperStatus() {
+  console.log('1', reviewsSwiper.isBeginning);
+  if (reviewsSwiper.isBeginning) {
+    refs.prevSlideButton.classList.add('reviews-pagination-btn-disabled');
+    refs.prevSlideButton.firstElementChild.classList.add(
+      'reviews-pagination-icon-disabled'
+    );
+  } else {
+    refs.prevSlideButton.classList.remove('reviews-pagination-btn-disabled');
+    refs.prevSlideButton.firstElementChild.classList.remove(
+      'reviews-pagination-icon-disabled'
+    );
+  }
+
+  if (reviewsSwiper.isEnd) {
+    refs.nextSlideButton.classList.add('reviews-pagination-btn-disabled');
+    refs.nextSlideButton.firstElementChild.classList.add(
+      'reviews-pagination-icon-disabled'
+    );
+  } else {
+    refs.nextSlideButton.classList.remove('reviews-pagination-btn-disabled');
+    refs.nextSlideButton.firstElementChild.classList.remove(
+      'reviews-pagination-icon-disabled'
+    );
+  }
+}
 
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
 document.addEventListener('keydown', onKeyDown);
@@ -36,8 +69,16 @@ refs.prevSlideButton.addEventListener('click', onPrevSlideButtonClick);
 refs.nextSlideButton.addEventListener('click', onNextSlideButtonClick);
 
 async function onDocumentLoaded() {
-  const reviews = await getReviews();
-  renderReviews(reviews);
+  try {
+    reviews = await getReviews();
+    renderReviews(reviews);
+  } catch (error) {
+    iziToast.show({
+      title: ':(',
+      message: error.message,
+    });
+    refs.reviewsWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
+  }
 }
 
 function onKeyDown(e) {

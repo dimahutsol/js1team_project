@@ -12,18 +12,12 @@
 @import url('./layout/footer.css');
 @import url('./layout/modal.css');
 
-:root {
+body {
   font-family: 'Inter Tight', sans-serif;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   font-weight: 400;
-
-  color: #fafafa;
-  background-color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  letter-spacing: -0.02em;
+  color: var(--textMain);
+  background-color: var(--backgroundMain);
 }

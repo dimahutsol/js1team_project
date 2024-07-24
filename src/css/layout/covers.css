@@ -1,0 +1,69 @@
+.covers-section {
+  margin: 32px 0 32px 0;
+  height: 100%;
+  background-image: url(../img/Covers/covers_background.png);
+}
+
+.covers-title {
+  display: none;
+}
+
+.content {
+  position: relative;
+}
+
+.marquee {
+  background-image: url(../img/Covers/covers_background.png);
+  backdrop-filter: blur(15px);
+  position: absolute;
+  width: 100%;
+  /* left: 0; */
+  overflow: hidden;
+  font-family: 'Pridi', sans-serif;
+  font-weight: 600;
+  font-size: 34px;
+  text-transform: uppercase;
+}
+
+.marquee__inner {
+  display: flex;
+  transform: rotate(17deg);
+}
+
+.marquee__line {
+  background-color: transparent;
+  flex-shrink: 0;
+  margin-right: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 282.294px;
+  height: 162.941px;
+  /* width: calc(100% / 8); */
+  white-space: nowrap;
+  animation: marqueeLine 5s ease-in-out infinite alternate;
+
+  /* animation-name: marqueeLine;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite; */
+}
+
+@keyframes marqueeLine {
+  /* from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(-180%);
+  }
+} */
+
+  from {
+    transform: translateX(-10%);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}

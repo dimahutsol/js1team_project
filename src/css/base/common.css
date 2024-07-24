@@ -1,4 +1,15 @@
 /* Reset styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -13,6 +24,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
+ol,
 ul {
   margin: 0;
   padding: 0;
@@ -20,11 +32,14 @@ ul {
 }
 
 a {
+  font-family: inherit;
   color: currentColor;
   text-decoration: none;
+  margin: 0;
 }
 
 button {
+  font-family: inherit;
   cursor: pointer;
 }
 
@@ -32,4 +47,8 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+address {
+  font-style: normal;
 }

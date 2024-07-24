@@ -2,7 +2,8 @@ name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [dev]
+    # Замінити на main в кінці
 
 jobs:
   build-and-deploy:

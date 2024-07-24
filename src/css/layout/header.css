@@ -1,0 +1,15 @@
+.header-hero {
+    position: relative;
+}
+
+.header {
+    position: absolute;
+}
+
+.header-logo {
+    display: flex;
+}
+
+.header-photo-logo {
+    border-radius: 18px;
+}

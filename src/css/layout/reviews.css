@@ -1,5 +1,5 @@
 .reviews {
-  padding: 82px 0;
+  padding: 32px 0;
 }
 
 .reviews-wrapper {
@@ -8,6 +8,7 @@
 }
 
 .reviews-title {
+  font-size: 16px;
   font-weight: 600;
   color: rgba(250, 250, 250, 0.4);
   margin-bottom: 32px;
@@ -30,6 +31,7 @@
   display: inline-block;
   background-color: #e0e0e0;
   border-radius: 10px;
+  margin-bottom: 32px;
 }
 
 .reviews-card-image {
@@ -46,6 +48,7 @@
 }
 
 .reviews-card-description {
+  font-weight: 500;
   color: var(--textAlternative);
 }
 
@@ -86,4 +89,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    padding: 48px 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .reviews {
+    padding: 82px 0;
+  }
 }

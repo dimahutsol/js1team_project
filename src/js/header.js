@@ -6,5 +6,6 @@ headerNavMenuBtn.addEventListener('click', () => {
   headerMobileMenuDiv.classList.add('header-mob-open');
 });
 
-    headerMobileMenuDiv.classList.remove('header-mob-open');
-})
+headerBtnCloseMenu.addEventListener('click', () => {
+  headerMobileMenuDiv.classList.remove('header-mob-open');
+});

@@ -44,36 +44,41 @@
 
 
 
+/* Общие стили для контейнера */
 .about-me-ac-container {
   margin-top: 32px;
 }
 
+/* Стили для списка аккордеонов */
 .about-me-ac-list {
+  list-style: none; /* Убираем маркеры списка, если они есть */
+  padding: 0;
+  margin: 0;
 }
 
+/* Стили для каждого элемента аккордеона */
 .about-me-ac-list-item {
+  background-color: transparent;
+  border: none !important; 
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  margin: 0;
   background-color: transparent !important;
-  border-left: none !important;
-  border-right: none !important;
-  border-top: none !important;
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
-  margin: 0 !important;
 }
 
-.ac {
-}
-
+/* Стили для аккордеона, когда он закрыт */
 .ac.closed .ac-trigger {
   margin-top: 20px;
   margin-bottom: 32px;
 }
 
+/* Стили для триггера аккордеона */
 .ac .ac-trigger {
   display: flex !important;
   justify-content: space-between;
-  padding: 0 !important;
+  padding: 0;
   margin-top: 20px;
   margin-bottom: 0;
+  position: relative; /* Для псевдоэлемента */
 }
 
 .ac .ac-trigger::after {
@@ -90,6 +95,7 @@
   overflow: hidden;
 }
 
+/* Заголовок элемента аккордеона */
 .about-me-ac-item-title {
   font: 600 16px / 1.5 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
@@ -97,17 +103,21 @@
   color: rgba(250, 250, 250, 0.4);
 }
 
+/* Кнопка аккордеона */
 .about-me-ac-button {
-  border: 1px solid rgba(250, 250, 250, 0.2) !important;
+  border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   padding: 10px;
   width: 40px;
   height: 40px;
-  background-color: transparent !important;
-  fill: #fafafa;
-  justify-content: space-between;
+  background-color: transparent;
+  display: flex; /* Обеспечивает центрирование содержимого */
+  justify-content: center;
+  align-items: center;
+  fill: #fafafa; /* Цвет заполнения для SVG */
 }
 
+/* Стрелка в кнопке аккордеона */
 .about-me-slider-arrow {
   transition: transform 0.3s ease-in-out;
 }
@@ -116,9 +126,7 @@
   transform: rotate(180deg);
 }
 
-.rotate-180 {
-}
-
+/* Контейнер с описанием */
 .about-me-desc-container {
   padding-top: 12px;
   padding-bottom: 20px;
@@ -127,32 +135,21 @@
   gap: 32px;
 }
 
-.ac-panel {
-}
-
+/* Описание */
 .about-me-desc {
   font: 500 16px / 1.5 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
   color: #fafafa;
 }
 
-.about-me-role-container {
-}
-
-.about-me-role-head {
-  margin-top: 20px;
-}
-
-.about-me-role-text {
-  padding-bottom: 20px;
-  display: flex;
-  gap: 10px;
-}
-
+/* Контейнер для ролей */
+.about-me-role-container,
 .about-me-education-container {
   margin-top: 20px;
 }
 
+/* Роли и текст образования */
+.about-me-role-text,
 .about-me-education-text {
   padding-bottom: 20px;
   display: flex;

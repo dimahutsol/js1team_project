@@ -25,8 +25,46 @@
   border-radius: 20px;
   padding: 32px 24px;
   min-height: 238px;
+  position: relative;
+  overflow: hidden;
 }
 
+.reviews-card::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 0.2)),
+    linear-gradient(rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 0.2)),
+    linear-gradient(rgba(250, 250, 250, 0.2), rgba(250, 250, 250, 0.2));
+  animation: rotate 4s linear infinite;
+}
+
+.reviews-card::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: var(--backgroundMain);
+  border-radius: 20px;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
 .reviews-image-box {
   display: inline-block;
   background-color: var(--accent);

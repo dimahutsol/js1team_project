@@ -24,7 +24,7 @@ body {
 
 .section-animation {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(100px);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }

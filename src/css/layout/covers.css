@@ -1,7 +1,6 @@
 .covers-section {
   margin: 32px 0 32px 0;
   height: 100%;
-  background-image: url(../img/Covers/covers_background.png);
 }
 
 .covers-title {
@@ -15,14 +14,8 @@
 .marquee {
   background-image: url(../img/Covers/covers_background.png);
   backdrop-filter: blur(15px);
-  position: absolute;
   width: 100%;
-  /* left: 0; */
   overflow: hidden;
-  font-family: 'Pridi', sans-serif;
-  font-weight: 600;
-  font-size: 34px;
-  text-transform: uppercase;
 }
 
 .marquee__inner {
@@ -38,11 +31,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 282.294px;
-  height: 162.941px;
-  /* width: calc(100% / 8); */
+  width: 544px;
+  height: 314px;
   white-space: nowrap;
-  animation: marqueeLine 5s ease-in-out infinite alternate;
+  animation: marqueeLine 10s ease-in-out infinite alternate;
 
   /* animation-name: marqueeLine;
   animation-duration: 5s;
@@ -64,6 +56,6 @@
     transform: translateX(-10%);
   }
   to {
-    transform: translateX(-200%);
+    transform: translateX(-300%);
   }
 }

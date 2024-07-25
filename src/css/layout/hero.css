@@ -1,0 +1,28 @@
+.hero {
+  background-image: url('../../img/Hero/heroBack_mob@1x.png');
+}
+
+.hero-box {
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center; */
+}
+
+.hero-title {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #fafafa;
+}
+
+.hero-social-list {
+    display: flex;
+}
+
+.hero-social-item {
+    width: 37px;
+height: 37px;
+}

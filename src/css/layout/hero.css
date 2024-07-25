@@ -1,15 +1,15 @@
-.hero {
-  background-image: url('../../img/Hero/heroBack_mob@1x.png');
+.header-hero {
+  padding-bottom: 32px;
 }
 
-.hero-box {
-  /* display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center; */
+.hero {
+  background-image: url('../../img/Hero/heroBack_mob@1x.png');
+  background-size: cover;
+  display: flex;
 }
 
 .hero-title {
+    padding: 281px 0;
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
@@ -20,6 +20,7 @@
 .hero-social-list {
   display: flex;
   column-gap: 4px;
+  padding-bottom: 32px;
 }
 
 .hero-social-item {

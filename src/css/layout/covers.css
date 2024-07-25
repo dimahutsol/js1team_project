@@ -1,61 +1,98 @@
-.covers-section {
-  margin: 32px 0 32px 0;
-  height: 100%;
-}
-
-.covers-title {
-  display: none;
-}
-
-.content {
+.covers {
   position: relative;
+  overflow: hidden;
+  height: 508px;
+  min-width: 320px;
+  background-size: cover;
+  background-image: url(/img/Covers/covers_background.png);
 }
 
 .marquee {
-  background-image: url(../img/Covers/covers_background.png);
-  backdrop-filter: blur(15px);
-  width: 100%;
-  overflow: hidden;
+  position: absolute;
+  top: -30px;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
 }
 
+@media (min-resolution: 192dpi) {
+  .covers {
+    background-image: url(/img/Covers/covers_background.png);
+  }
+}
 .marquee__inner {
   display: flex;
+  gap: 24px;
   transform: rotate(17deg);
 }
-
-.marquee__line {
-  background-color: transparent;
+.marquee-wrapper {
+  height: 100%;
+}
+.marquee__card {
+  display: block;
   flex-shrink: 0;
-  margin-right: 20px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 544px;
-  height: 314px;
-  white-space: nowrap;
-  animation: marqueeLine 10s ease-in-out infinite alternate;
-
-  /* animation-name: marqueeLine;
-  animation-duration: 5s;
+  width: 282px;
+  height: 162px;
+  object-fit: cover;
+}
+.animation {
+  animation-name: marqueeLine;
+  animation-duration: 10s;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.marquee-photo {
+  height: 100%;
 }
 
 @keyframes marqueeLine {
-  /* from {
-    transform: translateX(-20%);
-  }
-
-  to {
-    transform: translateX(-180%);
-  }
-} */
-
   from {
-    transform: translateX(-10%);
+    transform: translateX(280%);
   }
   to {
-    transform: translateX(-300%);
+    transform: translateX(-280%);
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  @keyframes marqueeLine {
+    from {
+      transform: translateX(260%);
+    }
+    to {
+      transform: translateX(-250%);
+    }
+  }
+
+  .covers {
+    height: 960px;
+  }
+  .marquee {
+    top: -40px;
+    gap: 44px;
+  }
+  .marquee__inner {
+    gap: 44px;
+  }
+  .marquee__card {
+    width: 544px;
+    height: 314px;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1440px) {
+  .marquee {
+    gap: 64px;
+  }
+  .marquee__inner {
+    gap: 64px;
   }
 }

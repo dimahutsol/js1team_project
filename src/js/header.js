@@ -3,9 +3,8 @@ const headerNavMenuBtn = document.querySelector('.header-nav-menu');
 const headerBtnCloseMenu = document.querySelector('.header-btn-close-menu');
 
 headerNavMenuBtn.addEventListener('click', () => {
-    headerMobileMenuDiv.classList.add('header-mob-open');
+  headerMobileMenuDiv.classList.add('header-mob-open');
 });
 
-headerBtnCloseMenu.addEventListener('click', () => { 
     headerMobileMenuDiv.classList.remove('header-mob-open');
 })

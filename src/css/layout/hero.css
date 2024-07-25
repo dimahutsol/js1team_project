@@ -19,7 +19,8 @@
 
 .hero-social-list {
   display: flex;
-  column-gap: 4px;
+  flex-wrap: wrap;
+  gap: 4px;
   padding-bottom: 32px;
 }
 

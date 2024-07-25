@@ -3,14 +3,25 @@
 }
 
 .hero {
+  position: relative;
   background-image: url('../../img/Hero/heroBack_mob@1x.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero {
+    background-image: url('../../img/Hero/heroBack_tab@1x.png');
+    background-size: contain;
+     min-height: 100vh;
+  }
 }
 
 .hero-title {
-  padding: 281px 0;
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
@@ -20,39 +31,34 @@
 
 @media only screen and (min-width: 768px) {
   .hero-title {
-    padding: 281px 0;
-    font-weight: 500;
     font-size: 90px;
-    line-height: 100%;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
   }
 }
 
 .hero-social-list {
+  position: absolute;
+  bottom: 32px;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
-  padding-bottom: 32px;
 }
 
 @media only screen and (min-width: 768px) {
   .hero-social-list {
     gap: 8px;
-    justify-content: flex-end;
+    right: 32px;
     flex-wrap: nowrap;
   }
 }
 
 .hero-social-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 60px;
   padding: 10px 8px;
   width: 37px;
   height: 37px;
+  cursor: pointer;
+  transition: all 350ms;
 }
 
 @media only screen and (min-width: 768px) {
@@ -71,8 +77,26 @@
   width: 178px;
 }
 
+@media only screen and (min-width: 768px) {
+  .email-link {
+    padding: 18px 24px;
+    width: 223px;
+  }
+}
+
 .hero-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-social-link {
+    font-size: 16px;
+  }
 }

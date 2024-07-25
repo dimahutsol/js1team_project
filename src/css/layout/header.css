@@ -5,6 +5,7 @@
 .header {
   position: absolute;
   padding-top: 32px;
+  z-index: 999;
 }
 
 @media only screen and (min-width: 768px) {

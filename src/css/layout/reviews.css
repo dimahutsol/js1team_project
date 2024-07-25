@@ -29,7 +29,7 @@
 
 .reviews-image-box {
   display: inline-block;
-  background-color: #e0e0e0;
+  background-color: var(--accent);
   border-radius: 10px;
   margin-bottom: 32px;
 }

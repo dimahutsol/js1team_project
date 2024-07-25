@@ -8,7 +8,7 @@ import 'accordion-js/dist/accordion.min.css';
   const aboutMeList = [
     {
       title: 'About me',
-      svgPath: '../img/symbols.svg#arrow-down',
+      svgPath: '../img/symbols.svg#arrow-up',
       content: `
         <p class="about-me-desc">
           I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. 
@@ -54,7 +54,7 @@ import 'accordion-js/dist/accordion.min.css';
     return `
       <li class="about-me-ac-list-item ac">
         <div class="ac-trigger">
-          <h4 class="about-me-ac-item-title">${title}</h4>
+          <h2 class="about-me-ac-item-title">${title}</h2>
           <button class="about-me-ac-button" type="button" aria-label="Slider button">
             <svg class="about-me-slider-arrow" width="10" height="10">
               <use href="${svgPath}"></use>

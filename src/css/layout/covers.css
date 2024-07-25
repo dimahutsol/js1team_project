@@ -1,10 +1,15 @@
 .covers {
+  margin: 32px 0 32px;
   position: relative;
   overflow: hidden;
   height: 508px;
   min-width: 320px;
   background-size: cover;
   background-image: url(/img/Covers/covers_background.png);
+}
+
+.covers-title {
+  display: none;
 }
 
 .marquee {
@@ -72,6 +77,7 @@
   }
 
   .covers {
+    margin: 48px 0 48px;
     height: 960px;
   }
   .marquee {
@@ -89,6 +95,9 @@
 
 /* Desktop */
 @media only screen and (min-width: 1440px) {
+  .covers {
+    margin: 82px 0 82px;
+  }
   .marquee {
     gap: 64px;
   }

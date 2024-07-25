@@ -1,6 +1,7 @@
-<section class="about-me-section">
+<section class="about-me-section .section-animation">
   <div class="container about-me-container">
     <h2 class="about-me-title">about me section</h2>
+
     <div class="about-me-hero-desc">
       <p class="about-me-hero-text">
         I WORK WITH PEOPLE ALL OVER THE WORLD TO CREATE IMPRESSIVE AND
@@ -9,6 +10,7 @@
         CLIENT'S UNIQUE PERSONALITY.
       </p>
     </div>
+
     <div class="about-me-picture-container">
       <picture class="about-me-picture">
         <source
@@ -20,8 +22,8 @@
         />
         <source
           srcset="
-            ./img/AboutMe/aboutMe_tab@1x.png  1x,
-            ./img/AboutMe/aboutMe_tabk@1x.png 2x
+            ./img/AboutMe/aboutMe_tab@1x.png 1x,
+            ./img/AboutMe/aboutMe_tab@1x.png 2x
           "
           media="(min-width: 768px)"
         />
@@ -39,6 +41,103 @@
           height="700"
         />
       </picture>
+    </div>
+
+    <div class="about-me-ac-container">
+      <ul class="about-me-ac-list">
+        <li class="about-me-ac-list-item open ac">
+          <div class="ac-trigger">
+            <h4 class="about-me-ac-item-title">About me</h4>
+            <button
+              class="about-me-ac-button"
+              type="button"
+              aria-label="Slider button"
+            >
+              <svg
+                class="about-me-slider-arrow rotate-180"
+                width="10"
+                height="10"
+              >
+                <use href="../img/symbols.svg#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="about-me-desc-container ac-panel">
+            <p class="about-me-desc">
+              I am Lloyd Jefferson, a talented programmer with extensive
+              expertise in software development. I have an understanding of
+              different programming languages ​​and technologies, always ready
+              to improve my skills. I always follow the latest trends and look
+              for unconventional, creative solutions to problems. I have a high
+              level of analytical skills and am able to effectively solve even
+              the most difficult tasks encountered on the way.
+            </p>
+            <p class="about-me-desc">
+              Able to work both independently and in a team. I can effectively
+              cooperate with colleagues, exchanging ideas and finding optimal
+              solutions. Professional maturity allows you to calmly cope with
+              challenges and stressful situations, while maintaining a high
+              quality of work.I am always looking for opportunities for
+              self-improvement. I actively study new technologies and practices
+              to stay abreast of the latest innovations. I have a strong
+              understanding of various programming languages, frameworks and
+              architectural concepts that allow me to create efficient and
+              scalable software.
+            </p>
+          </div>
+        </li>
+
+        <li class="about-me-ac-list-item .about-me-role-head closed ac">
+          <div class="ac-trigger">
+            <h4 class="about-me-ac-item-title">Role</h4>
+            <button
+              class="about-me-ac-button"
+              type="button"
+              aria-label="Slider button"
+            >
+              <svg class="about-me-slider-arrow" width="10" height="10">
+                <use href="../img/symbols.svg#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="about-me-role-container ac-panel">
+            <p class="about-me-role-text">Frontend development</p>
+            <p class="about-me-role-text">HeadlessCMS,Wordpress</p>
+            <p class="about-me-role-text">Blender(enjoy)</p>
+          </div>
+        </li>
+
+        <li class="about-me-ac-list-item closed ac">
+          <div class="ac-trigger">
+            <h4 class="about-me-ac-item-title">Education</h4>
+            <button
+              class="about-me-ac-button"
+              type="button"
+              aria-label="Slider button "
+            >
+              <svg class="about-me-slider-arrow" width="10" height="10">
+                <use href="../img/symbols.svg#arrow-down"></use>
+              </svg>
+            </button>
+          </div>
+
+          <div class="about-me-education-container ac-panel">
+            <p class="about-me-education-text">
+              2018 - 2019 / Frontend Development Diploma, GoIT IT School, New
+              York
+            </p>
+            <p class="about-me-education-text">
+              2019 - 2020 / Advanced Web Development Certificate, GoIT IT
+              School, New York
+            </p>
+            <p class="about-me-education-text">
+              2020 - 2022 / Advanced Blender Animation Techniques, Udemy
+            </p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </section>

@@ -93,13 +93,18 @@
   font-weight: 500;
   font-size: 14px;
   letter-spacing: -0.02em;
-  background-color: #e0373f;
+  background-color: #ed3b44;
   color: #fafafa;
   position: absolute;
   bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  transition: background-color 350ms;
+}
+
+.header-btn-link-project:hover{
+  background-color: #e0373f;
 }
 
 .blockScroll {

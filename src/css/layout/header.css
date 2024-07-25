@@ -76,22 +76,12 @@
   }
 }
 
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .header-tab-list {
   display: none;
 }
 
 @media only screen and (min-width: 768px) {
   .header-tab-list {
-    display: none;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -105,11 +95,7 @@
     display: block;
     animation: fadeIn 0.5s forwards;
   }
-
-  .header-tab-menu-box:not(:hover) .header-tab-list {
-    animation: fadeOut 0.5s forwards;
-  }
-
+  
   .header-tab-item {
     text-align: center;
   }

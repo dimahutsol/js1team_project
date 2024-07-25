@@ -15,6 +15,7 @@
   "author": "Volodka",
   "license": "ISC",
   "dependencies": {
+    "accordion-js": "^3.3.4",
     "axios": "^1.7.2",
     "izitoast": "^1.4.0",
     "swiper": "^11.1.7",

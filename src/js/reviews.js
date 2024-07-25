@@ -1,15 +1,14 @@
-import Swiper from 'swiper';
+import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { getReviews } from './requests';
 
 const refs = {
-  reviewsWrapper: document.querySelector('.reviews-wrapper'),
   sliderWrapper: document.querySelector('.reviews-wrapper'),
   reviewsList: document.querySelector('.reviews-cards'),
-  prevSlideButton: document.querySelector('.reviews-pagination-prev'),
-  nextSlideButton: document.querySelector('.reviews-pagination-next'),
+  prevSlideButton: document.querySelector('.reviews-navigation-prev'),
+  nextSlideButton: document.querySelector('.reviews-navigation-next'),
 };
 
 let reviews;
@@ -22,9 +21,12 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   centeredSlides: false,
   centeredSlidesBounds: false,
   watchSlidesVisibility: true,
+  keyboard: {
+    enabled: true,
+  },
   navigation: {
-    prevEl: '.reviews-pagination-prev',
-    nextEl: '.reviews-pagination-next',
+    prevEl: '.reviews-navigation-prev',
+    nextEl: '.reviews-navigation-next',
   },
   breakpoints: {
     768: {
@@ -37,11 +39,8 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
 });
 
 reviewsSwiper.on('transitionStart', checkSwiperStatus);
-
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
 document.addEventListener('keydown', onKeyDown);
-refs.prevSlideButton.addEventListener('click', onPrevSlideButtonClick);
-refs.nextSlideButton.addEventListener('click', onNextSlideButtonClick);
 
 async function onDocumentLoaded() {
   try {
@@ -53,57 +52,40 @@ async function onDocumentLoaded() {
       title: ':(',
       message: error.message,
     });
-    refs.reviewsWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
+    refs.sliderWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
+  }
+}
+
+function onKeyDown(e) {
+  if (e.code === 'Tab') {
+    reviewsSwiper.slideNext();
   }
 }
 
 function checkSwiperStatus() {
   if (reviewsSwiper.isBeginning) {
-    refs.prevSlideButton.classList.add('reviews-pagination-btn-disabled');
+    refs.prevSlideButton.classList.add('reviews-navigation-btn-disabled');
     refs.prevSlideButton.firstElementChild.classList.add(
-      'reviews-pagination-icon-disabled'
+      'reviews-navigation-icon-disabled'
     );
   } else {
-    refs.prevSlideButton.classList.remove('reviews-pagination-btn-disabled');
+    refs.prevSlideButton.classList.remove('reviews-navigation-btn-disabled');
     refs.prevSlideButton.firstElementChild.classList.remove(
-      'reviews-pagination-icon-disabled'
+      'reviews-navigation-icon-disabled'
     );
   }
 
   if (reviewsSwiper.isEnd) {
-    refs.nextSlideButton.classList.add('reviews-pagination-btn-disabled');
+    refs.nextSlideButton.classList.add('reviews-navigation-btn-disabled');
     refs.nextSlideButton.firstElementChild.classList.add(
-      'reviews-pagination-icon-disabled'
+      'reviews-navigation-icon-disabled'
     );
   } else {
-    refs.nextSlideButton.classList.remove('reviews-pagination-btn-disabled');
+    refs.nextSlideButton.classList.remove('reviews-navigation-btn-disabled');
     refs.nextSlideButton.firstElementChild.classList.remove(
-      'reviews-pagination-icon-disabled'
+      'reviews-navigation-icon-disabled'
     );
   }
-}
-
-function onKeyDown(e) {
-  const keyPressed = e.code;
-  switch (keyPressed) {
-    case 'ArrowLeft':
-      reviewsSwiper.slidePrev();
-      break;
-    case 'ArrowRight':
-      reviewsSwiper.slideNext();
-      break;
-    case 'Tab':
-      reviewsSwiper.slideNext();
-      break;
-  }
-}
-
-function onPrevSlideButtonClick() {
-  reviewsSwiper.slidePrev();
-}
-
-function onNextSlideButtonClick() {
-  reviewsSwiper.slideNext();
 }
 
 function setCardsHeight() {

@@ -25,6 +25,8 @@
 }
 
 .header-nav-menu {
+  width: 28px;
+  height: 28px;
   border: 0;
   background-color: transparent;
   padding: 0;

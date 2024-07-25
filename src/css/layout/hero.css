@@ -4,12 +4,13 @@
 
 .hero {
   background-image: url('../../img/Hero/heroBack_mob@1x.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   display: flex;
 }
 
 .hero-title {
-    padding: 281px 0;
+  padding: 281px 0;
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
@@ -17,11 +18,30 @@
   text-transform: uppercase;
 }
 
+@media only screen and (min-width: 768px) {
+  .hero-title {
+    padding: 281px 0;
+    font-weight: 500;
+    font-size: 90px;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+}
+
 .hero-social-list {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
   padding-bottom: 32px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-social-list {
+    gap: 8px;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
 }
 
 .hero-social-item {
@@ -33,6 +53,13 @@
   padding: 10px 8px;
   width: 37px;
   height: 37px;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-social-item {
+    width: 55px;
+    height: 55px;
+  }
 }
 
 .hero-social-item:hover {

@@ -34,6 +34,10 @@
   height: 37px;
 }
 
+.hero-social-item:hover {
+  border: 1px solid #fafafa;
+}
+
 .email-link {
   padding: 10px 12px;
   width: 178px;

@@ -213,10 +213,13 @@
   text-decoration: underline;
 }
 
-.header-btn-link-project {
+.header-link-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 164px;
   border: 0;
   border-radius: 60px;
-  padding: 14px 31px;
   height: 45px;
   font-weight: 500;
   font-size: 14px;
@@ -227,12 +230,11 @@
   bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
   transition: background-color var(--transition);
 }
 
-.header-btn-link-project:hover,
-.header-btn-link-project:focus {
+.header-link-project:hover,
+.header-link-project:focus {
   background-color: var(--accentAlternative);
 }
 
@@ -265,4 +267,10 @@
   .header-tab-project:focus {
     background-color: var(--accentAlternative);
   }
+}
+
+.header-tab-project-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

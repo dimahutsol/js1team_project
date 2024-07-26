@@ -131,6 +131,17 @@ div.projects-navigation {
     stroke: #3b3b3b;
 }
 
+.swiper-pagination-bullet{
+    background-color: aliceblue !important;
+    opacity: 0.50 !important; 
+    width: 11px !important;
+    height: 11px !important;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--accent) !important;
+    opacity: 1 !important;
+}
 @media (min-width: 768px) {
     .projects-wrapper {
         margin-bottom: 64px;

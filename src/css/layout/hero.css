@@ -10,7 +10,7 @@
 
 .hero {
   position: relative;
-  background-image: url('../../img/Hero/heroBack_mob@1x.png');
+  background-image: url('../../img/Hero/heroBack_mob@1x.webp');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -21,14 +21,14 @@
 
 @media only screen and (min-width: 768px) {
   .hero {
-    background-image: url('../../img/Hero/heroBack_tab@1x.png');
+    background-image: url('../../img/Hero/heroBack_tab@1x.webp');
     background-size: contain;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .hero {
-    background-image: url('../../img/Hero/heroBack_desk@1x.png');
+    background-image: url('../../img/Hero/heroBack_desk@1x.webp');
   }
 }
 

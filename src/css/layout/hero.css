@@ -2,6 +2,12 @@
   padding-bottom: 32px;
 }
 
+@media only screen and (min-width: 1440px) {
+   .header-hero {
+    padding-bottom: 48px;
+  }
+}
+
 .hero {
   position: relative;
   background-image: url('../../img/Hero/heroBack_mob@1x.png');
@@ -17,7 +23,12 @@
   .hero {
     background-image: url('../../img/Hero/heroBack_tab@1x.png');
     background-size: contain;
-    min-height: 100vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+   .hero{
+    background-image: url('../../img/Hero/heroBack_desk@1x.png');
   }
 }
 
@@ -32,6 +43,14 @@
 @media only screen and (min-width: 768px) {
   .hero-title {
     font-size: 90px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+   .hero-title{
+    width: 1084px;
+    display: block;
+    margin: 0 auto;
   }
 }
 

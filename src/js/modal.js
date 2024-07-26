@@ -19,10 +19,9 @@ window.addEventListener('keydown', e => {
   }
 });
 
-function showModal() {
+export function showModal() {
   refs.backdrop.classList.add('is-open');
 }
-
 function closeModal() {
   refs.backdrop.classList.remove('is-open');
 }

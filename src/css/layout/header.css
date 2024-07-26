@@ -72,30 +72,37 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes scaleIn {
   from {
     opacity: 0;
+    transform: translate(-50%, -10px) scale(0.95);
   }
   to {
     opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }
 
-.header-tab-list {
-  display: none;
-  width: 160px;
-  margin-bottom: 20px;
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.95);
+  }
 }
 
-@media only screen and (min-width: 1440px) {
-.header-tab-list {
-  width: 300px;
-  margin-bottom: 30px;
-}
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .header-tab-list {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .header-tab-list {
+    width: 160px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -103,13 +110,32 @@
     min-width: 80px;
     border-radius: 12px;
     z-index: 1;
+    margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -10px) scale(0.95);
+    transform-origin: top center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .header-tab-list {
+      width: 300px;
+      margin-bottom: 30px;
+    }
   }
 
   .header-tab-menu-box:hover .header-tab-list {
     display: block;
-    animation: fadeIn 0.5s forwards;
+    opacity: 1;
+    visibility: visible;
+    animation: scaleIn 0.3s forwards;
   }
-  
+
+  .header-tab-menu-box:not(:hover) .header-tab-list {
+    animation: scaleOut 0.3s forwards;
+  }
+
   .header-tab-item {
     text-align: center;
   }
@@ -121,9 +147,9 @@
   }
 
   @media only screen and (min-width: 1440px) {
-  .header-tab-link {
-    font-size: 22px;
-  }
+    .header-tab-link {
+      font-size: 22px;
+    }
   }
 
   .header-tab-link:hover {

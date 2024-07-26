@@ -14,7 +14,7 @@ for (let i = 0; i < slatCount; i++) {
      slat.style.background = `hsl(0, 100%, ${lightness}%)`;
      setTimeout(() => {
        slat.classList.add('show');
-     }, index * 200);
+     }, index * 150);
    });
    document.querySelector('.hero').classList.add('show');
  });

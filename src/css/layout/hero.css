@@ -10,7 +10,7 @@
 
 .hero {
   position: relative;
-  background-image: url('../../img/Hero/heroBack_mob@1x.webp');
+  /* background-image: url('../../img/Hero/heroBack_mob@1x.webp'); */
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -33,13 +33,13 @@
   right: 0;
   bottom: 0;
   display: flex;
-  gap: 20px; 
+  gap: 20px;
   z-index: -1;
 }
 
 .slat {
   flex-grow: 1;
-  background: linear-gradient(to right, #1C1D20,#69292D, #800000);
+  /* background: linear-gradient(to right, #1C1D20,#69292D, #800000); */
   transition: all 0.3s ease;
   position: relative;
   transform: translateX(-100%) scale(0.8);
@@ -52,8 +52,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .slat.show {
@@ -75,19 +75,25 @@
   }
 }
 
-.slat:hover {
-  animation: shake 0.5s ease-in-out infinite;
-}
-
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
   .hero {
     background-image: url('../../img/Hero/heroBack_tab@1x.webp');
     background-size: contain;
@@ -98,7 +104,7 @@
   .hero {
     background-image: url('../../img/Hero/heroBack_desk@1x.webp');
   }
-}
+} */
 
 .hero-title {
   font-weight: 500;
@@ -123,12 +129,12 @@
 }
 
 .hero-social-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 212px;
-    padding-top: 281px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 212px;
+  padding-top: 281px;
+}
 
 @media only screen and (min-width: 768px) {
   .hero-social-box {
@@ -195,9 +201,7 @@
 @media only screen and (min-width: 768px) {
   .email-link {
     width: 223px;
-
     padding: 18px 24px;
-
     gap: 10px;
   }
 }

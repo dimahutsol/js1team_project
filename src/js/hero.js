@@ -8,12 +8,10 @@ for (let i = 0; i < slatCount; i++) {
 }
 document.addEventListener('DOMContentLoaded', function () {
   const blinds = document.getElementById('blinds');
-  const numberOfSlats = 20; // Загальна кількість слатів
+  const numberOfSlats = 20; 
 
-  // Видаляємо всі існуючі слати перед створенням нових
   blinds.innerHTML = '';
 
-  // Створюємо слати
   for (let i = 0; i < numberOfSlats; i++) {
     const slat = document.createElement('div');
     slat.className = 'slat';
@@ -21,10 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     blinds.appendChild(slat);
   }
 
-  // Встановлюємо CSS змінні для градієнта
   blinds.style.setProperty('--slat-count', numberOfSlats);
 
-  // Додаємо анімацію появи слатів з невеликою затримкою
   setTimeout(() => {
     document.querySelectorAll('.slat').forEach((slat, index) => {
       setTimeout(() => {

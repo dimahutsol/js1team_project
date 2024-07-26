@@ -5,34 +5,106 @@
   height: 508px;
   min-width: 320px;
   background-size: cover;
-
+  background: rgba(217, 217, 217, 0.04);
+  backdrop-filter: blur(15px);
   /* background-image: url(/img/Covers/covers_background.png); */
 }
 
 .background {
-  background: rgba(217, 217, 217, 0.04);
-  backdrop-filter: blur(15px);
 }
 
-.crcl1 {
-  width: 350px;
-  height: 350px;
-  flex-shrink: 0;
-  border-radius: 350px;
-  background: rgba(237, 59, 68, 0.6);
-  filter: blur(86px);
+.crcl1::before,
+.crcl2::before,
+.crcl3::before,
+.crcl4::before,
+.crcl5::before,
+.crcl6::before,
+.crcl7::before,
+.crcl8::before,
+.crcl9::before,
+.crcl10::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background-color: var(--accent);
+  opacity: 0.6;
+  filter: blur(50px);
 }
-.crcl2 {
+
+.crcl1::before {
+  animation-delay: 1s;
+  animation: fade 3s ease-in-out 1s infinite alternate;
+  top: 198px;
+
+  left: 0;
 }
-.crcl3 {
+
+.crcl2::before {
+  animation-delay: 1s;
+  animation: fade 3s ease-in-out 2s infinite alternate;
+  top: 0;
+  left: 428px;
 }
-.crcl4 {
+
+.crcl3::before {
+  animation-delay: 2s;
+  animation: fade 3s ease-in-out 3s infinite alternate;
+  top: 714px;
+  left: 1478px;
 }
-.crcl5 {
+
+.crcl4::before {
+  animation-delay: 3s;
+  animation: fade 3s ease-in-out 4s infinite alternate;
+  top: 200px;
+  left: 928px;
 }
-.crcl6 {
+.crcl5::before {
+  animation-delay: 4s;
+  animation: fade 3s ease-in-out 5s infinite alternate;
+  top: 0px;
+  left: 128px;
 }
-.crcl7 {
+.crcl6::before {
+  animation-delay: 5s;
+  animation: fade 3s ease-in-out 6s infinite alternate;
+  top: 0px;
+  left: 1528px;
+}
+.crcl7::before {
+  animation-delay: 6s;
+  animation: fade 3s ease-in-out 7s infinite alternate;
+  top: 400px;
+  left: 1600px;
+}
+.crcl8::before {
+  animation-delay: 7s;
+  animation: fade 3s ease-in-out 8s infinite alternate;
+  top: 400px;
+  left: 428px;
+}
+.crcl9::before {
+  animation-delay: 8s;
+  animation: fade 3s ease-in-out 8s infinite alternate;
+  top: 700px;
+  left: 128px;
+}
+.crcl10::before {
+  animation-delay: 9s;
+  animation: fade 3s ease-in-out 9s infinite alternate;
+  top: 700px;
+  left: 728px;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .covers-title {

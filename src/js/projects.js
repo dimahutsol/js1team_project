@@ -3,23 +3,23 @@ import 'swiper/css/bundle';
 
 import mobimage1_1x from '../img/Projects/proj_1template_mob@1x.webp';
 import mobimage1_2x from '../img/Projects/proj_1template_mob@2x.webp';
+import tabimage1_1x from '../img/Projects/proj_1template_tab@1x.webp';
 import tabimage1_2x from '../img/Projects/proj_1template_tab@2x.webp';
 import descimage1_1x from '../img/Projects/proj_1template_desk@1x.webp';
-import tabimage1_1x from '../img/Projects/proj_1template_tab@1x.webp';
 import descimage1_2x from '../img/Projects/proj_1template_desk@2x.webp';
 
 import mobimage2_1x from '../img/Projects/proj_2template_mob@1x.webp';
 import mobimage2_2x from '../img/Projects/proj_2template_mob@2x.webp';
-import tabimage2_2x from '../img/Projects/proj_2template_tab@1x.webp';
-import descimage2_1x from '../img/Projects/proj_2template_tab@2x.webp';
-import tabimage2_1x from '../img/Projects/proj_2template_desk@1x.webp';
+import tabimage2_1x from '../img/Projects/proj_2template_tab@1x.webp';
+import tabimage2_2x from '../img/Projects/proj_2template_tab@2x.webp';
+import descimage2_1x from '../img/Projects/proj_2template_desk@1x.webp';
 import descimage2_2x from '../img/Projects/proj_2template_desk@2x.webp';
 
 import mobimage3_1x from '../img/Projects/proj_3template_mob@1x.webp';
 import mobimage3_2x from '../img/Projects/proj_3template_mob@2x.webp';
+import tabimage3_1x from '../img/Projects/proj_3template_tab@1x.webp';
 import tabimage3_2x from '../img/Projects/proj_3template_tab@2x.webp';
 import descimage3_1x from '../img/Projects/proj_3template_desk@1x.webp';
-import tabimage3_1x from '../img/Projects/proj_3template_tab@1x.webp';
 import descimage3_2x from '../img/Projects/proj_3template_desk@2x.webp';
 
 const refs = {
@@ -138,7 +138,7 @@ function createProjectExample({
   const newTags = tags
     .map(tag => `<li class="tag-item"><p class="tag-text">#${tag}</p></li>`)
     .join('');
-
+  console.log(imgTab_2x);
   return `
     <li class="swiper-slide">
       <div class="projects-li-item">

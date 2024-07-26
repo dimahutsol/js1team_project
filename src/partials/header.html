@@ -5,14 +5,14 @@
         <source
           media="(min-width: 320px)"
           srcset="
-            ./img/Header/header_@1x.png 1x,
-            ./img/Header/header_@2x.png 2x
+            ./img/Header/header_@1x.webp 1x,
+            ./img/Header/header_@2x.webp 2x
           "
-          type="image/png"
+          type="webp"
         />
         <img
           class="header-photo-logo"
-          src="./img/Header/header_@1x.png"
+          src="./img/Header/header_@1x.webp"
           alt="logo-author"
           width="80"
           height="80"
@@ -20,9 +20,11 @@
         />
       </picture>
 
+      <a class="header-logo-link" href="../index.html">
       <svg class="header-author-logo" width="84" height="19" fill="#fafafa">
         <use href="./img/symbols.svg#jefferson"></use>
       </svg>
+      </a>
     </div>
 
     <div class="header-tab-menu-box">
@@ -61,21 +63,21 @@
 
     <ul class="header-modal-menu-list">
       <li class="header-modal-menu-item">
-        <a href="#" class="header-modal-link">About me</a>
+        <a href="#scroll-about_me" class="header-modal-link">About me</a>
       </li>
       <li class="header-modal-menu-item">
-        <a href="#" class="header-modal-link">Benefits</a>
+        <a href="#scroll-benefits" class="header-modal-link">Benefits</a>
       </li>
       <li class="header-modal-menu-item">
-        <a href="#" class="header-modal-link">Projects</a>
+        <a href="#scroll-porjects" class="header-modal-link">Projects</a>
       </li>
       <li class="header-modal-menu-item">
-        <a href="#" class="header-modal-link">FAQ</a>
+        <a href="#scroll-faq" class="header-modal-link">FAQ</a>
       </li>
     </ul>
 
     <button class="header-btn-link-project">
-      <a class="header-link-project" href="#">Order the project</a>
+      <a class="header-link-project" href="#work_together">Order the project</a>
     </button>
   </div>
 </header>

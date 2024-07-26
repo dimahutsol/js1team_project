@@ -3,32 +3,32 @@
 }
 
 @media only screen and (min-width: 1440px) {
-   .header-hero {
+  .header-hero {
     padding-bottom: 48px;
   }
 }
 
 .hero {
   position: relative;
-  background-image: url('../../img/Hero/heroBack_mob@1x.png');
+  background-image: url('../../img/Hero/heroBack_mob@1x.webp');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) {
   .hero {
-    background-image: url('../../img/Hero/heroBack_tab@1x.png');
+    background-image: url('../../img/Hero/heroBack_tab@1x.webp');
     background-size: contain;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-   .hero{
-    background-image: url('../../img/Hero/heroBack_desk@1x.png');
+  .hero {
+    background-image: url('../../img/Hero/heroBack_desk@1x.webp');
   }
 }
 
@@ -47,16 +47,42 @@
 }
 
 @media only screen and (min-width: 1440px) {
-   .hero-title{
+  .hero-title {
     width: 1084px;
     display: block;
     margin: 0 auto;
   }
 }
 
+.hero-social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 212px;
+    padding-top: 281px;
+  }
+
+@media only screen and (min-width: 768px) {
+  .hero-social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 187px;
+    padding-top: 300px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .hero-social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 243px;
+    padding-top: 300px;
+  }
+}
+
 .hero-social-list {
-  position: absolute;
-  bottom: 32px;
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -65,7 +91,6 @@
 @media only screen and (min-width: 768px) {
   .hero-social-list {
     gap: 8px;
-    right: 32px;
     flex-wrap: nowrap;
   }
 }
@@ -94,12 +119,18 @@
 .email-link {
   padding: 10px 12px;
   width: 178px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 @media only screen and (min-width: 768px) {
   .email-link {
-    padding: 18px 24px;
     width: 223px;
+
+    padding: 18px 24px;
+
+    gap: 10px;
   }
 }
 

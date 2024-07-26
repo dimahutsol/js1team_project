@@ -38,9 +38,9 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   },
 });
 
-reviewsSwiper.on('transitionStart', checkSwiperStatus);
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
 document.addEventListener('keydown', onKeyDown);
+refs.reviewsList.addEventListener('click', onReviewsListClick);
 
 async function onDocumentLoaded() {
   try {
@@ -57,35 +57,18 @@ async function onDocumentLoaded() {
 }
 
 function onKeyDown(e) {
+  e.preventDefault();
   if (e.code === 'Tab') {
     reviewsSwiper.slideNext();
   }
 }
 
-function checkSwiperStatus() {
-  if (reviewsSwiper.isBeginning) {
-    refs.prevSlideButton.classList.add('reviews-navigation-btn-disabled');
-    refs.prevSlideButton.firstElementChild.classList.add(
-      'reviews-navigation-icon-disabled'
-    );
-  } else {
-    refs.prevSlideButton.classList.remove('reviews-navigation-btn-disabled');
-    refs.prevSlideButton.firstElementChild.classList.remove(
-      'reviews-navigation-icon-disabled'
-    );
-  }
-
-  if (reviewsSwiper.isEnd) {
-    refs.nextSlideButton.classList.add('reviews-navigation-btn-disabled');
-    refs.nextSlideButton.firstElementChild.classList.add(
-      'reviews-navigation-icon-disabled'
-    );
-  } else {
-    refs.nextSlideButton.classList.remove('reviews-navigation-btn-disabled');
-    refs.nextSlideButton.firstElementChild.classList.remove(
-      'reviews-navigation-icon-disabled'
-    );
-  }
+function onReviewsListClick(e) {
+  if (e.target === e.currentTarget) return;
+  const targetEl = e.target
+    .closest('.reviews-card')
+    .querySelector('.reviews-card-description');
+  targetEl.classList.toggle('reviews-card-description-overflow-hidden');
 }
 
 function setCardsHeight() {
@@ -111,7 +94,7 @@ function createSingleReviewTemplate({ author, avatar_url, review }) {
           <img class="reviews-card-image" src="${avatar_url}" alt="photo of ${author}" />
         </div>
         <p class="reviews-card-name">${author}</p>
-        <p class="reviews-card-description">${review}</p>
+        <p class="reviews-card-description reviews-card-description-overflow-hidden">${review}</p>
       </li>`;
 }
 

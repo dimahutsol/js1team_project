@@ -47,7 +47,7 @@
   }
 }
 .title-text-footer {
-  color: #fafafa;
+  color: var(--textMain);
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
@@ -64,7 +64,7 @@
   }
 }
 .work-span {
-  color: #ed3b44;
+  color: var(--accent);
 }
 .form-footer {
   display: inline-flex;

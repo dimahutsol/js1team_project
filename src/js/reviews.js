@@ -59,14 +59,16 @@ const observer = new IntersectionObserver(
 
 observer.observe(refs.sliderWrapper);
 
-reviewsSwiper.on('keyPress', (swiper, keyCode) => {
-  if (keyCode === 9 && isReviewsSwiperInViewPort) {
-    swiper.slideNext();
-  }
-});
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
-document.addEventListener('keydown', e => e.preventDefault());
 refs.reviewsList.addEventListener('click', onReviewsListClick);
+document.addEventListener('keydown', onKeyDown);
+
+function onKeyDown(e) {
+  if (e.keyCode === 9 && isReviewsSwiperInViewPort) {
+    e.preventDefault();
+    reviewsSwiper.slideNext();
+  }
+}
 
 async function onDocumentLoaded() {
   try {
@@ -110,7 +112,7 @@ function getTheHighestElement(elements) {
 function createSingleReviewTemplate({ author, avatar_url, review }) {
   return `<li class="reviews-card swiper-slide">
         <div class="reviews-image-box">
-          <img class="reviews-card-image" src="${avatar_url}" alt="photo of ${author}" />
+          <img class="reviews-card-image" src="${avatar_url}" alt="photo of ${author}" loading="lazy" />
         </div>
         <p class="reviews-card-name">${author}</p>
         <p class="reviews-card-description reviews-card-description-overflow-hidden">${review}</p>

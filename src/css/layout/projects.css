@@ -1,3 +1,8 @@
+.projects{
+    margin-top: 82px;
+    margin-bottom: 82px;
+}
+
 .projects-title {
     font-weight: 600;
     text-transform: uppercase;
@@ -7,6 +12,8 @@
 
 .projects-white-wrapper {
     padding: 32px;
+    background-color: var(--textMain);
+    border-radius: 24px 24px 0 0;
 }
 
 .projects-wrapper {
@@ -22,8 +29,7 @@
 .projects-li-item {
     display: flex;
     flex-direction: column;
-    background-color: var(--textMain);
-    border-radius: 24px;
+    
 }
 
 .tag-list {
@@ -71,6 +77,15 @@
     border-radius: 60px;
     padding: 13px 32px;
     background-color: var(--accent);
+    cursor: pointer;
+    transition: border var(--transition);
+}
+
+
+
+.project-btn:hover{
+    background-color: var(--accentAlternative);
+    
 }
 
 .project-image-wrapper {
@@ -105,6 +120,62 @@ div.projects-navigation {
     align-items: center;
     cursor: pointer;
 }
+
+/* .projects-navigation-btn {
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(250, 250, 250, 0.5);
+    border-radius: 50%;
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.projects-navigation-btn::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 1px;
+    top: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background: var(--backgroundMain);
+    border-radius: 50%;
+    transition: height var(--transition), width var(--transition);
+}
+
+.projects-navigation-btn:hover::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: 1px;
+    top: 1px;
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    background-image: linear-gradient(var(--accent), var(--accent)),
+        linear-gradient(var(--accent), var(--accent)),
+        linear-gradient(var(--accent), var(--accent)),
+        linear-gradient(var(--accent), var(--accent));
+    border-radius: 50%;
+}
+
+.projects-navigation-btn:hover::after {
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+}
+
+.projects-navigation-btn:hover {
+    animation: rotate 0.5s infinite linear;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn);
+    }
+} */
 
 .projects-navigation-prev.swiper-button-disabled {
     border: 1px solid var(--borderMain);

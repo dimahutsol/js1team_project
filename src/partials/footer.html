@@ -1,10 +1,10 @@
-<section class="footer section-animation">
+<section id="work_together" class="footer section-animation">
   <div class="container">
     <div class="title-footer">
       <span class="img-span">
         <img
           class="img-footer"
-          srcset="./img/Footer/footer_@1x.png, ./img/Footer/footer_@2x.png 2x"
+          srcset="./img/Footer/footer_@1x.webp, ./img/Footer/footer_@2x.webp 2x"
           src="./img/Footer/footer_@1x.png"
           alt="Jefferson"
           loading="lazy"
@@ -13,19 +13,22 @@
           Let’s <span class="work-span">work</span>
         </h2></span
       >
-
       <h2 class="title-text-footer">together</h2>
     </div>
 
     <form class="form-footer js-form-footer">
-      <input
-        type="email"
-        name="email"
-        placeholder="clients@gmail.com"
-        required
-        pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        title="Invalid email, try again"
-      />
+      <div class="input-container">
+        <input
+          type="email"
+          name="email"
+          class="js-email-input"
+          placeholder="clients@gmail.com"
+          required
+          title="Invalid email, try again"
+        />
+        <span class="email-message js-email-message"></span>
+      </div>
+
       <input
         type="text"
         name="comment"
@@ -39,14 +42,14 @@
     <address class="contacts-footer">
       <ul class="contacts-list-footer">
         <li class="contact-item-footer">
-          <a class="contact-link-footer" href="mailto:lloydjefferson@gmail.com"
-            >example@example.com</a
-          >
+          <a href="mailto:lloydjefferson@gmail.com" target="_blank">
+            <button class="contact-link-footer">example@example.com</button>
+          </a>
         </li>
         <li class="contact-item-footer">
-          <a class="contact-link-footer" href="tel:+3801111111111"
-            >+380 11 1111 11 11</a
-          >
+          <a href="tel:+3801111111111" target="_blank">
+            <button class="contact-link-footer">+380 11 1111 11 11</button>
+          </a>
         </li>
       </ul>
     </address>

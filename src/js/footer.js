@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { showModal } from './modal';
+import { postComment } from './requests';
 
 const refs = {
   formFooter: document.querySelector('.js-form-footer'),
@@ -28,8 +28,6 @@ function validateEmail() {
 
 refs.emailInput.addEventListener('input', validateEmail);
 
-axios.defaults.baseURL = 'https://portfolio-js.b.goit.study';
-
 refs.formFooter.addEventListener('submit', async function (e) {
   e.preventDefault();
 
@@ -38,17 +36,21 @@ refs.formFooter.addEventListener('submit', async function (e) {
   const comment = formData.get('comment');
 
   try {
-    const response = await axios.post('/api-docs', {
+    const response = await postComment({
       email,
       comment,
     });
 
-    if (response.status !== 200) {
+    if (!response) {
       throw new Error('Server error');
     }
 
     refs.formFooter.reset();
-    showModal();
+    refs.emailInput.classList.remove('valid', 'invalid');
+    refs.emailMessage.textContent = '';
+
+    refs.formFooter.reset();
+    showModal(response);
   } catch (error) {
     alert(
       'Error: ' + error.message + '. Please check your input and try again.'

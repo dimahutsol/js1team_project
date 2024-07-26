@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.header-logo-link {
+  height: 0;
+}
+
 .header-photo-logo {
   margin-right: 8px;
   border-radius: 18px;

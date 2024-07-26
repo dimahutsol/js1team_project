@@ -13,6 +13,7 @@ const refs = {
 
 let reviews;
 let theHighestCard;
+let isReviewsSwiperInViewPort = false;
 
 const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   slidesPerView: 1,
@@ -22,6 +23,7 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   centeredSlidesBounds: false,
   watchSlidesVisibility: true,
   keyboard: {
+    onlyInViewport: true,
     enabled: true,
   },
   navigation: {
@@ -38,8 +40,32 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   },
 });
 
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isReviewsSwiperInViewPort = true;
+      } else {
+        isReviewsSwiperInViewPort = false;
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  }
+);
+
+observer.observe(refs.sliderWrapper);
+
+reviewsSwiper.on('keyPress', (swiper, keyCode) => {
+  if (keyCode === 9 && isReviewsSwiperInViewPort) {
+    swiper.slideNext();
+  }
+});
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
-document.addEventListener('keydown', onKeyDown);
+document.addEventListener('keydown', e => e.preventDefault());
 refs.reviewsList.addEventListener('click', onReviewsListClick);
 
 async function onDocumentLoaded() {
@@ -53,13 +79,6 @@ async function onDocumentLoaded() {
       message: error.message,
     });
     refs.sliderWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
-  }
-}
-
-function onKeyDown(e) {
-  e.preventDefault();
-  if (e.code === 'Tab') {
-    reviewsSwiper.slideNext();
   }
 }
 

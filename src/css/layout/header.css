@@ -24,6 +24,10 @@
   display: flex;
 }
 
+.header-logo-link {
+  height: 0;
+}
+
 .header-photo-logo {
   margin-right: 8px;
   border-radius: 18px;
@@ -68,21 +72,37 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes scaleIn {
   from {
     opacity: 0;
+    transform: translate(-50%, -10px) scale(0.95);
   }
   to {
     opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }
 
-.header-tab-list {
-  display: none;
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -10px) scale(0.95);
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .header-tab-list {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .header-tab-list {
+    width: 160px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
@@ -90,13 +110,32 @@
     min-width: 80px;
     border-radius: 12px;
     z-index: 1;
+    margin-bottom: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -10px) scale(0.95);
+    transform-origin: top center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .header-tab-list {
+      width: 300px;
+      margin-bottom: 30px;
+    }
   }
 
   .header-tab-menu-box:hover .header-tab-list {
     display: block;
-    animation: fadeIn 0.5s forwards;
+    opacity: 1;
+    visibility: visible;
+    animation: scaleIn 0.3s forwards;
   }
-  
+
+  .header-tab-menu-box:not(:hover) .header-tab-list {
+    animation: scaleOut 0.3s forwards;
+  }
+
   .header-tab-item {
     text-align: center;
   }
@@ -104,7 +143,13 @@
   .header-tab-link {
     color: #fafafa;
     display: block;
-    transition: all 400ms;
+    transition: all 350ms;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    .header-tab-link {
+      font-size: 22px;
+    }
   }
 
   .header-tab-link:hover {
@@ -117,7 +162,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url('../../img/Hero/heroMenu_mob@1x.png');
+  background-image: url('../../img/Hero/heroMenu_mob@1x.webp');
   background-size: cover;
   width: 100%;
   height: 100%;

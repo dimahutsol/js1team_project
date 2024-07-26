@@ -34,7 +34,6 @@
 }
 
 .crcl1::before {
-  animation-delay: 1s;
   animation: fade 1s ease-in-out 1s infinite alternate;
   top: 198px;
 
@@ -42,57 +41,48 @@
 }
 
 .crcl2::before {
-  animation-delay: 1s;
   animation: fade 2s ease-in-out 2s infinite alternate;
   top: 0;
   left: 428px;
 }
 
 .crcl3::before {
-  animation-delay: 2s;
   animation: fade 3s ease-in-out 3s infinite alternate;
   top: 714px;
   left: 1478px;
 }
 
 .crcl4::before {
-  animation-delay: 3s;
   animation: fade 1s ease-in-out 4s infinite alternate;
   top: 200px;
   left: 928px;
 }
 .crcl5::before {
-  animation-delay: 4s;
   animation: fade 2s ease-in-out 5s infinite alternate;
   top: 0px;
   left: 128px;
 }
 .crcl6::before {
-  animation-delay: 5s;
   animation: fade 3s ease-in-out 6s infinite alternate;
   top: 0px;
   left: 1528px;
 }
 .crcl7::before {
-  animation-delay: 6s;
   animation: fade 1s ease-in-out 7s infinite alternate;
   top: 400px;
   left: 1600px;
 }
 .crcl8::before {
-  animation-delay: 7s;
   animation: fade 2s ease-in-out 8s infinite alternate;
   top: 400px;
   left: 428px;
 }
 .crcl9::before {
-  animation-delay: 8s;
   animation: fade 3s ease-in-out 8s infinite alternate;
   top: 700px;
   left: 128px;
 }
 .crcl10::before {
-  animation-delay: 9s;
   animation: fade 1s ease-in-out 9s infinite alternate;
   top: 700px;
   left: 728px;

@@ -1,0 +1,81 @@
+<header class="header container">
+  <nav class="header-nav">
+    <div class="header-logo">
+      <picture>
+        <source
+          media="(min-width: 320px)"
+          srcset="
+            ./img/Header/header_@1x.png 1x,
+            ./img/Header/header_@2x.png 2x
+          "
+          type="image/png"
+        />
+        <img
+          class="header-photo-logo"
+          src="./img/Header/header_@1x.png"
+          alt="logo-author"
+          width="80"
+          height="80"
+          loading="lazy"
+        />
+      </picture>
+
+      <svg class="header-author-logo" width="84" height="19" fill="#fafafa">
+        <use href="./img/symbols.svg#jefferson"></use>
+      </svg>
+    </div>
+
+    <div class="header-tab-menu-box">
+      <a href="#" class="header-tab-menu">Menu</a>
+
+      <ul class="header-tab-list">
+        <li class="header-tab-item"><a href="#scroll-about_me" class="header-tab-link">About me</a></li>
+        <li class="header-tab-item"><a href="#scroll-benefits" class="header-tab-link">Benefits</a></li>
+        <li class="header-tab-item"><a href="#scroll-porjects" class="header-tab-link">Projects</a></li>
+        <li class="header-tab-item"><a href="#scroll-faq" class="header-tab-link">FAQ</a></li>
+      </ul>
+    </div>
+
+    <button class="header-tab-project">
+      <a class="header-tab-project-link" href="#work_together">Order the project</a>
+    </button>
+
+    <button class="header-nav-menu">
+      <svg class="header-svg-menu" width="28" height="28" stroke="#fafafa">
+        <use href="./img/symbols.svg#burger"></use>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="header-mobile-menu">
+    <button class="header-btn-close-menu">
+      <svg
+        class="header-btn-svg-close-menu"
+        width="28"
+        height="28"
+        stroke="#fafafa"
+      >
+        <use href="./img/symbols.svg#x-mob"></use>
+      </svg>
+    </button>
+
+    <ul class="header-modal-menu-list">
+      <li class="header-modal-menu-item">
+        <a href="#" class="header-modal-link">About me</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#" class="header-modal-link">Benefits</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#" class="header-modal-link">Projects</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#" class="header-modal-link">FAQ</a>
+      </li>
+    </ul>
+
+    <button class="header-btn-link-project">
+      <a class="header-link-project" href="#">Order the project</a>
+    </button>
+  </div>
+</header>

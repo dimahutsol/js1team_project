@@ -1,3 +1,4 @@
+@import url('./base/reset.css');
 @import url('./base/common.css');
 @import url('./base/container.css');
 @import url('./utils/variables.css');
@@ -11,13 +12,3 @@
 @import url('./layout/reviews.css');
 @import url('./layout/footer.css');
 @import url('./layout/modal.css');
-
-body {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: var(--textMain);
-  background-color: var(--backgroundMain);
-}

@@ -144,7 +144,7 @@
   .header-tab-link {
     color: var(--textMain);
     display: block;
-    transition: all 350ms;
+    transition: all var(--transition);
   }
 
   @media only screen and (min-width: 1440px) {
@@ -153,8 +153,9 @@
     }
   }
 
-  .header-tab-link:hover {
-    background-color: #e0373f;
+  .header-tab-link:hover,
+  .header-tab-link:focus {
+    background-color: var(--accentAlternative);
     border-radius: 12px;
   }
 }
@@ -227,11 +228,12 @@
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  transition: background-color 350ms;
+  transition: background-color var(--transition);
 }
 
-.header-btn-link-project:hover {
-  background-color: #e0373f;
+.header-btn-link-project:hover,
+.header-btn-link-project:focus {
+  background-color: var(--accentAlternative);
 }
 
 .blockScroll {
@@ -256,10 +258,11 @@
     letter-spacing: -0.02em;
     background-color: var(--accent);
     color: var(--textMain);
-    transition: background-color 350ms;
+    transition: background-color var(--transition);
   }
 
-  .header-tab-project:hover {
-    background-color: #e0373f;
+  .header-tab-project:hover,
+  .header-tab-project:focus {
+    background-color: var(--accentAlternative);
   }
 }

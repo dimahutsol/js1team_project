@@ -54,6 +54,24 @@
   }
 }
 
+.hero-social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 212px;
+    padding-top: 281px;
+  }
+
+@media only screen and (min-width: 768px) {
+  .hero-social-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 187px;
+    padding-top: 300px;
+  }
+}
+
 @media only screen and (min-width: 1440px) {
   .hero-social-box {
     display: flex;

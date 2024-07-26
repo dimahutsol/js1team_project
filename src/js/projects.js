@@ -1,7 +1,26 @@
-// Import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
-// Import Swiper styles bundle
 import 'swiper/css/bundle';
+
+import mobimage1_1x from '../img/Projects/proj_1template_mob@1x.webp';
+import mobimage1_2x from '../img/Projects/proj_1template_mob@2x.webp';
+import tabimage1_1x from '../img/Projects/proj_1template_tab@1x.webp';
+import tabimage1_2x from '../img/Projects/proj_1template_tab@2x.webp';
+import descimage1_1x from '../img/Projects/proj_1template_desk@1x.webp';
+import descimage1_2x from '../img/Projects/proj_1template_desk@2x.webp';
+
+import mobimage2_1x from '../img/Projects/proj_2template_mob@1x.webp';
+import mobimage2_2x from '../img/Projects/proj_2template_mob@2x.webp';
+import tabimage2_1x from '../img/Projects/proj_2template_tab@1x.webp';
+import tabimage2_2x from '../img/Projects/proj_2template_tab@2x.webp';
+import descimage2_1x from '../img/Projects/proj_2template_desk@1x.webp';
+import descimage2_2x from '../img/Projects/proj_2template_desk@2x.webp';
+
+import mobimage3_1x from '../img/Projects/proj_3template_mob@1x.webp';
+import mobimage3_2x from '../img/Projects/proj_3template_mob@2x.webp';
+import tabimage3_1x from '../img/Projects/proj_3template_tab@1x.webp';
+import tabimage3_2x from '../img/Projects/proj_3template_tab@2x.webp';
+import descimage3_1x from '../img/Projects/proj_3template_desk@1x.webp';
+import descimage3_2x from '../img/Projects/proj_3template_desk@2x.webp';
 
 const refs = {
   projectListRef: document.querySelector('.project-list-js'),
@@ -10,14 +29,30 @@ const refs = {
   nextSlideProjBtn: document.querySelector('.projects-navigation-next'),
 };
 
+let isProjectSwiperInViewPort = false;
+
 const projSwiper = new Swiper(refs.projectWrapper, {
   slidesPerView: 1,
   spaceBetween: 25,
+  effect: 'cube',
+
   centerInsufficientSlides: true,
   centeredSlides: false,
   centeredSlidesBounds: false,
   watchSlidesVisibility: true,
-  keyboard: { enabled: true },
+
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true, // Enable keyboard control only when Swiper is in viewport
+    pageUpDown: true, // Enable control via Page Up and Page Down keys
+  },
+
+  cubeEffect: {
+    shadow: true, // Enables main slider shadow
+    shadowOffset: 20, // Main shadow offset in px
+    shadowScale: 0.94, // Main shadow scale ratio
+    slideShadows: true,
+  },
 
   pagination: {
     el: '.projects-swiper-pagination',
@@ -29,99 +64,97 @@ const projSwiper = new Swiper(refs.projectWrapper, {
   },
 });
 
-function updateNavigation() {
-  if (projSwiper.isBeginning) {
-    refs.prevSlideProjBtn.classList.add('projects-navigation-btn-disabled');
-    refs.prevSlideProjBtn.setAttribute('disabled', true);
-    refs.prevSlideProjBtn
-      .querySelector('svg')
-      .classList.add('projects-navigation-icon-disabled');
-  } else {
-    refs.prevSlideProjBtn.classList.remove('projects-navigation-btn-disabled');
-    refs.prevSlideProjBtn.removeAttribute('disabled');
-    refs.prevSlideProjBtn
-      .querySelector('svg')
-      .classList.remove('projects-navigation-icon-disabled');
+projSwiper.on('keyPress', (swiper, keyCode) => {
+  if (keyCode === 9 && isProjectSwiperInViewPort) {
+    swiper.slideNext();
   }
+});
 
-  if (projSwiper.isEnd) {
-    refs.nextSlideProjBtn.classList.add('projects-navigation-btn-disabled');
-    refs.nextSlideProjBtn.setAttribute('disabled', true);
-    refs.nextSlideProjBtn
-      .querySelector('svg')
-      .classList.add('projects-navigation-icon-disabled');
-  } else {
-    refs.nextSlideProjBtn.classList.remove('projects-navigation-btn-disabled');
-    refs.nextSlideProjBtn.removeAttribute('disabled');
-    refs.nextSlideProjBtn
-      .querySelector('svg')
-      .classList.remove('projects-navigation-icon-disabled');
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isProjectSwiperInViewPort = true;
+      } else {
+        isProjectSwiperInViewPort = false;
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
   }
-}
-
-projSwiper.on('slideChange', updateNavigation);
-projSwiper.on('reachBeginning', updateNavigation);
-projSwiper.on('reachEnd', updateNavigation);
-projSwiper.on('init', updateNavigation);
+);
+observer.observe(refs.projectWrapper);
 
 const projectArray = [
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
     links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
-    mobimage1x: './img/Projects/proj_1template_mob@1x.png',
-    mobimage2x: './img/Projects/proj_1template_mob@2x.png',
-    tabimage1x: './img/Projects/proj_1template_tab@1x.png',
-    tabimage2x: './img/Projects/proj_1template_tab@2x.png',
-    descimage1x: './img/Projects/proj_1template_desk@1x.png',
-    descimage2x: './img/Projects/proj_1template_desk@2x.png',
+    imgMob_1x: mobimage1_1x,
+    imgMob_2x: mobimage1_2x,
+    imgTab_1x: tabimage1_1x,
+    imgTab_2x: tabimage1_2x,
+    imgDesc_1x: descimage1_1x,
+    imgDesc_2x: descimage1_2x,
   },
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
     links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
-    mobimage1x: './img/Projects/proj_2template_mob@1x.png',
-    mobimage2x: './img/Projects/proj_2template_mob@2x.png',
-    tabimage1x: './img/Projects/proj_2template_tab@1x.png',
-    tabimage2x: './img/Projects/proj_2template_tab@2x.png',
-    descimage1x: './img/Projects/proj_2template_desk@1x.png',
-    descimage2x: './img/Projects/proj_2template_desk@2x.png',
+    imgMob_1x: mobimage2_1x,
+    imgMob_2x: mobimage2_2x,
+    imgTab_1x: tabimage2_1x,
+    imgTab_2x: tabimage2_2x,
+    imgDesc_1x: descimage2_1x,
+    imgDesc_2x: descimage2_2x,
   },
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
     links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
-    mobimage1x: './img/Projects/proj_3template_mob@1x.png',
-    mobimage2x: './img/Projects/proj_3template_mob@2x.png',
-    tabimage1x: './img/Projects/proj_3template_tab@1x.png',
-    tabimage2x: './img/Projects/proj_3template_tab@2x.png',
-    descimage1x: './img/Projects/proj_3template_desk@1x.png',
-    descimage2x: './img/Projects/proj_3template_desk@2x.png',
+    imgMob_1x: mobimage3_1x,
+    imgMob_2x: mobimage3_2x,
+    imgTab_1x: tabimage3_1x,
+    imgTab_2x: tabimage3_2x,
+    imgDesc_1x: descimage3_1x,
+    imgDesc_2x: descimage3_2x,
   },
 ];
 
-function createProjectExample(project) {
-  const tags = project.tags
+function createProjectExample({
+  title,
+  tags,
+  links,
+  imgMob_1x,
+  imgMob_2x,
+  imgTab_1x,
+  imgTab_2x,
+  imgDesc_1x,
+  imgDesc_2x,
+}) {
+  const newTags = tags
     .map(tag => `<li class="tag-item"><p class="tag-text">#${tag}</p></li>`)
     .join('');
+  console.log(imgTab_2x);
   return `
     <li class="swiper-slide">
-    <div class="projects-li-item ">
-      <div class="projects-white-wrapper">
-        <ul class="tag-list">
-          ${tags}
-        </ul>
-        <h3 class="projects-header">${project.title}</h3>
-        <a class="project-btn" type="button" href="${project.links}">See project</a>
-      </div>
-      <div class="project-image-wrapper">
-        <img class="project-image" 
-             src="${project.mobimage1x}"
-             srcset="${project.mobimage1x} 1x, ${project.mobimage2x} 2x, 
-                     ${project.tabimage1x} 1x, ${project.tabimage2x} 2x, 
-                     ${project.descimage1x} 1x, ${project.descimage2x} 2x"
-             alt="project example image" />
-      </div>
+      <div class="projects-li-item">
+        <div class="projects-white-wrapper">
+          <ul class="tag-list">${newTags}</ul>
+          <h3 class="projects-header">${title}</h3>
+          <a class="project-btn" type="button" href="${links}" target="_blank">See project</a>
+        </div>
+        <div class="project-image-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp">
+            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp">
+            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp">
+            <img src="${imgMob_1x}" alt="project example image" loading="lazy" class="project-image">
+          </picture>
+        </div>
       </div>
     </li>`;
 }

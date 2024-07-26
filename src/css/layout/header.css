@@ -79,6 +79,8 @@
 
 .header-tab-list {
   display: none;
+  width: 160px;
+  margin-bottom: 14px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -104,7 +106,8 @@
   .header-tab-link {
     color: #fafafa;
     display: block;
-    transition: all 400ms;
+    transition: all 350ms;
+    font-size: 18px;
   }
 
   .header-tab-link:hover {

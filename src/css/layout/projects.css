@@ -1,7 +1,7 @@
 .projects-title {
     font-weight: 600;
     text-transform: uppercase;
-    color: rgba(250, 250, 250, 0.4);
+    color: var(--textTitle);
     padding-bottom: 32px;
 }
 
@@ -22,7 +22,7 @@
 .projects-li-item {
     display: flex;
     flex-direction: column;
-    background-color: #fafafa;
+    background-color: var(--textMain);
     border-radius: 24px;
 }
 
@@ -50,7 +50,7 @@
     font-weight: 500;
     font-size: 16px;
     letter-spacing: -0.02em;
-    color: #1c1d20;
+    color: var(--backgroundMain);
 }
 
 .projects-header {
@@ -58,7 +58,7 @@
     font-size: 24px;
     line-height: 1.17;
     letter-spacing: -0.03em;
-    color: #1c1d20;
+    color: var(--backgroundMain);
     margin-bottom: 32px;
 }
 
@@ -80,7 +80,7 @@
     padding: 0;
     border-radius: 0 0 24px 24px;
     padding: 100px 16px;
-    background-color: #242527;
+    background-color: var(--backgroundAlternative);
 
 }
 
@@ -106,22 +106,42 @@ div.projects-navigation {
     cursor: pointer;
 }
 
-.projects-navigation-btn-disabled {
-    border: 1px solid rgba(250, 250, 250, 0.2);
+.projects-navigation-prev.swiper-button-disabled {
+    border: 1px solid var(--borderMain);
+}
+.projects-navigation-prev.swiper-button-disabled svg {
+ stroke: var(--arrow);
+}
+.projects-navigation-next.swiper-button-disabled svg {
+ stroke: var(--arrow);
+}
+.projects-navigation-next.swiper-button-disabled {
+    border: 1px solid var(--borderMain);
 }
 
 .projects-navigation-icon {
     width: 32px;
     height: 32px;
-    fill: var(--textMain);
+    fill: transparent;
     stroke: var(--textMain);
 }
 
-.projects-navigation-icon-disabled {
-    fill: #3b3b3b;
-    stroke: #3b3b3b;
+.swiper-button-disabled {
+    fill: var(--arrow);
+    stroke: var(--arrow);
 }
 
+.swiper-pagination-bullet{
+    background-color: aliceblue !important;
+    opacity: 0.50 !important; 
+    width: 11px !important;
+    height: 11px !important;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--accent) !important;
+    opacity: 1 !important;
+}
 @media (min-width: 768px) {
     .projects-wrapper {
         margin-bottom: 64px;

@@ -106,18 +106,27 @@ div.projects-navigation {
     cursor: pointer;
 }
 
-.projects-navigation-btn-disabled {
+.projects-navigation-prev.swiper-button-disabled {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+}
+.projects-navigation-prev.swiper-button-disabled svg {
+ stroke: #3b3b3b;
+}
+.projects-navigation-next.swiper-button-disabled svg {
+ stroke: #3b3b3b;
+}
+.projects-navigation-next.swiper-button-disabled {
     border: 1px solid rgba(250, 250, 250, 0.2);
 }
 
 .projects-navigation-icon {
     width: 32px;
     height: 32px;
-    fill: var(--textMain);
+    fill: transparent;
     stroke: var(--textMain);
 }
 
-.projects-navigation-icon-disabled {
+.swiper-button-disabled {
     fill: #3b3b3b;
     stroke: #3b3b3b;
 }

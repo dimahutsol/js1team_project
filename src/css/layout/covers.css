@@ -7,7 +7,6 @@
   background-size: cover;
   background: rgba(217, 217, 217, 0.04);
   backdrop-filter: blur(15px);
-  /* background-image: url(/img/Covers/covers_background.png); */
 }
 
 .background {
@@ -36,7 +35,6 @@
 .crcl1::before {
   animation: fade 1s ease-in-out 1s infinite alternate;
   top: 198px;
-
   left: 0;
 }
 

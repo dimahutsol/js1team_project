@@ -4,8 +4,9 @@
 
 .header {
   position: absolute;
+  top: 0;
   padding-top: 32px;
-  z-index: 999;
+  z-index: 997;
 }
 
 @media only screen and (min-width: 768px) {
@@ -170,7 +171,7 @@
   pointer-events: none;
   visibility: hidden;
   transform: translateY(-100%);
-  transition: transform 400ms ease, opacity 400ms ease, visibility 400ms ease;
+  transition: transform 350ms ease, opacity 350ms ease, visibility 350ms ease;
   z-index: 999;
 }
 

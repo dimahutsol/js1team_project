@@ -59,14 +59,16 @@ const observer = new IntersectionObserver(
 
 observer.observe(refs.sliderWrapper);
 
-reviewsSwiper.on('keyPress', (swiper, keyCode) => {
-  if (keyCode === 9 && isReviewsSwiperInViewPort) {
-    swiper.slideNext();
-  }
-});
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
-document.addEventListener('keydown', e => e.preventDefault());
 refs.reviewsList.addEventListener('click', onReviewsListClick);
+document.addEventListener('keydown', onKeyDown);
+
+function onKeyDown(e) {
+  if (e.keyCode === 9 && isReviewsSwiperInViewPort) {
+    e.preventDefault();
+    reviewsSwiper.slideNext();
+  }
+}
 
 async function onDocumentLoaded() {
   try {

@@ -43,7 +43,7 @@
   background-position: 0 0, 100% 0, 100% 100%, 0 100%;
   background-image: linear-gradient(var(--accent), var(--accent)),
     linear-gradient(var(--borderMain), var(--borderMain)),
-    linear-gradient(var(--borderMain), var(--borderMain)),
+    linear-gradient(var(--accent), var(--accent)),
     linear-gradient(var(--borderMain), var(--borderMain));
   animation: rotate 4s linear infinite;
 }
@@ -58,25 +58,19 @@
   height: calc(100% - 2px);
   background: var(--backgroundMain);
   border-radius: 20px;
-
-  transition: top var(--transition);
-  transition: left var(--transition);
   transition: height var(--transition);
   transition: width var(--transition);
 }
 
 .reviews-card:hover::before {
   background-image: linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--borderMain), var(--borderMain)),
     linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--borderMain), var(--borderMain));
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent));
 }
 
 .reviews-card:hover::after {
-  top: 4px;
-  left: 4px;
   width: calc(100% - 8px);
-  height: calc(100% - 8px);
 }
 
 @keyframes rotate {
@@ -133,10 +127,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: border var(--transition);
+}
+
+.reviews-navigation-btn:hover {
+  border: 12px solid var(--accent);
 }
 
 .reviews-navigation-icon {
-  fill: var(--textMain);
+  fill: transparent;
   stroke: var(--textMain);
 }
 
@@ -145,7 +144,6 @@
 }
 
 .reviews-navigation-btn.swiper-button-disabled .reviews-navigation-icon {
-  fill: var(--arrow);
   stroke: var(--arrow);
 }
 

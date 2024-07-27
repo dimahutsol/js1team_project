@@ -7,6 +7,7 @@
     font-weight: 600;
     text-transform: uppercase;
     color: var(--textTitle);
+    color: var(--textTitle);
     padding-bottom: 32px;
 }
 
@@ -57,6 +58,7 @@
     font-size: 16px;
     letter-spacing: -0.02em;
     color: var(--backgroundMain);
+    color: var(--backgroundMain);
 }
 
 .projects-header {
@@ -64,6 +66,7 @@
     font-size: 24px;
     line-height: 1.17;
     letter-spacing: -0.03em;
+    color: var(--backgroundMain);
     color: var(--backgroundMain);
     margin-bottom: 32px;
 }
@@ -95,6 +98,7 @@
     padding: 0;
     border-radius: 0 0 24px 24px;
     padding: 100px 16px;
+    background-color: var(--backgroundAlternative);
     background-color: var(--backgroundAlternative);
 
 }
@@ -194,6 +198,7 @@ div.projects-navigation {
     width: 32px;
     height: 32px;
     fill: transparent;
+    fill: transparent;
     stroke: var(--textMain);
 }
 
@@ -207,8 +212,22 @@ div.projects-navigation {
     opacity: 0.50 !important; 
     width: 11px !important;
     height: 11px !important;
+.swiper-button-disabled {
+    fill: var(--arrow);
+    stroke: var(--arrow);
 }
 
+.swiper-pagination-bullet{
+    background-color: aliceblue !important;
+    opacity: 0.50 !important; 
+    width: 11px !important;
+    height: 11px !important;
+}
+
+.swiper-pagination-bullet-active{
+    background-color: var(--accent) !important;
+    opacity: 1 !important;
+}
 .swiper-pagination-bullet-active{
     background-color: var(--accent) !important;
     opacity: 1 !important;

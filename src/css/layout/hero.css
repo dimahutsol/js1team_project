@@ -10,25 +10,65 @@
 
 .hero {
   position: relative;
-  background-image: url('../../img/Hero/heroBack_mob@1x.webp');
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  /* min-height: 100vh; */
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+    padding-bottom: 32px;
 }
 
-@media only screen and (min-width: 768px) {
-  .hero {
-    background-image: url('../../img/Hero/heroBack_tab@1x.webp');
-    background-size: contain;
+.hero.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.blinds {
+  --slat-count: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  gap: 6px;
+  z-index: -1;
+}
+
+.slat {
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    #ed3b44 0%,
+    #ed3b44 calc(100% - 200% * (var(--index) / var(--slat-count))),
+    #8b2326 calc(100% - 150% * (var(--index) / var(--slat-count))),
+    #1c1c1c calc(100% - 100% * (var(--index) / var(--slat-count))),
+    #0d0d0d 100%
+  );
+  transition: all 0.3s ease;
+  transform: translateX(-100%) scale(0.8);
+  opacity: 0;
+}
+
+.slat.show {
+  animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%) scale(0.8);
+    opacity: 0;
   }
-}
-
-@media only screen and (min-width: 1440px) {
-  .hero {
-    background-image: url('../../img/Hero/heroBack_desk@1x.webp');
+  50% {
+    transform: translateX(20%) scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
   }
 }
 
@@ -38,6 +78,7 @@
   line-height: 100%;
   letter-spacing: -0.03em;
   text-transform: uppercase;
+  letter-spacing: 1.5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -55,12 +96,12 @@
 }
 
 .hero-social-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 212px;
-    padding-top: 281px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 212px;
+  padding-top: 281px;
+}
 
 @media only screen and (min-width: 768px) {
   .hero-social-box {
@@ -96,13 +137,14 @@
 }
 
 .hero-social-item {
-  border: 1px solid rgba(250, 250, 250, 0.2);
+  border: 1px solid var(--borderMain);
   border-radius: 60px;
   padding: 10px 8px;
   width: 37px;
   height: 37px;
   cursor: pointer;
-  transition: all 350ms;
+  transition: all var(--transition);
+  letter-spacing: 0.2;
 }
 
 @media only screen and (min-width: 768px) {
@@ -113,7 +155,7 @@
 }
 
 .hero-social-item:hover {
-  border: 1px solid #fafafa;
+  border: 1px solid var(--textMain);
 }
 
 .email-link {
@@ -127,9 +169,7 @@
 @media only screen and (min-width: 768px) {
   .email-link {
     width: 223px;
-
     padding: 18px 24px;
-
     gap: 10px;
   }
 }

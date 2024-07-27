@@ -1,0 +1,101 @@
+.theme-switcher-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: flex;
+  background-color: var(--borderMain);
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color var(--transition);
+}
+
+.theme-switcher-btn:hover {
+  background-color: var(--borderAlternative);
+}
+
+.theme-switcher-icon {
+  fill: var(--textMain);
+}
+
+.theme-switcher-menu {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: var(--borderMain);
+}
+
+.theme-btn {
+  border: none;
+  height: 30px;
+  width: 30px;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+
+.theme-btn:hover {
+  transform: scale(1.2);
+}
+
+.theme-bg-red {
+  background-color: #ed3b44;
+}
+
+.theme-bg-blue {
+  background-color: rgba(45, 0, 255, 1);
+}
+
+.theme-bg-green {
+  background-color: rgba(0, 255, 13, 1);
+}
+
+@media (max-width: 768px) {
+  .theme-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .theme-switcher-menu {
+    padding: 5px;
+  }
+}
+
+.top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  display: none;
+  border-radius: 50%;
+}
+
+.top-button {
+  display: flex;
+  background-color: var(--borderMain);
+  color: var(--textMain);
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color var(--transition);
+}
+
+.top:hover .top-button {
+  background-color: var(--borderAlternative);
+}
+
+.top-icon {
+  fill: transparent;
+  stroke: var(--textMain);
+}

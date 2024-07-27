@@ -76,16 +76,12 @@
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
-  letter-spacing: -0.09em;
   text-transform: uppercase;
-  line-height: 50px;
 }
 
 @media only screen and (min-width: 768px) {
   .hero-title {
     font-size: 90px;
-    letter-spacing: -0.16em;
-    line-height: 90px;
   }
 }
 
@@ -157,6 +153,7 @@
   }
 }
 
+.hero-social-item:focus,
 .hero-social-item:hover {
   border: 1px solid var(--textMain);
 }

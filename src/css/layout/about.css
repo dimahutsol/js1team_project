@@ -1,47 +1,44 @@
 .about-me-section {
 }
+
 .about-me-container {
 }
-.about-me-title {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
+
 .about-me-hero-desc {
   border-radius: 24px;
   min-width: 343px;
   min-height: 500px;
-  background-color: #242527;
+  background-color: var(--backgroundAlternative);
   margin-bottom: 16px;
 }
+
 .about-me-hero-text {
-  font: 500 24px / 1.16667 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--textMain);
   padding: 32px 32px;
 }
+
 .about-me-text-functional {
   color: var(--accent);
 }
+
 .about-me-text-website {
-  color: rgba(250, 250, 250, 0.4);
+  color: var(--textTitle);
 }
+
 .about-me-picture-container {
   border-radius: 24px;
   min-width: 343px;
   min-height: 500px;
 }
+
 .about-me-picture {
-  
 }
+
 .about-photo {
 }
 
@@ -49,88 +46,76 @@
   .about-me-hero-desc {
     min-height: 700px;
   }
-  .about-me-hero-text{
+  .about-me-hero-text {
     padding: 64px;
-    font: 500 38px / 1.05263 "Inter Tight", sans-serif;
-letter-spacing: -0.03em;
+    font-size: 38px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
   }
   .about-me-picture-container {
     min-height: 700px;
-
   }
-  .about-me-photo {
+  .about-me-picture {
     width: 704px;
     height: 700px;
   }
 }
+
 @media screen and (min-width: 1440px) {
-  .about-me-section{
+  .about-me-section {
     padding-top: 48px;
   }
-  .about-me-hero-desc{
+  .about-me-hero-desc {
     margin-bottom: 0;
   }
 
-  .about-me-text-photo{
+  .about-me-text-photo {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 16px;
-    align-items: center; 
+    align-items: center;
   }
 
   .about-me-hero-desc {
-    min-width: 50%; 
-    max-width: 50%; 
+    min-width: 50%;
+    max-width: 50%;
   }
 
   .about-me-picture-container {
-    width: 680px; 
-    height: 700px; 
+    width: 680px;
+    height: 700px;
   }
 
   .about-me-picture {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
   }
 }
-
 
 .about-me-ac-container {
   margin-top: 32px;
 }
 
-.about-me-ac-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .about-me-ac-list-item {
-  background-color: transparent;
-  border: none !important;
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
-  margin: 0;
   background-color: transparent !important;
-  /* padding-bottom: 32px; */
+  border: none !important;
+  border-bottom: 1px solid var(--borderMain) !important;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 32px;
 }
 
-.ac.closed .ac-trigger {
-  /* margin-top: 20px; */
-}
-
-.about-me-section .ac{
+.about-me-section .ac {
   margin-top: 0 !important;
 }
+
 .about-me-section .ac .ac-trigger {
   display: flex !important;
   justify-content: space-between;
-  /* padding: 0 !important;
-  margin-top: 20px !important; */
   margin-bottom: 0;
   position: relative;
-  /* padding: 20px 0px 32px !important; */
   padding-left: 0px !important;
-  /* padding-bottom: 32px !important; */
+  transition: var(--transition);
 }
 
 .about-me-section .ac .ac-trigger::after {
@@ -148,17 +133,19 @@ letter-spacing: -0.03em;
 }
 
 .about-me-ac-item-title {
-  font: 600 16px / 1.5 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  color: rgba(250, 250, 250, 0.4);
+  color: var(--textTitle);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .about-me-ac-button {
   position: absolute;
   right: 0;
   top: 0;
-  border: 1px solid rgba(250, 250, 250, 0.2);
+  border: 1px solid var(--borderMain);
   border-radius: 100px;
   width: 40px;
   height: 40px;
@@ -166,12 +153,12 @@ letter-spacing: -0.03em;
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: transform 0.3s ease-in-out;
-  stroke: #fafafa;
+  transition: var(--transition);
+  stroke: var(--textMain);
 }
 
 .about-me-slider-arrow {
-  transition: transform 0.3s ease-in-out;
+  transition: var(--transition);
 }
 
 .about-me-slider-arrow.rotate-180 {
@@ -179,94 +166,75 @@ letter-spacing: -0.03em;
 }
 
 .about-me-desc-container {
-  /* padding-top: 12px; */
-  /* padding-bottom: 20px; */
   display: flex;
   flex-direction: column;
-  /* gap: 32px; */
+}
 
-}
-.about-me-ac-list{
-
-}
-.about-me-ac-list-item{
-  padding-top: 20px;
-  padding-bottom: 32px;
-}
 .about-me-desc {
   font: 500 16px / 1.5 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
-  color: #fafafa;
-  /* padding-top: 24px; */
+  color: var(--textMain);
   padding-top: 12px;
   padding-bottom: 32px;
 }
 
-
 .about-me-role-container,
 .about-me-education-container {
-  /* margin-top: 20px; */
 }
 
 .about-me-role-text,
 .about-me-education-text {
   padding-top: 12px;
   display: flex;
-  /* gap: 10px; */
 }
+
 @media screen and (min-width: 768px) {
   .about-me-desc {
-
     padding-top: 8px;
     padding-bottom: 16px;
   }
   .about-me-ac-list-item {
     padding-top: 32px;
+  }
 }
-}
+
 @media screen and (min-width: 1440px) {
-  .about-me-ac-container{
+  .about-me-ac-container {
     margin-top: 96px;
   }
-  .about-me-desc-container{
+  .about-me-desc-container {
     width: 612px;
     display: flex;
-  justify-content: flex-end; /* Выравнивание элементов по правому краю */
-  }  
+    justify-content: flex-end;
+  }
 }
 
-
-
-
-
-
-.about-me-skills{
+.about-me-skills {
   margin-top: 32px;
 }
 
-.about-skills-swiper {
+.about-me-skills-swiper {
   position: relative;
   margin-bottom: 32px;
   overflow: hidden;
 }
 
-.about-skills-swiper .swiper-wrapper {
+.about-me-skills-swiper .swiper-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
-.about-skills-swiper .swiper-slide {
-  font-weight: 500;
+.about-me-skills-swiper .swiper-slide {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
-  color: #fafafa;
+  color: var(--textMain);
   width: 130px;
   height: 130px;
   flex-shrink: 0;
   border-radius: 100%;
-  border: 1px solid rgba(250, 250, 250, 0.2);
+  border: 1px solid var(--borderMain);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -274,8 +242,7 @@ letter-spacing: -0.03em;
   padding: 0;
 }
 
-.about-skills-swiper .about-swiper-button-next {
-  /* width: 50px; */
+.about-me-skills-swiper .about-me-swiper-button-next {
   height: 50px;
   position: absolute;
   right: 0;
@@ -284,43 +251,43 @@ letter-spacing: -0.03em;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 300ms cubic-bezier(0.41, 0.6, 0.52, 0.93);
+  transition: var(--transition);
   cursor: pointer;
   z-index: 10;
 }
 
-.about-skills-swiper .is-first {
-  background-color: #ed3b44;
+.about-me-skills-swiper .is-first {
+  background-color: var(--accent);
   border: none;
 }
 
-.about-skills-swiper .about-swiper-icon {
+.about-me-skills-swiper .about-me-swiper-icon {
   fill: none;
-  stroke: #3b3b3b;
+  stroke: var(--arrow);
 }
 
 @media screen and (min-width: 768px) {
-  .about-me-skills{
+  .about-me-skills {
     margin-top: 64px;
   }
-  .swiper .about-skills-swiper {
+  .swiper .about-me-skills-swiper {
     margin-bottom: 48px;
   }
 
-  .about-skills-swiper .swiper-slide {
+  .about-me-skills-swiper .swiper-slide {
     font-size: 20px;
     width: 200px;
     height: 200px;
   }
 
-  .about-skills-swiper .about-swiper-icon {
+  .about-me-skills-swiper .about-me-swiper-icon {
     width: 40px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .swiper .about-skills-swiper {
+  .swiper .about-me-skills-swiper {
     margin-bottom: 82px;
   }
 }

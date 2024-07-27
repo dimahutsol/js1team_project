@@ -3,8 +3,7 @@ import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
-import image from '/img/symbols.svg'
-
+import image from '/img/symbols.svg';
 
 const refs = {
   listAcRef: document.querySelector('.about-me-ac-list'),
@@ -56,7 +55,15 @@ const aboutMeList = [
   },
 ];
 
-const aboutMeSkillsList = ['HTML/CSS', 'JavaScript', 'React', 'Node.js', 'React Native', 'Soft Skills', 'Python']
+const aboutMeSkillsList = [
+  'HTML/CSS',
+  'JavaScript',
+  'React',
+  'Node.js',
+  'React Native',
+  'Soft Skills',
+  'Python',
+];
 
 function listItemTemplate({ title, svgPath, content }) {
   return `
@@ -104,7 +111,6 @@ document.querySelectorAll('.about-me-ac-button').forEach(button => {
   });
 });
 
-
 function listSkillItemTemplate(nameSkill) {
   return `
     <li class="about-me-skills-item swiper-slide">
@@ -120,12 +126,10 @@ function renderSkillList(arr) {
 
 renderSkillList(aboutMeSkillsList);
 
-
-
-const skillSwiper = new Swiper('.about-skills-swiper', {
+const skillsCarousel = new Swiper('.about-me-skills-swiper', {
   modules: [Navigation, Keyboard, Mousewheel],
   navigation: {
-    nextEl: '.about-swiper-button-next',
+    nextEl: '.about-me-swiper-button-next',
     grabCursor: true,
   },
   keyboard: {
@@ -160,33 +164,25 @@ const skillSwiper = new Swiper('.about-skills-swiper', {
   simulateTouch: false,
   slideToClickedSlide: true,
   slidesPerGroup: 1,
-  
 });
 
-function updateHighlightClass() {
-  const slides = skillSwiper.slides;
+function updateHighlight() {
+  const slides = skillsCarousel.slides;
   slides.forEach(slide => slide.classList.remove('is-first'));
-  const firstVisibleSlide = slides[skillSwiper.activeIndex];
+  const firstVisibleSlide = slides[skillsCarousel.activeIndex];
   firstVisibleSlide.classList.add('is-first');
 }
 
 document.addEventListener('keydown', event => {
   if (event.key === 'Tab') {
     event.preventDefault();
-    skillSwiper.slideNext(600);
-  } else if (event.key === 'Shift') {
-    event.preventDefault();
-    skillSwiper.slidePrev(600);
+    skillsCarousel.slideNext(600);
   }
 });
 
-skillSwiper.update();
-skillSwiper.on('slideChange', updateHighlightClass);
+skillsCarousel.update();
+skillsCarousel.on('slideChange', updateHighlight);
 
-skillSwiper.on('slideChangeTransitionEnd', updateHighlightClass);
+skillsCarousel.on('slideChangeTransitionEnd', updateHighlight);
 
-updateHighlightClass();
-
-
-
-
+updateHighlight();

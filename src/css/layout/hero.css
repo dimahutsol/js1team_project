@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
   padding-bottom: 32px;

@@ -1,5 +1,4 @@
 import './js/requests';
-import './js/utilities';
 import './js/header';
 import './js/hero';
 import './js/about';
@@ -10,3 +9,4 @@ import './js/covers';
 import './js/reviews';
 import './js/footer';
 import './js/themes-menu';
+import './js/utilities';

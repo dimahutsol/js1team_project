@@ -1,25 +1,26 @@
+import image from '/img/symbols.svg'
 const refs = {
   listRef: document.querySelector('.benefit-list'),
 };
 
 const benefitList = [
   {
-    svgPath: './img/symbols.svg#user',
+    svgPath: `${image}#user`,
     title: 'Expertise',
     text: 'As a highly experienced developer, I have deep knowledge of programming and website development.',
   },
   {
-    svgPath: './img/symbols.svg#message',
+    svgPath: `${image}#message`,
     title: 'Communication',
     text: 'Understanding your needs and wants is my priority and I am always open to discussions and corrections.',
   },
   {
-    svgPath: './img/symbols.svg#brush',
+    svgPath: `${image}#brush`,
     title: 'Art',
     text: 'Thanks to my creative nature, I am ready to accept challenges and help you bring your ideas to life.',
   },
   {
-    svgPath: './img/symbols.svg#hourglass',
+    svgPath: `${image}#hourglass`,
     title: 'Urgent execution',
     text: 'I understand how important time is to you. Ready to work quickly and efficiently, without reducing the quality of work.',
   },

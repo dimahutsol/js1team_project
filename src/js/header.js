@@ -32,7 +32,6 @@ function closeMobileMenu() {
   bodyEl.classList.remove('blockScroll');
 }
 
-// Обробник для header-tab-list
 headerTabList.addEventListener('click', event => {
   if (event.target.classList.contains('header-tab-link')) {
     event.preventDefault();

@@ -5,8 +5,11 @@
 .header {
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   padding-top: 32px;
   z-index: 997;
+  height: 100%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -95,7 +98,7 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
   .header-tab-list {
     display: none;
   }
@@ -167,7 +170,7 @@
   background-image: url('../../img/Hero/heroMenu_mob@1x.webp');
   background-size: cover;
   width: 100%;
-  height: 100%;
+  height: 100%; 
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
@@ -211,12 +214,17 @@
 
 .header-modal-link {
   text-decoration: underline;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.header-btn-link-project {
+.header-link-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 164px;
   border: 0;
   border-radius: 60px;
-  padding: 14px 31px;
   height: 45px;
   font-weight: 500;
   font-size: 14px;
@@ -227,12 +235,11 @@
   bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
   transition: background-color var(--transition);
 }
 
-.header-btn-link-project:hover,
-.header-btn-link-project:focus {
+.header-link-project:hover,
+.header-link-project:focus {
   background-color: var(--accentAlternative);
 }
 
@@ -265,4 +272,10 @@
   .header-tab-project:focus {
     background-color: var(--accentAlternative);
   }
+}
+
+.header-tab-project-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

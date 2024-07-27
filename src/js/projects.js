@@ -64,20 +64,10 @@ const projSwiper = new Swiper(refs.projectWrapper, {
   },
 });
 
-projSwiper.on('keyPress', (swiper, keyCode) => {
-  if (keyCode === 9 && isProjectSwiperInViewPort) {
-    swiper.slideNext();
-  }
-});
-
-const observer = new IntersectionObserver(
-  (entries, observer) => {
+const swiperObserver = new IntersectionObserver(
+  entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        isProjectSwiperInViewPort = true;
-      } else {
-        isProjectSwiperInViewPort = false;
-      }
+      isProjectSwiperInViewPort = entry.isIntersecting;
     });
   },
   {
@@ -86,7 +76,21 @@ const observer = new IntersectionObserver(
     threshold: 0.2,
   }
 );
-observer.observe(refs.projectWrapper);
+
+swiperObserver.observe(refs.projectWrapper);
+
+document.addEventListener('keydown', event => {
+  if (isProjectSwiperInViewPort) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        projSwiper.slidePrev();
+      } else {
+        projSwiper.slideNext();
+      }
+    }
+  }
+});
 
 const projectArray = [
   {
@@ -138,7 +142,6 @@ function createProjectExample({
   const newTags = tags
     .map(tag => `<li class="tag-item"><p class="tag-text">#${tag}</p></li>`)
     .join('');
-  console.log(imgTab_2x);
   return `
     <li class="swiper-slide">
       <div class="projects-li-item">
@@ -149,9 +152,9 @@ function createProjectExample({
         </div>
         <div class="project-image-wrapper">
           <picture>
-            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp">
-            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp">
-            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp">
+            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
+            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
+            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
             <img src="${imgMob_1x}" alt="project example image" loading="lazy" class="project-image">
           </picture>
         </div>

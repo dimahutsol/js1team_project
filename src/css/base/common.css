@@ -6,6 +6,7 @@ body {
   letter-spacing: -0.02em;
   color: var(--textMain);
   background-color: var(--backgroundMain);
+  overflow-x: hidden;
 }
 
 .visually-hidden {

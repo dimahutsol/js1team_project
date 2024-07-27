@@ -18,6 +18,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
+  padding-bottom: 32px;
 }
 
 .hero.show {
@@ -41,9 +42,10 @@
   flex: 1;
   background: linear-gradient(
     to right,
-    #ed3b44 0%,
-    #ed3b44 calc(100% - 200% * (var(--index) / var(--slat-count))),
-    #8b2326 calc(100% - 150% * (var(--index) / var(--slat-count))),
+    var(--accent) 0%,
+    var(--accent) calc(100% - 200% * (var(--index) / var(--slat-count))),
+    var(--accentAlternative)
+      calc(100% - 150% * (var(--index) / var(--slat-count))),
     #1c1c1c calc(100% - 100% * (var(--index) / var(--slat-count))),
     #0d0d0d 100%
   );
@@ -75,9 +77,7 @@
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
-  letter-spacing: -0.03em;
   text-transform: uppercase;
-  letter-spacing: 1.5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -143,16 +143,18 @@
   height: 37px;
   cursor: pointer;
   transition: all var(--transition);
-  letter-spacing: 0.2;
+  letter-spacing: -0.01em;
 }
 
 @media only screen and (min-width: 768px) {
   .hero-social-item {
     width: 55px;
     height: 55px;
+    letter-spacing: -0.02em;
   }
 }
 
+.hero-social-item:focus,
 .hero-social-item:hover {
   border: 1px solid var(--textMain);
 }

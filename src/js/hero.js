@@ -1,3 +1,7 @@
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+gsap.registerPlugin(TextPlugin);
+
 const blinds = document.getElementById('blinds');
 const slatCount = 20;
 
@@ -6,14 +10,14 @@ for (let i = 0; i < slatCount; i++) {
   slat.className = 'slat';
   blinds.appendChild(slat);
 }
-document.addEventListener('DOMContentLoaded', function () {
-  const blinds = document.getElementById('blinds');
-  const numberOfSlats = 20; // Загальна кількість слатів
+document.addEventListener('DOMContentLoaded', onDomLoadedAnimation);
 
-  // Видаляємо всі існуючі слати перед створенням нових
+export function onDomLoadedAnimation() {
+  const blinds = document.getElementById('blinds');
+  const numberOfSlats = 20;
+
   blinds.innerHTML = '';
 
-  // Створюємо слати
   for (let i = 0; i < numberOfSlats; i++) {
     const slat = document.createElement('div');
     slat.className = 'slat';
@@ -21,10 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     blinds.appendChild(slat);
   }
 
-  // Встановлюємо CSS змінні для градієнта
   blinds.style.setProperty('--slat-count', numberOfSlats);
 
-  // Додаємо анімацію появи слатів з невеликою затримкою
   setTimeout(() => {
     document.querySelectorAll('.slat').forEach((slat, index) => {
       setTimeout(() => {
@@ -32,6 +34,29 @@ document.addEventListener('DOMContentLoaded', function () {
       }, index * 100);
     });
   }, 500);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const heroTitle = document.querySelector('.hero-title');
+
+  if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    const alternateText = 'what is the text?';
+
+    heroTitle.addEventListener('mouseenter', () => {
+      gsap.to(heroTitle, {
+        duration: 2,
+        text: alternateText,
+        ease: 'none',
+      });
+    });
+
+    heroTitle.addEventListener('mouseleave', () => {
+      gsap.to(heroTitle, {
+        duration: 2,
+        text: originalText,
+        ease: 'none',
+      });
+    });
+  }
 });
-
-

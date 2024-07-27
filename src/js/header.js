@@ -6,14 +6,17 @@ const headerTabList = document.querySelector('.header-tab-list');
 const headerTabProject = document.querySelector('.header-tab-project');
 const headerModalMenuList = document.querySelector('.header-modal-menu-list');
 const headerLinkProject = document.querySelector('.header-link-project');
+const headerEl = document.querySelector('.header');
 
 headerNavMenuBtn.addEventListener('click', () => {
   headerMobileMenuDiv.classList.add('header-mob-open');
+  headerEl.classList.add('container-header');
   bodyEl.classList.add('blockScroll');
 });
 
 headerBtnCloseMenu.addEventListener('click', () => {
   headerMobileMenuDiv.classList.remove('header-mob-open');
+  headerEl.classList.remove('container-header');
   bodyEl.classList.remove('blockScroll');
 });
 
@@ -51,6 +54,7 @@ headerModalMenuList.addEventListener('click', event => {
     event.preventDefault();
     const target = event.target.getAttribute('href');
     closeMobileMenu();
+    headerEl.classList.remove('container-header');
     setTimeout(() => smoothScroll(target), 300);
   }
 });
@@ -58,6 +62,7 @@ headerModalMenuList.addEventListener('click', event => {
 headerLinkProject.addEventListener('click', event => {
   event.preventDefault();
   const target = headerLinkProject.getAttribute('href');
+  headerEl.classList.remove('container-header');
   closeMobileMenu();
   setTimeout(() => smoothScroll(target), 300);
 });

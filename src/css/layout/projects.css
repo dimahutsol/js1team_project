@@ -215,7 +215,7 @@ div.projects-navigation {
 .swiper-button-disabled {
     fill: var(--arrow);
     stroke: var(--arrow);
-}
+}}
 
 .swiper-pagination-bullet{
     background-color: aliceblue !important;
@@ -232,6 +232,7 @@ div.projects-navigation {
     background-color: var(--accent) !important;
     opacity: 1 !important;
 }
+
 @media (min-width: 768px) {
     .projects-wrapper {
         margin-bottom: 64px;
@@ -272,7 +273,7 @@ div.projects-navigation {
     .projects-navigation-btn {
         padding: 18 px;
     }
-}
+};
 
 
 @media (min-width: 1440px) {
@@ -296,5 +297,4 @@ div.projects-navigation {
 
     .tag-list {
         margin-bottom: 223px;
-    }
-}
+    }}

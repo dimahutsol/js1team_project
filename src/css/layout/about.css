@@ -63,6 +63,37 @@ letter-spacing: -0.03em;
     height: 700px;
   }
 }
+@media screen and (min-width: 1440px) {
+  .about-me-section{
+    padding-top: 48px;
+  }
+  .about-me-hero-desc{
+    margin-bottom: 0;
+  }
+
+  .about-me-text-photo{
+    display: flex;
+    flex-direction: row; 
+    gap: 16px;
+    align-items: center; 
+  }
+
+  .about-me-hero-desc {
+    min-width: 50%; 
+    max-width: 50%; 
+  }
+
+  .about-me-picture-container {
+    width: 680px; 
+    height: 700px; 
+  }
+
+  .about-me-picture {
+    width: 100%; 
+    height: auto; 
+  }
+}
+
 
 .about-me-ac-container {
   margin-top: 32px;
@@ -87,10 +118,10 @@ letter-spacing: -0.03em;
   /* margin-top: 20px; */
 }
 
-.ac{
+.about-me-section .ac{
   margin-top: 0 !important;
 }
-.ac .ac-trigger {
+.about-me-section .ac .ac-trigger {
   display: flex !important;
   justify-content: space-between;
   /* padding: 0 !important;
@@ -102,7 +133,7 @@ letter-spacing: -0.03em;
   /* padding-bottom: 32px !important; */
 }
 
-.ac .ac-trigger::after {
+.about-me-section .ac .ac-trigger::after {
   visibility: hidden;
   position: absolute;
   width: 1px;
@@ -192,6 +223,16 @@ letter-spacing: -0.03em;
   .about-me-ac-list-item {
     padding-top: 32px;
 }
+}
+@media screen and (min-width: 1440px) {
+  .about-me-ac-container{
+    margin-top: 96px;
+  }
+  .about-me-desc-container{
+    width: 612px;
+    display: flex;
+  justify-content: flex-end; /* Выравнивание элементов по правому краю */
+  }  
 }
 
 

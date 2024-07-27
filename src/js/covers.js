@@ -1,5 +1,6 @@
 const section = {
-  cards: document.querySelectorAll('.marquee__card'),
+  cards1: document.querySelectorAll('.marquee__card1'),
+  cards2: document.querySelectorAll('.marquee__card2'),
   covers: document.querySelector('.covers'),
 };
 
@@ -12,13 +13,19 @@ const options = {
 const animationCovers = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      section.cards.forEach(card => {
-        card.classList.add('animation');
+      section.cards1.forEach(card => {
+        card.classList.add('line1');
+      });
+      section.cards2.forEach(card => {
+        card.classList.add('line2');
       });
       return;
     }
-    section.cards.forEach(card => {
-      card.classList.remove('animation');
+    section.cards1.forEach(card => {
+      card.classList.remove('line1');
+    });
+    section.cards2.forEach(card => {
+      card.classList.remove('line2');
     });
   });
 };

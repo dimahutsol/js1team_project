@@ -13,6 +13,7 @@ const refs = {
 
 let reviews;
 let theHighestCard;
+let isReviewsSwiperInViewPort = false;
 
 const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   slidesPerView: 1,
@@ -22,6 +23,7 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   centeredSlidesBounds: false,
   watchSlidesVisibility: true,
   keyboard: {
+    onlyInViewport: true,
     enabled: true,
   },
   navigation: {
@@ -38,9 +40,35 @@ const reviewsSwiper = new Swiper(refs.sliderWrapper, {
   },
 });
 
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isReviewsSwiperInViewPort = true;
+      } else {
+        isReviewsSwiperInViewPort = false;
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  }
+);
+
+observer.observe(refs.sliderWrapper);
+
 document.addEventListener('DOMContentLoaded', onDocumentLoaded);
-document.addEventListener('keydown', onKeyDown);
 refs.reviewsList.addEventListener('click', onReviewsListClick);
+document.addEventListener('keydown', onKeyDown);
+
+function onKeyDown(e) {
+  if (e.keyCode === 9 && isReviewsSwiperInViewPort) {
+    e.preventDefault();
+    reviewsSwiper.slideNext();
+  }
+}
 
 async function onDocumentLoaded() {
   try {
@@ -53,13 +81,6 @@ async function onDocumentLoaded() {
       message: error.message,
     });
     refs.sliderWrapper.innerHTML = `<h2 class="reviews-error">Not Found...</h2>`;
-  }
-}
-
-function onKeyDown(e) {
-  e.preventDefault();
-  if (e.code === 'Tab') {
-    reviewsSwiper.slideNext();
   }
 }
 
@@ -91,7 +112,7 @@ function getTheHighestElement(elements) {
 function createSingleReviewTemplate({ author, avatar_url, review }) {
   return `<li class="reviews-card swiper-slide">
         <div class="reviews-image-box">
-          <img class="reviews-card-image" src="${avatar_url}" alt="photo of ${author}" />
+          <img class="reviews-card-image" src="${avatar_url}" alt="photo of ${author}" loading="lazy" />
         </div>
         <p class="reviews-card-name">${author}</p>
         <p class="reviews-card-description reviews-card-description-overflow-hidden">${review}</p>

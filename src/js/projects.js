@@ -64,21 +64,6 @@ const projSwiper = new Swiper(refs.projectWrapper, {
   },
 });
 
-const titleObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  },
-  {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.2,
-  }
-);
-
 const swiperObserver = new IntersectionObserver(
   entries => {
     entries.forEach(entry => {
@@ -167,9 +152,9 @@ function createProjectExample({
         </div>
         <div class="project-image-wrapper">
           <picture>
-            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp">
-            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp">
-            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp">
+            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
+            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
+            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
             <img src="${imgMob_1x}" alt="project example image" loading="lazy" class="project-image">
           </picture>
         </div>
@@ -184,10 +169,6 @@ function projectList(arr) {
 function renderProjectList() {
   const markup = projectList(projectArray);
   refs.projectListRef.innerHTML = markup;
-
-  // Observe the titles
-  const titles = document.querySelectorAll('.projects-header');
-  titles.forEach(title => titleObserver.observe(title));
 }
 
 renderProjectList();

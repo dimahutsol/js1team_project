@@ -10,26 +10,25 @@
     padding-bottom: 32px;
 }
 
-@keyframes fadeInSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
 }
 
 .projects-header {
-    opacity: 0;
-     animation: fadeInSlideUp 1s ease-out forwards; 
-    animation-delay: 0.5s;
+  opacity: 1;
 }
 
-.projects-header.visible {
-    opacity: 1;
+.projects-header:hover {
+  color: var(--accent); 
+  animation: bounce 1s; 
 }
 
 .projects-white-wrapper {
@@ -74,6 +73,7 @@
     padding: 13px 18px;
 }
 
+
 .tag-text {
     font-weight: 500;
     letter-spacing: -0.02em;
@@ -104,11 +104,8 @@
     transition: border var(--transition);
 }
 
-
-
 .project-btn:hover{
     background-color: var(--accentAlternative);
-    
 }
 
 .project-image-wrapper {
@@ -135,7 +132,6 @@ div.projects-navigation {
     gap: 12px;
 }
 
- /* Hover animation */
  .projects-navigation-btn {
      transition: transform 0.3s ease, background-color 0.3s ease;
  }
@@ -144,12 +140,10 @@ div.projects-navigation {
      transform: scale(1.1);
  }
 
- /* Click animation */
  .projects-navigation-btn:active {
      transform: scale(0.9);
  }
 
- /* Optional: Adding a more complex animation using keyframes */
  @keyframes pulse {
      0% {
          transform: scale(1);
@@ -168,7 +162,6 @@ div.projects-navigation {
      animation: pulse 1s infinite;
  }
 
- /* Additional styles for better appearance */
  .projects-navigation-btn {
      border: 1px solid rgba(250, 250, 250, 0.5);
      border-radius: 50%;
@@ -180,9 +173,13 @@ div.projects-navigation {
      transition: transform 0.3s ease, border-color 0.3s ease;
  }
 
+ .tag-item:hover {
+     border: 1px solid var(--accent);
+    animation: pulse 1s infinite;
+ }
+
  .projects-navigation-btn:hover {
     border: 1.5px solid var(--accent);
-     /* border-color: var(--accent); */
  }
 
 .projects-navigation-prev.swiper-button-disabled {
@@ -288,7 +285,7 @@ div.projects-navigation {
 
 @media (min-width: 1440px) {
     .projects-wrapper {
-        border-radius: 0 24px 24px 0;
+        border-radius:  24px;
     }
 
     .projects-li-item {
@@ -297,10 +294,11 @@ div.projects-navigation {
 
     .projects-white-wrapper {
         padding-right: 130px;
+        border-radius: 24px 0 0 24px;
     }
 
     .project-image-wrapper {
-        border-radius: 0 0 24px;
+        border-radius: 0 24px 24px 0;
         padding: 120px 37px;
         width: 100%;
     }

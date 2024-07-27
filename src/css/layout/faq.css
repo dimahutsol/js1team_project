@@ -16,25 +16,23 @@
   margin-bottom: 32px;
 }
 
-.ac .ac-header {
-  color: var(--textMain);
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: -0.02em;
-  font-family: 'Inter Tight', sans-serif;
-  padding: 20px 90px 20px 0;
+.faq .ac .ac-header {
+  padding: 20px 0 16px 0;
 }
 
-.ac .ac-trigger {
+.faq .ac .ac-trigger {
+  font: 600 20px 'Inter Tight' !important;
   position: relative;
+  display: flex !important;
+  justify-content: space-between !important;
+  padding: 0 !important;
   margin: 0;
   color: var(--textMain) !important;
   font-family: 'Inter Tight', sans-serif !important;
 }
 
-.ac .ac-trigger::after {
-  content: '';
+.faq .ac .ac-trigger::after {
+  content: '' !important;
 }
 
 .faq-span {
@@ -45,38 +43,37 @@
   border-radius: 50%;
   padding: 10px;
 }
-.ac {
+.faq .ac {
   background-color: transparent !important;
   border: none !important;
   margin-top: 0 !important;
   border-top: 1px solid var(--borderMain) !important;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
-.ac:last-child {
+.faq .ac:last-child {
   border-bottom: 1px solid var(--borderMain) !important;
 }
 
-.ac .faq-icon {
+.faq .ac .faq-icon {
   fill: transparent;
   stroke: var(--textMain);
 
   transition: transform var(--transition);
 }
 
-.ac.is-active .faq-icon {
+.faq .ac.is-active .faq-icon {
   transform: rotate(180deg);
   transition: transform var(--transition);
 }
 
-.ac .ac-text {
+.faq .ac .ac-text {
   color: var(--textAlternative) !important;
   font-weight: 500 !important;
   font-size: 16px !important;
   font-family: 'Inter Tight', sans-serif !important;
+  padding: 0 !important;
   padding-left: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 20px !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -85,9 +82,12 @@
     padding-bottom: 48px;
   }
 
-  .ac .ac-text {
-    padding-right: 48px;
+  .faq .ac .ac-text {
     padding-bottom: 24px;
+  }
+
+  .faq .ac .ac-header {
+    padding: 32px 0 26px 0;
   }
 }
 
@@ -97,34 +97,34 @@
     padding-bottom: 82px;
   }
 
-  .accordion-container {
+  .faq .accordion-container {
     display: flex;
     flex-wrap: wrap;
     min-height: 250px;
     max-height: 584px;
   }
 
-  .ac {
+  .faq .ac {
     width: 50%;
   }
 
-  .ac:nth-last-child(n) {
+  .faq .ac:nth-last-child(n) {
     border-bottom: 1px solid var(--borderMain) !important;
   }
 
-  .ac:nth-child(odd) {
+  .faq .ac:nth-child(odd) {
     border-right: 1px solid var(--borderMain) !important;
   }
 
-  .ac:nth-child(odd) {
+  .faq .ac:nth-child(odd) {
     padding-right: 32px !important;
   }
 
-  .ac:nth-child(even) {
+  .faq .ac:nth-child(even) {
     padding-left: 32px;
   }
 
-  .ac .ac-text {
+  .faq .ac .ac-text {
     padding-bottom: 26px;
   }
 }

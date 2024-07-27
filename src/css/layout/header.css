@@ -95,7 +95,7 @@
   }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 767px) {
+@media only screen and (min-width: 0px) and (max-width: 767px) {
   .header-tab-list {
     display: none;
   }

@@ -8,7 +8,7 @@
 }
 
 .faq-title {
-  color: rgba(250, 250, 250, 0.4);
+  color: var(--textTitle);
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
@@ -17,7 +17,7 @@
 }
 
 .ac .ac-header {
-  color: #fafafa;
+  color: var(--textMain);
   font-weight: 600;
   font-size: 20px;
   line-height: 1.5;
@@ -29,7 +29,7 @@
 .ac .ac-trigger {
   position: relative;
   margin: 0;
-  color: #fafafa !important;
+  color: var(--textMain) !important;
   font-family: 'Inter Tight', sans-serif !important;
 }
 
@@ -41,7 +41,7 @@
   display: flex;
   margin-left: 20px;
 
-  border: 1px solid rgba(250, 250, 250, 0.2);
+  border: 1px solid var(--borderMain);
   border-radius: 50%;
   padding: 10px;
 }
@@ -49,29 +49,29 @@
   background-color: transparent !important;
   border: none !important;
   margin-top: 0 !important;
-  border-top: 1px solid rgba(250, 250, 250, 0.2) !important;
+  border-top: 1px solid var(--borderMain) !important;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 .ac:last-child {
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
+  border-bottom: 1px solid var(--borderMain) !important;
 }
 
 .ac .faq-icon {
   fill: transparent;
-  stroke: #fafafa;
+  stroke: var(--textMain);
 
-  transition: 300ms cubic-bezier(0.41, 0.6, 0.52, 0.93);
+  transition: transform var(--transition);
 }
 
 .ac.is-active .faq-icon {
   transform: rotate(180deg);
-  transition: 300ms cubic-bezier(0.41, 0.6, 0.52, 0.93);
+  transition: transform var(--transition);
 }
 
 .ac .ac-text {
-  color: rgba(250, 250, 250, 0.6) !important;
+  color: var(--textAlternative) !important;
   font-weight: 500 !important;
   font-size: 16px !important;
   font-family: 'Inter Tight', sans-serif !important;
@@ -109,11 +109,11 @@
   }
 
   .ac:nth-last-child(n) {
-    border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
+    border-bottom: 1px solid var(--borderMain) !important;
   }
 
   .ac:nth-child(odd) {
-    border-right: 1px solid rgba(250, 250, 250, 0.2) !important;
+    border-right: 1px solid var(--borderMain) !important;
   }
 
   .ac:nth-child(odd) {

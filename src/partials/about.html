@@ -1,4 +1,4 @@
-<section class="about-me-section .section-animation">
+<section class="about-me-section .section-animation" id="scroll-about_me">
   <div class="container about-me-container">
     <h2 class="about-me-title">about me section</h2>
 
@@ -11,43 +11,71 @@
       </p>
     </div>
 
-    <div class="about-me-picture-container ">
+    <div class="about-me-picture-container">
       <picture class="about-me-picture">
         <source
           srcset="
-            ./img/AboutMe/aboutMe_desk@1x.png 1x,
-            ./img/AboutMe/aboutMe_desk@1x.png 2x
+            ./img/AboutMe/aboutMe_desk@1x.webp 1x,
+            ./img/AboutMe/aboutMe_desk@1x.webp 2x
           "
           media="(min-width: 1440px)"
         />
         <source
           srcset="
-            ./img/AboutMe/aboutMe_tab@1x.png 1x,
-            ./img/AboutMe/aboutMe_tab@1x.png 2x
+            ./img/AboutMe/aboutMe_tab@1x.webp 1x,
+            ./img/AboutMe/aboutMe_tab@1x.webp 2x
           "
           media="(min-width: 768px)"
         />
         <source
           srcset="
-            ./img/AboutMe/aboutMe_mob@1x.png 1x,
-            ./img/AboutMe/aboutMe_mob@2x.png 2x
+            ./img/AboutMe/aboutMe_mob@1x.webp 1x,
+            ./img/AboutMe/aboutMe_mob@2x.webp 2x
           "
           media="(min-width: 375px)"
         />
         <img
-          src="./img/AboutMe/aboutMe_desk@1x.png"
+          src="./img/AboutMe/aboutMe_desk@1x.webp"
           alt="Photo developer"
           width="680"
           height="700"
           class="about-me-photo"
+          loading="lazy"
         />
       </picture>
     </div>
 
     <div class="about-me-ac-container">
-      <ul class="about-me-ac-list">
-
-      </ul>
+      <ul class="about-me-ac-list"></ul>
     </div>
+
+    <!-- <div class="about-me-skills">
+      <div class="about-me-skills-container swiper-wrapper" id="about-me-swiper">
+
+
+          <ul class="about-me-skills-list swiper-wrapper">
+
+          </ul>
+
+
+        <button class="about-me-skills-swiper-button" type="button">
+          <svg class="about-me-svg-button" width="28" height="28">
+            <use href="./img/symbols.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div> -->
+    <div class="about-me-skills">
+      <div class="swiper about-skills-swiper">
+        <ul class="about-me-skills-list swiper-wrapper"></ul>
+        <div class="about-swiper-button-next">
+          <svg class="about-swiper-icon" width="28" height="28">
+            <use href="./img/symbols.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </section>

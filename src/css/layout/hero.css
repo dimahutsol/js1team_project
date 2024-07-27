@@ -18,7 +18,7 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
-    padding-bottom: 32px;
+  padding-bottom: 32px;
 }
 
 .hero.show {
@@ -76,9 +76,7 @@
   font-weight: 500;
   font-size: 50px;
   line-height: 100%;
-  letter-spacing: -0.03em;
   text-transform: uppercase;
-  letter-spacing: 1.5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -144,16 +142,18 @@
   height: 37px;
   cursor: pointer;
   transition: all var(--transition);
-  letter-spacing: 0.2;
+  letter-spacing: -0.01em;
 }
 
 @media only screen and (min-width: 768px) {
   .hero-social-item {
     width: 55px;
     height: 55px;
+    letter-spacing: -0.02em;
   }
 }
 
+.hero-social-item:focus,
 .hero-social-item:hover {
   border: 1px solid var(--textMain);
 }

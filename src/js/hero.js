@@ -1,3 +1,7 @@
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/TextPlugin';
+gsap.registerPlugin(TextPlugin);
+
 const blinds = document.getElementById('blinds');
 const slatCount = 20;
 
@@ -8,7 +12,7 @@ for (let i = 0; i < slatCount; i++) {
 }
 document.addEventListener('DOMContentLoaded', function () {
   const blinds = document.getElementById('blinds');
-  const numberOfSlats = 20; 
+  const numberOfSlats = 20;
 
   blinds.innerHTML = '';
 
@@ -30,4 +34,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 500);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const heroTitle = document.querySelector('.hero-title');
 
+  if (heroTitle) {
+    const originalText = heroTitle.textContent;
+    const alternateText = 'what is the text?';
+
+    heroTitle.addEventListener('mouseenter', () => {
+      gsap.to(heroTitle, {
+        duration: 2,
+        text: alternateText,
+        ease: 'none',
+      });
+    });
+
+    heroTitle.addEventListener('mouseleave', () => {
+      gsap.to(heroTitle, {
+        duration: 2,
+        text: originalText,
+        ease: 'none',
+      });
+    });
+  }
+});

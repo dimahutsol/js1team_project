@@ -211,6 +211,8 @@
 
 .header-modal-link {
   text-decoration: underline;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
 .header-link-project {

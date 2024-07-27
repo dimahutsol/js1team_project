@@ -64,19 +64,11 @@ const projSwiper = new Swiper(refs.projectWrapper, {
   },
 });
 
-projSwiper.on('keyPress', (swiper, keyCode) => {
-  if (keyCode === 9 && isProjectSwiperInViewPort) {
-    swiper.slideNext();
-  }
-});
-
-const observer = new IntersectionObserver(
-  (entries, observer) => {
+const titleObserver = new IntersectionObserver(
+  entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        isProjectSwiperInViewPort = true;
-      } else {
-        isProjectSwiperInViewPort = false;
+        entry.target.classList.add('visible');
       }
     });
   },
@@ -86,7 +78,34 @@ const observer = new IntersectionObserver(
     threshold: 0.2,
   }
 );
-observer.observe(refs.projectWrapper);
+
+const swiperObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      isProjectSwiperInViewPort = entry.isIntersecting;
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  }
+);
+
+swiperObserver.observe(refs.projectWrapper);
+
+document.addEventListener('keydown', event => {
+  if (isProjectSwiperInViewPort) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        projSwiper.slidePrev();
+      } else {
+        projSwiper.slideNext();
+      }
+    }
+  }
+});
 
 const projectArray = [
   {
@@ -138,7 +157,6 @@ function createProjectExample({
   const newTags = tags
     .map(tag => `<li class="tag-item"><p class="tag-text">#${tag}</p></li>`)
     .join('');
-  console.log(imgTab_2x);
   return `
     <li class="swiper-slide">
       <div class="projects-li-item">
@@ -166,6 +184,10 @@ function projectList(arr) {
 function renderProjectList() {
   const markup = projectList(projectArray);
   refs.projectListRef.innerHTML = markup;
+
+  // Observe the titles
+  const titles = document.querySelectorAll('.projects-header');
+  titles.forEach(title => titleObserver.observe(title));
 }
 
 renderProjectList();

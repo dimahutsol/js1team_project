@@ -7,8 +7,29 @@
     font-weight: 600;
     text-transform: uppercase;
     color: var(--textTitle);
-    color: var(--textTitle);
     padding-bottom: 32px;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projects-header {
+    opacity: 0;
+     animation: fadeInSlideUp 1s ease-out forwards; 
+    animation-delay: 0.5s;
+}
+
+.projects-header.visible {
+    opacity: 1;
 }
 
 .projects-white-wrapper {
@@ -115,73 +136,63 @@ div.projects-navigation {
     gap: 12px;
 }
 
-.projects-navigation-btn {
-    border: 1px solid rgba(250, 250, 250, 0.5);
-    border-radius: 50%;
-    padding: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
+ /* Hover animation */
+ .projects-navigation-btn {
+     transition: transform 0.3s ease, background-color 0.3s ease;
+ }
 
-/* .projects-navigation-btn {
-    position: relative;
-    z-index: 1;
-    border: 1px solid rgba(250, 250, 250, 0.5);
-    border-radius: 50%;
-    padding: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all var(--transition);
-}
+ .projects-navigation-btn:hover {
+     transform: scale(1.1);
+ }
 
-.projects-navigation-btn::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    left: 1px;
-    top: 1px;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    background: var(--backgroundMain);
-    border-radius: 50%;
-    transition: height var(--transition), width var(--transition);
-}
+ /* Click animation */
+ .projects-navigation-btn:active {
+     transform: scale(0.9);
+ }
 
-.projects-navigation-btn:hover::before {
-    content: '';
-    position: absolute;
-    z-index: -2;
-    left: 1px;
-    top: 1px;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    background-image: linear-gradient(var(--accent), var(--accent)),
-        linear-gradient(var(--accent), var(--accent)),
-        linear-gradient(var(--accent), var(--accent)),
-        linear-gradient(var(--accent), var(--accent));
-    border-radius: 50%;
-}
+ /* Optional: Adding a more complex animation using keyframes */
+ @keyframes pulse {
+     0% {
+         transform: scale(1);
+     }
 
-.projects-navigation-btn:hover::after {
-    width: calc(100% - 5px);
-    height: calc(100% - 5px);
-}
+     50% {
+         transform: scale(1.05);
+     }
 
-.projects-navigation-btn:hover {
-    animation: rotate 0.5s infinite linear;
-}
+     100% {
+         transform: scale(1);
+     }
+ }
 
-@keyframes rotate {
-    100% {
-        transform: rotate(1turn);
-    }
-} */
+ .projects-navigation-btn.pulse {
+     animation: pulse 1s infinite;
+ }
+
+ /* Additional styles for better appearance */
+ .projects-navigation-btn {
+     border: 1px solid rgba(250, 250, 250, 0.5);
+     border-radius: 50%;
+     padding: 14px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     transition: transform 0.3s ease, border-color 0.3s ease;
+ }
+
+ .projects-navigation-btn:hover {
+    border: 1.5px solid var(--accent);
+     /* border-color: var(--accent); */
+ }
 
 .projects-navigation-prev.swiper-button-disabled {
+    border: 1px solid var(--borderMain);
+}
+.projects-navigation-prev.swiper-button-disabled:hover {
+    border: 1px solid var(--borderMain);
+}
+.projects-navigation-next.swiper-button-disabled:hover {
     border: 1px solid var(--borderMain);
 }
 .projects-navigation-prev.swiper-button-disabled svg {
@@ -298,3 +309,48 @@ div.projects-navigation {
     .tag-list {
         margin-bottom: 223px;
     }}
+
+        .projects-navigation-btn {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+    
+        .projects-navigation-btn:hover {
+            transform: scale(1.1);
+        }
+    
+        .projects-navigation-btn:active {
+            transform: scale(0.9);
+        }
+    
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+    
+            50% {
+                transform: scale(1.05);
+            }
+    
+            100% {
+                transform: scale(1);
+            }
+        }
+    
+        .projects-navigation-btn.pulse {
+            animation: pulse 1s infinite;
+        }
+    
+        .projects-navigation-btn {
+            border: 1px solid rgba(250, 250, 250, 0.5);
+            border-radius: 50%;
+            padding: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+    
+        .projects-navigation-btn:hover {
+            border-color: var(--accent);
+        }

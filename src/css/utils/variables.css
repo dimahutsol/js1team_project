@@ -16,11 +16,11 @@
 }
 
 .theme-blue {
-  --accent: rgba(45, 0, 255, 1);
-  --accentAlternative: rgba(45, 17, 181, 1);
+  --accent: rgb(48, 106, 214);
+  --accentAlternative: rgb(30, 81, 177);
 }
 
 .theme-green {
-  --accent: rgba(114, 255, 133, 1);
+  --accent: rgb(105, 167, 113);
   --accentAlternative: rgba(86, 184, 99, 1);
 }

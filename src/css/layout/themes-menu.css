@@ -53,11 +53,11 @@
 }
 
 .theme-bg-blue {
-  background-color: rgba(45, 0, 255, 1);
+  background-color: rgb(48, 106, 214);
 }
 
 .theme-bg-green {
-  background-color: rgba(0, 255, 13, 1);
+  background-color: rgb(105, 167, 113);
 }
 
 @media (max-width: 768px) {

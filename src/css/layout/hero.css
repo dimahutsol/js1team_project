@@ -15,7 +15,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
   padding-bottom: 32px;
 }
@@ -88,7 +87,7 @@
 
 @media only screen and (min-width: 1440px) {
   .hero-title {
-    width: 1084px;
+    max-width: 1084px;
     display: block;
     margin: 0 auto;
   }

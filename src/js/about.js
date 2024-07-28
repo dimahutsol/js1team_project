@@ -1,9 +1,10 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
-import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
+import { Navigation, Keyboard, Mousewheel} from 'swiper/modules';
 import 'swiper/css';
 import image from '/img/symbols.svg';
+Swiper.use([Navigation, Keyboard, Mousewheel]);
 
 const refs = {
   listAcRef: document.querySelector('.about-me-ac-list'),
@@ -21,7 +22,7 @@ const aboutMeList = [
           I always follow the latest trends and look for unconventional, creative solutions to problems. 
           I have a high level of analytical skills and am able to effectively solve even the most difficult tasks encountered on the way.
         </p>
-        <p class="about-me-desc-2">
+        <p class="about-me-desc">
           Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding optimal solutions. 
           Professional maturity allows you to calmly cope with challenges and stressful situations, while maintaining a high quality of work. 
           I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. 
@@ -37,6 +38,7 @@ const aboutMeList = [
         <p class="about-me-role-text">HeadlessCMS,Wordpress</p>
         <p class="about-me-role-text">Blender(enjoy)</p>
       `,
+    className: 'with-gap',
   },
   {
     title: 'Education',
@@ -52,6 +54,7 @@ const aboutMeList = [
           2020 - 2022 / Advanced Blender Animation Techniques, Udemy
         </p>
       `,
+    className: 'with-gap',
   },
 ];
 
@@ -71,7 +74,7 @@ function listItemTemplate({ title, svgPath, content }) {
         <div class="ac-trigger">
           <h2 class="about-me-ac-item-title">${title}</h2>
           <button class="about-me-ac-button" type="button" aria-label="Slider button">
-            <svg class="about-me-slider-arrow" width="10" height="10">
+            <svg class="about-me-slider-arrow" width="18" height="18">
               <use href="${svgPath}"></use>
             </svg>
           </button>
@@ -138,25 +141,20 @@ const skillsCarousel = new Swiper('.about-me-skills-swiper', {
   },
   mousewheel: {
     invert: true,
+    sensitivity: 1,
+    eventsTarget: '.about-me-skills-swiper',
   },
-
   breakpoints: {
     375: {
       slidesPerView: 2,
-      width: 260,
     },
-
     768: {
       slidesPerView: 3,
-      width: 600,
     },
-
     1440: {
       slidesPerView: 6,
-      width: 1200,
     },
   },
-
   loop: true,
   setWrapperSize: true,
   spaceBetween: 0,
@@ -164,6 +162,7 @@ const skillsCarousel = new Swiper('.about-me-skills-swiper', {
   simulateTouch: false,
   slideToClickedSlide: true,
   slidesPerGroup: 1,
+  grabCursor: true,
 });
 
 function updateHighlight() {
@@ -182,7 +181,7 @@ document.addEventListener('keydown', event => {
 
 skillsCarousel.update();
 skillsCarousel.on('slideChange', updateHighlight);
-
 skillsCarousel.on('slideChangeTransitionEnd', updateHighlight);
 
 updateHighlight();
+

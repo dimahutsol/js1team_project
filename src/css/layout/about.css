@@ -1,4 +1,5 @@
 .about-me-section {
+  padding-top: 32px;
 }
 
 .about-me-container {
@@ -32,8 +33,8 @@
 
 .about-me-picture-container {
   border-radius: 24px;
-  /* min-width: 343px; */
   min-height: 500px;
+  padding-bottom: 32px;
 }
 
 .about-me-picture {
@@ -43,6 +44,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .about-me-section {
+    padding-top: 48px;
+  }
+  
   .about-me-hero-desc {
     min-height: 700px;
   }
@@ -54,6 +59,7 @@
   }
   .about-me-picture-container {
     min-height: 700px;
+    padding-bottom: 64px;
   }
   .about-me-picture {
     width: 704px;
@@ -74,6 +80,7 @@
     flex-direction: row;
     gap: 16px;
     align-items: center;
+    padding-bottom: 96px;
   }
 
   .about-me-hero-desc {
@@ -93,7 +100,7 @@
 }
 
 .about-me-ac-container {
-  margin-top: 32px;
+
 }
 
 .about-me-ac-list-item {
@@ -101,13 +108,13 @@
   border: none !important;
   border-bottom: 1px solid var(--borderMain) !important;
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 32px;
 }
 
 .about-me-section .ac {
-  margin-top: 0 !important;
+  margin-top: 0;
+
 }
+
 
 .about-me-section .ac .ac-trigger {
   display: flex !important;
@@ -131,6 +138,35 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.about-me-container .ac .ac-trigger{
+}
+.about-me-ac-list-item{
+  margin-bottom: 20px;
+}
+.about-me-desc:first-child{
+  padding-bottom: 32px;
+}
+.about-me-desc:last-child,
+.about-me-role-text:last-child,
+.about-me-education-text:last-child{
+  padding-bottom: 20px;
+}
+.about-me-section .ac .ac-trigger{
+  padding-bottom: 32px;
+}
+.about-me-ac-list-item.is-active  .ac-trigger{
+  padding-bottom: 12px;
+}
+.about-me-ac-list{
+  margin-bottom:64px;
+}
+.about-me-desc-container{
+  gap:10px;
+}
+.about-me-desc-container:first-child{
+  gap:0px;
+}
+
 
 .about-me-ac-item-title {
   letter-spacing: -0.02em;
@@ -174,8 +210,6 @@
   font: 500 16px / 1.5 'Inter Tight', sans-serif;
   letter-spacing: -0.02em;
   color: var(--textMain);
-  padding-top: 12px;
-  padding-bottom: 32px;
 }
 
 .about-me-role-container,
@@ -184,33 +218,42 @@
 
 .about-me-role-text,
 .about-me-education-text {
-  padding-top: 12px;
   display: flex;
 }
 
 @media screen and (min-width: 768px) {
   .about-me-desc {
-    padding-top: 8px;
+
+  }
+  .about-me-desc:first-child{
     padding-bottom: 16px;
   }
   .about-me-ac-list-item {
-    padding-top: 32px;
+
   }
+  .about-me-ac-list-item {
+    margin-bottom: 32px;
+}
+.about-me-desc-container{
+
+}
 }
 
 @media screen and (min-width: 1440px) {
   .about-me-ac-container {
-    margin-top: 96px;
+
   }
   .about-me-desc-container {
-    width: 612px;
-    display: flex;
-    justify-content: flex-end;
+    
+  }
+
+  .about-me-desc:first-child{
+    padding-bottom: 32px;
   }
 }
 
 .about-me-skills {
-  margin-top: 32px;
+  margin-bottom: 96px;
 }
 
 .about-me-skills-swiper {

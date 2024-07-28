@@ -1,27 +1,39 @@
-const headerMobileMenuDiv = document.querySelector('.header-mobile-menu');
-const headerNavMenuBtn = document.querySelector('.header-nav-menu');
-const headerBtnCloseMenu = document.querySelector('.header-btn-close-menu');
-const bodyEl = document.querySelector('body');
-const headerTabList = document.querySelector('.header-tab-list');
-const headerTabProject = document.querySelector('.header-tab-project');
-const headerModalMenuList = document.querySelector('.header-modal-menu-list');
-const headerLinkProject = document.querySelector('.header-link-project');
-const headerEl = document.querySelector('.header');
-const themesEl = document.querySelector('.theme-switcher-btn');
+const selectors = {
+  headerMobileMenu: '.header-mobile-menu',
+  headerNavMenu: '.header-nav-menu',
+  headerBtnCloseMenu: '.header-btn-close-menu',
+  body: 'body',
+  headerTabList: '.header-tab-list',
+  headerTabProject: '.header-tab-project',
+  headerModalMenuList: '.header-modal-menu-list',
+  headerLinkProject: '.header-link-project',
+  header: '.header',
+  themeSwitcher: '.theme-switcher-btn',
+  mobileBlinds: '#mobile-blinds',
+};
 
-headerNavMenuBtn.addEventListener('click', () => {
-  headerMobileMenuDiv.classList.add('header-mob-open');
-  headerEl.classList.add('container-header');
-  bodyEl.classList.add('blockScroll');
-  themesEl.style.display = 'none';
-});
+const elements = Object.fromEntries(
+  Object.entries(selectors).map(([key, selector]) => [
+    key,
+    document.querySelector(selector),
+  ])
+);
 
-headerBtnCloseMenu.addEventListener('click', () => {
-  headerMobileMenuDiv.classList.remove('header-mob-open');
-  headerEl.classList.remove('container-header');
-  bodyEl.classList.remove('blockScroll');
-  themesEl.style.display = 'flex';
-});
+function toggleMobileMenu(open) {
+  elements.headerMobileMenu.classList.toggle('header-mob-open', open);
+  elements.header.classList.toggle('container-header', open);
+  elements.body.classList.toggle('blockScroll', open);
+  elements.themeSwitcher.style.display = open ? 'none' : 'flex';
+
+  if (open) {
+    createMobileBlinds();
+    setTimeout(animateMobileBlinds, 200);
+  } else {
+    document
+      .querySelectorAll('.mobile-slat')
+      .forEach(slat => slat.classList.remove('show'));
+  }
+}
 
 function smoothScroll(target) {
   const element = document.querySelector(target);
@@ -33,84 +45,50 @@ function smoothScroll(target) {
   }
 }
 
-function closeMobileMenu() {
-  headerMobileMenuDiv.classList.remove('header-mob-open');
-  bodyEl.classList.remove('blockScroll');
+function handleNavClick(event, closeMenu = false) {
+  if (event.target.matches('a') || event.target === elements.headerTabProject) {
+    event.preventDefault();
+    const target =
+      event.target.getAttribute('href') ||
+      event.target.querySelector('a').getAttribute('href');
+    if (closeMenu) {
+      toggleMobileMenu(false);
+      setTimeout(() => smoothScroll(target), 300);
+    } else {
+      smoothScroll(target);
+    }
+  }
 }
 
-headerTabList.addEventListener('click', event => {
-  if (event.target.classList.contains('header-tab-link')) {
-    event.preventDefault();
-    const target = event.target.getAttribute('href');
-    smoothScroll(target);
-  }
-});
-
-headerTabProject.addEventListener('click', event => {
-  event.preventDefault();
-  const target = headerTabProject.querySelector('a').getAttribute('href');
-  smoothScroll(target);
-});
-
-headerModalMenuList.addEventListener('click', event => {
-  if (event.target.classList.contains('header-modal-link')) {
-    event.preventDefault();
-    const target = event.target.getAttribute('href');
-    closeMobileMenu();
-    headerEl.classList.remove('container-header');
-    setTimeout(() => smoothScroll(target), 300);
-  }
-});
-
-headerLinkProject.addEventListener('click', event => {
-  event.preventDefault();
-  const target = headerLinkProject.getAttribute('href');
-  headerEl.classList.remove('container-header');
-  closeMobileMenu();
-  setTimeout(() => smoothScroll(target), 300);
-});
-
 function createMobileBlinds() {
-  const mobileBlinds = document.getElementById('mobile-blinds');
   const numberOfSlats = 20;
-
-  mobileBlinds.innerHTML = '';
-
-  for (let i = 0; i < numberOfSlats; i++) {
-    const slat = document.createElement('div');
-    slat.className = 'mobile-slat';
-    slat.style.setProperty('--index', i);
-    mobileBlinds.appendChild(slat);
-  }
-
-  mobileBlinds.style.setProperty('--slat-count', numberOfSlats);
+  elements.mobileBlinds.innerHTML = Array(numberOfSlats)
+    .fill()
+    .map((_, i) => `<div class="mobile-slat" style="--index:${i}"></div>`)
+    .join('');
+  elements.mobileBlinds.style.setProperty('--slat-count', numberOfSlats);
 }
 
 function animateMobileBlinds() {
   const slats = document.querySelectorAll('.mobile-slat');
   const middleIndex = Math.floor(slats.length / 2);
-
-  for (let i = 0; i < slats.length; i++) {
-    const delay = Math.abs(i - middleIndex) * 70;
-    setTimeout(() => {
-      slats[i].classList.add('show');
-    }, delay);
-  }
+  slats.forEach((slat, i) => {
+    setTimeout(
+      () => slat.classList.add('show'),
+      Math.abs(i - middleIndex) * 70
+    );
+  });
 }
 
-headerNavMenuBtn.addEventListener('click', () => {
-  headerMobileMenuDiv.classList.add('header-mob-open');
-  headerEl.classList.add('container-header');
-  bodyEl.classList.add('blockScroll');
-  createMobileBlinds();
-  setTimeout(animateMobileBlinds, 200);
-});
-
-headerBtnCloseMenu.addEventListener('click', () => {
-  headerMobileMenuDiv.classList.remove('header-mob-open');
-  headerEl.classList.remove('container-header');
-  bodyEl.classList.remove('blockScroll');
-  document.querySelectorAll('.mobile-slat').forEach(slat => {
-    slat.classList.remove('show');
-  });
-});
+elements.headerNavMenu.addEventListener('click', () => toggleMobileMenu(true));
+elements.headerBtnCloseMenu.addEventListener('click', () =>
+  toggleMobileMenu(false)
+);
+elements.headerTabList.addEventListener('click', handleNavClick);
+elements.headerTabProject.addEventListener('click', handleNavClick);
+elements.headerModalMenuList.addEventListener('click', e =>
+  handleNavClick(e, true)
+);
+elements.headerLinkProject.addEventListener('click', e =>
+  handleNavClick(e, true)
+);

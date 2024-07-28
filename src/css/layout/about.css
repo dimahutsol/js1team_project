@@ -1,4 +1,5 @@
 .about-me-section {
+  padding-top: 32px;
 }
 
 .about-me-container {
@@ -6,7 +7,6 @@
 
 .about-me-hero-desc {
   border-radius: 24px;
-  /* min-width: 343px; */
   min-height: 500px;
   background-color: var(--backgroundAlternative);
   margin-bottom: 16px;
@@ -32,8 +32,8 @@
 
 .about-me-picture-container {
   border-radius: 24px;
-  /* min-width: 343px; */
   min-height: 500px;
+  padding-bottom: 32px;
 }
 
 .about-me-picture {
@@ -43,6 +43,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .about-me-section {
+    padding-top: 48px;
+  }
+
   .about-me-hero-desc {
     min-height: 700px;
   }
@@ -54,6 +58,7 @@
   }
   .about-me-picture-container {
     min-height: 700px;
+    padding-bottom: 64px;
   }
   .about-me-picture {
     width: 704px;
@@ -74,6 +79,7 @@
     flex-direction: row;
     gap: 16px;
     align-items: center;
+    padding-bottom: 96px;
   }
 
   .about-me-hero-desc {
@@ -93,7 +99,6 @@
 }
 
 .about-me-ac-container {
-  margin-top: 32px;
 }
 
 .about-me-ac-list-item {
@@ -101,12 +106,10 @@
   border: none !important;
   border-bottom: 1px solid var(--borderMain) !important;
   margin: 0;
-  padding-top: 20px;
-  padding-bottom: 32px;
 }
 
 .about-me-section .ac {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
 .about-me-section .ac .ac-trigger {
@@ -131,6 +134,34 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+.about-me-container .ac .ac-trigger {
+}
+.about-me-ac-list-item {
+  margin-bottom: 20px;
+}
+.about-me-desc:first-child {
+  padding-bottom: 32px;
+}
+.about-me-desc:last-child,
+.about-me-role-text:last-child,
+.about-me-education-text:last-child {
+  padding-bottom: 20px;
+}
+.about-me-section .ac .ac-trigger {
+  padding-bottom: 32px;
+}
+.about-me-ac-list-item.is-active .ac-trigger {
+  padding-bottom: 12px;
+}
+.about-me-ac-list {
+  margin-bottom: 64px;
+}
+.about-me-desc-container {
+  gap: 10px;
+}
+.about-me-desc-container:first-child {
+  gap: 0px;
+}
 
 .about-me-ac-item-title {
   letter-spacing: -0.02em;
@@ -147,8 +178,8 @@
   top: 0;
   border: 1px solid var(--borderMain);
   border-radius: 100px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -171,11 +202,11 @@
 }
 
 .about-me-desc {
-  font: 500 16px / 1.5 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--textMain);
-  padding-top: 12px;
-  padding-bottom: 32px;
 }
 
 .about-me-role-container,
@@ -184,39 +215,66 @@
 
 .about-me-role-text,
 .about-me-education-text {
-  padding-top: 12px;
   display: flex;
 }
 
 @media screen and (min-width: 768px) {
   .about-me-desc {
-    padding-top: 8px;
+  }
+  .about-me-desc:first-child {
     padding-bottom: 16px;
   }
   .about-me-ac-list-item {
-    padding-top: 32px;
+  }
+  .about-me-ac-list-item {
+    margin-bottom: 32px;
+  }
+  .about-me-desc-container {
+  }
+  .about-me-ac-button {
+    width: 40px;
+    height: 40px;
+  }
+  .about-me-slider-arrow {
+    width: 20px;
+    height: 20px;
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .about-me-desc {
+    max-width: 50%;
+    align-self: flex-end;
+    padding-right: 68px;
+  }
+  .about-me-role-text {
+    margin: 0 68px 0px 694px;
+  }
+  .about-me-education-text {
+    margin: 0 68px 0px 694px;
+  }
+
   .about-me-ac-container {
-    margin-top: 96px;
   }
   .about-me-desc-container {
-    width: 612px;
-    display: flex;
-    justify-content: flex-end;
+  }
+
+  .about-me-desc:first-child {
+    padding-bottom: 32px;
   }
 }
 
 .about-me-skills {
-  margin-top: 32px;
+  position: relative;
 }
 
 .about-me-skills-swiper {
-  position: relative;
+  width: 260px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   margin-bottom: 32px;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 .about-me-skills-swiper .swiper-wrapper {
@@ -226,12 +284,13 @@
 }
 
 .about-me-skills-swiper .swiper-slide {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--textMain);
-  width: 130px;
-  height: 130px;
+  width: 130px !important;
+  height: 130px !important;
   flex-shrink: 0;
   border-radius: 100%;
   border: 1px solid var(--borderMain);
@@ -242,18 +301,19 @@
   padding: 0;
 }
 
-.about-me-skills-swiper .about-me-swiper-button-next {
-  height: 50px;
+.about-me-swiper-button-next {
+  width: 28px;
+  height: 28px;
   position: absolute;
-  right: 0;
   top: 50%;
+  right: 0; 
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: var(--transition);
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
 }
 
 .about-me-skills-swiper .is-first {
@@ -261,33 +321,39 @@
   border: none;
 }
 
-.about-me-skills-swiper .about-me-swiper-icon {
+.about-me-swiper-icon {
   fill: none;
   stroke: var(--arrow);
 }
 
 @media screen and (min-width: 768px) {
-  .about-me-skills {
-    margin-top: 64px;
-  }
-  .swiper .about-me-skills-swiper {
+  .about-me-skills-swiper {
     margin-bottom: 48px;
+    width: 600px;
   }
 
   .about-me-skills-swiper .swiper-slide {
     font-size: 20px;
-    width: 200px;
-    height: 200px;
+    width: 200px !important;
+    height: 200px !important;
   }
 
-  .about-me-skills-swiper .about-me-swiper-icon {
+  .about-me-swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about-me-swiper-icon {
     width: 40px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .swiper .about-me-skills-swiper {
+  .about-me-skills-swiper {
     margin-bottom: 82px;
+    width: 1200px;
   }
 }
+
+

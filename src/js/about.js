@@ -4,6 +4,7 @@ import Swiper from 'swiper';
 import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import image from '/img/symbols.svg';
+Swiper.use([Navigation, Keyboard, Mousewheel]);
 
 const refs = {
   listAcRef: document.querySelector('.about-me-ac-list'),
@@ -138,22 +139,24 @@ const skillsCarousel = new Swiper('.about-me-skills-swiper', {
   },
   mousewheel: {
     invert: true,
+    sensitivity: 1,
+    eventsTarget: '.about-me-skills-swiper',
   },
 
   breakpoints: {
     375: {
       slidesPerView: 2,
-      width: 260,
+      // width: 260,
     },
 
     768: {
       slidesPerView: 3,
-      width: 600,
+      // width: 600,
     },
 
     1440: {
       slidesPerView: 6,
-      width: 1200,
+      // width: 1200,
     },
   },
 
@@ -164,6 +167,7 @@ const skillsCarousel = new Swiper('.about-me-skills-swiper', {
   simulateTouch: false,
   slideToClickedSlide: true,
   slidesPerGroup: 1,
+  grabCursor: true,
 });
 
 function updateHighlight() {

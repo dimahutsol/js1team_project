@@ -1,5 +1,6 @@
 .benefits-section {
-  margin-bottom: 96px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .benefit-container {
@@ -77,9 +78,11 @@
 }
 
 @media screen and (min-width: 768px) {
-  .benefit-container {
-    margin-top: 96px;
+  .benefits-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
+
   .benefit-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -94,17 +97,18 @@
     margin-bottom: 64px;
   }
   .benefit-btn-order {
-
   }
 }
 
 @media screen and (min-width: 1440px) {
+  .benefits-section {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
   .benefits-section .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-  .benefit-container {
-    margin-top: 164px;
   }
 
   .benefits-list-container {

@@ -156,23 +156,16 @@
 }
 
 .email-link {
-  padding: 10px 12px;
   width: 178px;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-@media only screen and (min-width: 768px) {
-  .email-link {
-    width: 223px;
-    padding: 18px 24px;
-    gap: 10px;
-  }
-}
-
 .hero-social-link {
-display: block;
+display: flex;
+justify-content: center;
+align-items: center;
   width: 100%;
   height: 100%;
   font-weight: 500;
@@ -185,5 +178,11 @@ display: block;
 @media only screen and (min-width: 768px) {
   .hero-social-link {
     font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .email-link {
+    width: 223px;
   }
 }

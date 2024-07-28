@@ -20,7 +20,11 @@
         />
       </picture>
 
-      <a class="header-logo-link" href="../index.html">
+      <a
+        class="header-logo-link"
+        href="./index.html"
+        aria-label="Go to the main page"
+      >
         <svg class="header-author-logo" width="84" height="19" fill="#fafafa">
           <use href="./img/symbols.svg#jefferson"></use>
         </svg>
@@ -46,13 +50,13 @@
       </ul>
     </div>
 
-    <button class="header-tab-project">
-      <a class="header-tab-project" href="#work_together" target="_blank"
+    <div class="header-tab-project">
+      <a class="header-tab-project-link" href="#work_together" target="_blank"
         >Order the project</a
       >
-    </button>
+    </div>
 
-    <button class="header-nav-menu">
+    <button class="header-nav-menu" aria-label="Open navigation menu">
       <svg class="header-svg-menu" width="28" height="28" stroke="#fafafa">
         <use href="./img/symbols.svg#burger"></use>
       </svg>
@@ -60,6 +64,7 @@
   </nav>
 
   <div class="header-mobile-menu">
+    <div class="mobile-blinds" id="mobile-blinds"></div>
     <button class="header-btn-close-menu">
       <svg
         class="header-btn-svg-close-menu"
@@ -86,6 +91,8 @@
       </li>
     </ul>
 
-    <a class="header-link-project" href="#work_together">Order the project</a>
+    <div class="header-link-project">
+      <a class="header-btn-project" href="#work_together">Order the project</a>
+    </div>
   </div>
 </header>

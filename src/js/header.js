@@ -66,3 +66,48 @@ headerLinkProject.addEventListener('click', event => {
   closeMobileMenu();
   setTimeout(() => smoothScroll(target), 300);
 });
+
+function createMobileBlinds() {
+  const mobileBlinds = document.getElementById('mobile-blinds');
+  const numberOfSlats = 20;
+
+  mobileBlinds.innerHTML = '';
+
+  for (let i = 0; i < numberOfSlats; i++) {
+    const slat = document.createElement('div');
+    slat.className = 'mobile-slat';
+    slat.style.setProperty('--index', i);
+    mobileBlinds.appendChild(slat);
+  }
+
+  mobileBlinds.style.setProperty('--slat-count', numberOfSlats);
+}
+
+function animateMobileBlinds() {
+  const slats = document.querySelectorAll('.mobile-slat');
+  const middleIndex = Math.floor(slats.length / 2);
+
+  for (let i = 0; i < slats.length; i++) {
+    const delay = Math.abs(i - middleIndex) * 70;
+    setTimeout(() => {
+      slats[i].classList.add('show');
+    }, delay);
+  }
+}
+
+headerNavMenuBtn.addEventListener('click', () => {
+  headerMobileMenuDiv.classList.add('header-mob-open');
+  headerEl.classList.add('container-header');
+  bodyEl.classList.add('blockScroll');
+  createMobileBlinds();
+  setTimeout(animateMobileBlinds, 200);
+});
+
+headerBtnCloseMenu.addEventListener('click', () => {
+  headerMobileMenuDiv.classList.remove('header-mob-open');
+  headerEl.classList.remove('container-header');
+  bodyEl.classList.remove('blockScroll');
+  document.querySelectorAll('.mobile-slat').forEach(slat => {
+    slat.classList.remove('show');
+  });
+});

@@ -164,15 +164,13 @@
 
 .container-header {
   max-width: 100%;
-  transition: max-width 0.45s ease;
+  transition: max-width 2.45s ease;
 }
 
 .header-mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url('../../img/Hero/heroMenu_mob@1x.webp');
-  background-size: cover;
   width: 100%;
   height: 100vh;
   opacity: 0;
@@ -228,7 +226,7 @@
   height: 45px;
   font-weight: 500;
   font-size: 14px;
-  background-color: var(--accent);
+  background-color: var(--backgroundMain);
   color: var(--textMain);
   position: absolute;
   bottom: 64px;
@@ -289,4 +287,50 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.mobile-blinds {
+  --slat-count: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.mobile-slat {
+  flex: 1;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) 50%,
+    var(--accentAlternative) 75%,
+    #1c1c1c 90%,
+    #0d0d0d 100%
+  );
+  transition: all 0.5s ease;
+  transform: scaleX(0);
+  opacity: 0;
+}
+
+.mobile-slat.show {
+  animation: mobileExpandFromCenter 0.8s ease forwards;
+}
+
+@keyframes mobileExpandFromCenter {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scaleX(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }

@@ -35,7 +35,7 @@ const arrayFAQ = [
 ];
 
 function markupFAQ({ title, text }) {
-  return `  <li class="ac section-animation" id="list-question">
+  return `  <li class="ac" id="list-question">
         <h3 class="ac-header">
           <button type="button" class="ac-trigger">
             ${title}

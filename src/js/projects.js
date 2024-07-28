@@ -154,9 +154,9 @@ function createProjectExample({
         </div>
         <div class="project-image-wrapper">
           <picture>
-            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
-            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
-            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp" alt="project example image" loading="lazy">
+            <source media="(min-width: 1440px)" srcset="${imgDesc_1x} 1x, ${imgDesc_2x} 2x" type="image/webp" >
+            <source media="(min-width: 768px)" srcset="${imgTab_1x} 1x, ${imgTab_2x} 2x" type="image/webp" >
+            <source media="(max-width: 767px)" srcset="${imgMob_1x} 1x, ${imgMob_2x} 2x" type="image/webp" >
             <img src="${imgMob_1x}" alt="project example image" loading="lazy" class="project-image">
           </picture>
         </div>

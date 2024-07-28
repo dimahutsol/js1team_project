@@ -88,9 +88,6 @@
   transition: background-color var(--transition);
 }
 
-.top-button {
-}
-
 .top:hover {
   background-color: var(--borderAlternative);
 }

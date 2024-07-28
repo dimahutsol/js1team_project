@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 417px;
+    min-height: 417px;
 }
 
 .projects-wrapper {
@@ -228,8 +228,6 @@ div.projects-navigation {
 }
 
 .projects-navigation-icon {
-    width: 32px;
-    height: 32px;
     fill: transparent;
     stroke: var(--textMain);
 }
@@ -269,7 +267,7 @@ div.projects-navigation {
 
     .projects-white-wrapper {
         padding: 64px;
-        height: 566px;
+    min-height: 566px;
     padding-right: 146px;
     }
 
@@ -293,6 +291,11 @@ div.projects-navigation {
     .projects-navigation-btn {
         padding: 18px;
     }
+
+        .projects-navigation-icon {
+            width: 32px;
+            height: 32px;}
+    
 }
 
 @media (min-width: 1440px) {
@@ -313,7 +316,7 @@ div.projects-navigation {
     .projects-white-wrapper {
         padding-right: 130px;
         border-radius: 24px 0 0 24px;
-        height: 625px;
+        min-height: 625px;
     }
 
     .project-image-wrapper {

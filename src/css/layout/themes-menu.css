@@ -96,38 +96,3 @@
   fill: transparent;
   stroke: var(--textMain);
 }
-
-/* .animate__animated.animate__fadeInBottomLeft,
-.animate__animated.animate__fadeInBottomRight {
-  --animate-duration: 0.5s;
-} */
-
-.animate__fadeInBottomLeft {
-  animation-name: fadeInBottomLeft;
-}
-
-.animate__fadeInBottomRight {
-  animation-name: fadeInBottomRight;
-}
-
-@keyframes fadeInBottomLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-100%, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeInBottomRight {
-  from {
-    opacity: 0;
-    transform: translate3d(100%, 100%, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}

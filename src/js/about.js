@@ -1,7 +1,7 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
-import { Navigation, Keyboard, Mousewheel} from 'swiper/modules';
+import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import image from '/img/symbols.svg';
 Swiper.use([Navigation, Keyboard, Mousewheel]);
@@ -16,6 +16,7 @@ const aboutMeList = [
     title: 'About me',
     svgPath: `${image}#arrow-up`,
     content: `
+      <div class="about-me-role-box">
         <p class="about-me-desc">
           I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. 
           I have an understanding of different programming languages ​​and technologies, always ready to improve my skills. 
@@ -28,15 +29,18 @@ const aboutMeList = [
           I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. 
           I have a strong understanding of various programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.
         </p>
+      </div>
       `,
   },
   {
     title: 'Role',
     svgPath: `${image}#arrow-down`,
     content: `
+      <div class="about-me-role-box">
         <p class="about-me-role-text">Frontend development</p>
         <p class="about-me-role-text">HeadlessCMS,Wordpress</p>
         <p class="about-me-role-text">Blender(enjoy)</p>
+      </div>
       `,
     className: 'with-gap',
   },
@@ -44,6 +48,7 @@ const aboutMeList = [
     title: 'Education',
     svgPath: `${image}#arrow-down`,
     content: `
+      <div class="about-me-role-box">
         <p class="about-me-education-text">
           2018 - 2019 / Frontend Development Diploma, GoIT IT School, New York
         </p>
@@ -53,6 +58,7 @@ const aboutMeList = [
         <p class="about-me-education-text">
           2020 - 2022 / Advanced Blender Animation Techniques, Udemy
         </p>
+      </div>
       `,
     className: 'with-gap',
   },
@@ -106,8 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-document.querySelectorAll('.about-me-ac-button').forEach(button => {
-  button.addEventListener('click', function () {
+document.querySelectorAll('.ac-trigger').forEach(trigger => {
+  trigger.addEventListener('click', function () {
     const acItem = this.closest('.ac');
     acItem.classList.toggle('closed');
     this.querySelector('.about-me-slider-arrow').classList.toggle('rotate-180');
@@ -184,4 +190,3 @@ skillsCarousel.on('slideChange', updateHighlight);
 skillsCarousel.on('slideChangeTransitionEnd', updateHighlight);
 
 updateHighlight();
-

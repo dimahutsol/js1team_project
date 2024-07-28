@@ -7,17 +7,20 @@ const headerTabProject = document.querySelector('.header-tab-project');
 const headerModalMenuList = document.querySelector('.header-modal-menu-list');
 const headerLinkProject = document.querySelector('.header-link-project');
 const headerEl = document.querySelector('.header');
+const themesEl = document.querySelector('.theme-switcher-btn');
 
 headerNavMenuBtn.addEventListener('click', () => {
   headerMobileMenuDiv.classList.add('header-mob-open');
   headerEl.classList.add('container-header');
   bodyEl.classList.add('blockScroll');
+  themesEl.style.display = 'none';
 });
 
 headerBtnCloseMenu.addEventListener('click', () => {
   headerMobileMenuDiv.classList.remove('header-mob-open');
   headerEl.classList.remove('container-header');
   bodyEl.classList.remove('blockScroll');
+  themesEl.style.display = 'flex';
 });
 
 function smoothScroll(target) {

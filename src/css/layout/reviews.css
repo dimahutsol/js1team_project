@@ -122,8 +122,8 @@
 .reviews-navigation-btn {
   border: 1px solid var(--borderAlternative);
   border-radius: 50%;
-  height: 52px;
-  width: 52px;
+  height: 54px;
+  width: 54px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +158,11 @@
 @media (min-width: 768px) {
   .reviews {
     padding: 48px 0;
+  }
+
+  .reviews-navigation-btn {
+    height: 70px;
+    width: 70px;
   }
 }
 

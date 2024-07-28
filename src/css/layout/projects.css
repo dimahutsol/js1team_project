@@ -270,6 +270,7 @@ div.projects-navigation {
     .projects-white-wrapper {
         padding: 64px;
         height: 566px;
+    padding-right: 146px;
     }
 
     .project-image-wrapper {

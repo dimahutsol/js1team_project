@@ -27,7 +27,7 @@ const benefitList = [
 ];
 
 function cardTemplate({ svgPath, title, text }) {
-  return `<li class="benefit-list-card">
+  return `<li class="benefit-list-card section-animation">
             <div class="benefit-list-icon">
               <svg class="benefit-list-icon-svg" width="24" height="24">
                 <use href="${svgPath}"></use>

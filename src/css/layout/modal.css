@@ -37,6 +37,12 @@
   cursor: pointer;
 }
 
+@media only screen and (max-width: 375px) {
+  .modal-content {
+    width: 290px;
+  }
+}
+
 .modal-content::before {
   content: '';
   position: absolute;

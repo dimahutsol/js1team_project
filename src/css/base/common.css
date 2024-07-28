@@ -29,3 +29,22 @@ body {
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 } */
+
+.section-animation {
+  opacity: 0;
+  transition: transform 0.75s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-animation:nth-child(odd) {
+  transform: translate(2000px);
+}
+
+.section-animation:nth-child(even) {
+  transform: translate(-2000px);
+}
+
+.section-animation.visible {
+  opacity: 1;
+  transform: translate(0);
+}

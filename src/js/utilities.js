@@ -1,27 +1,76 @@
 // Sections animation
+// let blocks = document.querySelectorAll('.section-animation');
+
+// function checkBlocksVisibility() {
+//   let windowHeight = window.innerHeight;
+
+//   blocks.forEach((block, index) => {
+//     let blockPosition = block.getBoundingClientRect().top;
+//     if (blockPosition < windowHeight - 100) {
+//       block.style.opacity = '1';
+//       block.style.transform = 'translateY(0)';
+//     }
+//   });
+// }
+
+// checkBlocksVisibility();
+
+// window.addEventListener('scroll', checkBlocksVisibility);
+
+// function animateBlock(entry, index) {
+//   const block = entry.target;
+
+//   if (alreadyAnimated.has(block)) return;
+
+//   // Використовуємо translateZ(0) для активації апаратного прискорення
+//   block.style.willChange = 'transform, opacity';
+//   block.style.opacity = '1';
+//   if (index % 2 === 0) {
+//     block.classList.add('animate__animated', 'animate__fadeInBottomLeft');
+//   } else {
+//     block.classList.add('animate__animated', 'animate__fadeInBottomRight');
+//   }
+
+//   alreadyAnimated.add(block);
+//   observer.unobserve(block); // Stop observing the block once it's animated
+// }
+
+// let observer = new IntersectionObserver(
+//   entries => {
+//     entries.forEach(entry => {
+//       if (entry.isIntersecting) {
+//         let index = Array.from(blocks).indexOf(entry.target);
+//         animateBlock(entry, index);
+//       }
+//     });
+//   },
+//   {
+//     threshold: 0.1, // Adjust as needed, 0.1 means the block is 10% visible
+//   }
+// );
+
+// blocks.forEach(block => {
+//   observer.observe(block);
+// });
+
+//
+
 let blocks = document.querySelectorAll('.section-animation');
 
 function checkBlocksVisibility() {
   let windowHeight = window.innerHeight;
 
-  blocks.forEach((block, index) => {
+  blocks.forEach(block => {
     let blockPosition = block.getBoundingClientRect().top;
-    if (blockPosition <= windowHeight) {
-      // block.style.opacity = '1';
-      // block.style.transform = 'translateY(0)';
-      if (index % 2 === 0) {
-        block.classList.add('animate__animated', 'animate__fadeInBottomLeft');
-      } else {
-        block.classList.add('animate__animated', 'animate__fadeInBottomRight');
-      }
+    if (blockPosition < windowHeight - 100) {
+      block.classList.add('visible');
     }
   });
 }
 
-checkBlocksVisibility();
-
 window.addEventListener('scroll', checkBlocksVisibility);
-//
+window.addEventListener('resize', checkBlocksVisibility);
+document.addEventListener('DOMContentLoaded', checkBlocksVisibility);
 
 // Smooth scroll to anchor
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

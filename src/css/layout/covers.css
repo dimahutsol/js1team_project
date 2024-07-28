@@ -9,9 +9,6 @@
   backdrop-filter: blur(15px);
 }
 
-.background {
-}
-
 .crcl1::before,
 .crcl2::before,
 .crcl3::before,

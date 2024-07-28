@@ -137,7 +137,6 @@
 .hero-social-item {
   border: 1px solid var(--borderMain);
   border-radius: 60px;
-  padding: 10px 8px;
   width: 37px;
   height: 37px;
   cursor: pointer;
@@ -173,13 +172,14 @@
 }
 
 .hero-social-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: block;
   width: 100%;
   height: 100%;
   font-weight: 500;
   font-size: 14px;
+  border-radius: 60px;
+  text-align: center;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 768px) {

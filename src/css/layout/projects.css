@@ -50,8 +50,7 @@
 }
 
 .projects-wrapper {
-    margin-bottom: 32px;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 100%;
 }
 

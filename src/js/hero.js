@@ -1,33 +1,32 @@
-const blinds = document.getElementById('blinds');
 const slatCount = 20;
 
-for (let i = 0; i < slatCount; i++) {
-  const slat = document.createElement('div');
-  slat.className = 'slat';
-  blinds.appendChild(slat);
-}
-document.addEventListener('DOMContentLoaded', onDomLoadedAnimation);
-
-export function onDomLoadedAnimation() {
+function createSlats() {
   const blinds = document.getElementById('blinds');
-  const numberOfSlats = 20;
+  const fragment = document.createDocumentFragment();
 
-  blinds.innerHTML = '';
-
-  for (let i = 0; i < numberOfSlats; i++) {
+  for (let i = 0; i < slatCount; i++) {
     const slat = document.createElement('div');
     slat.className = 'slat';
     slat.style.setProperty('--index', i);
-    blinds.appendChild(slat);
+    fragment.appendChild(slat);
   }
 
-  blinds.style.setProperty('--slat-count', numberOfSlats);
+  blinds.innerHTML = '';
+  blinds.appendChild(fragment);
+  blinds.style.setProperty('--slat-count', slatCount);
+}
+
+export function onDomLoadedAnimation() {
+  createSlats();
 
   setTimeout(() => {
-    document.querySelectorAll('.slat').forEach((slat, index) => {
+    const slats = document.querySelectorAll('.slat');
+    slats.forEach((slat, index) => {
       setTimeout(() => {
         slat.classList.add('show');
       }, index * 100);
     });
   }, 500);
 }
+
+document.addEventListener('DOMContentLoaded', onDomLoadedAnimation);

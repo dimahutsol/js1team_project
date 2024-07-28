@@ -78,9 +78,6 @@
   z-index: 1000;
   display: none;
   border-radius: 50%;
-}
-
-.top-button {
   display: flex;
   background-color: var(--borderMain);
   color: var(--textMain);
@@ -91,7 +88,7 @@
   transition: background-color var(--transition);
 }
 
-.top:hover .top-button {
+.top:hover {
   background-color: var(--borderAlternative);
 }
 

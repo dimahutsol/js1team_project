@@ -1,7 +1,7 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
-import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
+import { Navigation, Keyboard, Mousewheel} from 'swiper/modules';
 import 'swiper/css';
 import image from '/img/symbols.svg';
 Swiper.use([Navigation, Keyboard, Mousewheel]);
@@ -38,7 +38,7 @@ const aboutMeList = [
         <p class="about-me-role-text">HeadlessCMS,Wordpress</p>
         <p class="about-me-role-text">Blender(enjoy)</p>
       `,
-      className: 'with-gap'
+    className: 'with-gap',
   },
   {
     title: 'Education',
@@ -54,9 +54,8 @@ const aboutMeList = [
           2020 - 2022 / Advanced Blender Animation Techniques, Udemy
         </p>
       `,
-      className: 'with-gap'
+    className: 'with-gap',
   },
-  
 ];
 
 const aboutMeSkillsList = [
@@ -145,24 +144,17 @@ const skillsCarousel = new Swiper('.about-me-skills-swiper', {
     sensitivity: 1,
     eventsTarget: '.about-me-skills-swiper',
   },
-
   breakpoints: {
     375: {
       slidesPerView: 2,
-      // width: 260,
     },
-
     768: {
       slidesPerView: 3,
-      // width: 600,
     },
-
     1440: {
       slidesPerView: 6,
-      // width: 1200,
     },
   },
-
   loop: true,
   setWrapperSize: true,
   spaceBetween: 0,
@@ -189,7 +181,7 @@ document.addEventListener('keydown', event => {
 
 skillsCarousel.update();
 skillsCarousel.on('slideChange', updateHighlight);
-
 skillsCarousel.on('slideChangeTransitionEnd', updateHighlight);
 
 updateHighlight();
+

@@ -7,7 +7,6 @@
 
 .about-me-hero-desc {
   border-radius: 24px;
-  /* min-width: 343px; */
   min-height: 500px;
   background-color: var(--backgroundAlternative);
   margin-bottom: 16px;
@@ -236,7 +235,7 @@
     width: 40px;
     height: 40px;
   }
-  .about-me-slider-arrow{
+  .about-me-slider-arrow {
     width: 20px;
     height: 20px;
   }
@@ -256,7 +255,6 @@
   }
 
   .about-me-ac-container {
-
   }
   .about-me-desc-container {
   }
@@ -267,13 +265,16 @@
 }
 
 .about-me-skills {
-  margin-bottom: 96px;
+  position: relative;
 }
 
 .about-me-skills-swiper {
-  position: relative;
+  width: 260px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   margin-bottom: 32px;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 .about-me-skills-swiper .swiper-wrapper {
@@ -283,6 +284,7 @@
 }
 
 .about-me-skills-swiper .swiper-slide {
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
@@ -299,18 +301,19 @@
   padding: 0;
 }
 
-.about-me-skills-swiper .about-me-swiper-button-next {
-  height: 50px;
+.about-me-swiper-button-next {
+  width: 28px;
+  height: 28px;
   position: absolute;
-  right: 0;
   top: 50%;
+  right: 0; 
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
   transition: var(--transition);
   cursor: pointer;
-  z-index: 10;
+  z-index: 20;
 }
 
 .about-me-skills-swiper .is-first {
@@ -318,33 +321,39 @@
   border: none;
 }
 
-.about-me-skills-swiper .about-me-swiper-icon {
+.about-me-swiper-icon {
   fill: none;
   stroke: var(--arrow);
 }
 
 @media screen and (min-width: 768px) {
-  .about-me-skills {
-    margin-top: 64px;
-  }
-  .swiper .about-me-skills-swiper {
+  .about-me-skills-swiper {
     margin-bottom: 48px;
+    width: 600px;
   }
 
   .about-me-skills-swiper .swiper-slide {
     font-size: 20px;
     width: 200px !important;
-    height: 200px;
+    height: 200px !important;
   }
 
-  .about-me-skills-swiper .about-me-swiper-icon {
+  .about-me-swiper-button-next {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about-me-swiper-icon {
     width: 40px;
     height: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
-  .swiper .about-me-skills-swiper {
+  .about-me-skills-swiper {
     margin-bottom: 82px;
+    width: 1200px;
   }
 }
+
+

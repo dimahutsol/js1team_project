@@ -75,7 +75,7 @@ function listItemTemplate({ title, svgPath, content }) {
         <div class="ac-trigger">
           <h2 class="about-me-ac-item-title">${title}</h2>
           <button class="about-me-ac-button" type="button" aria-label="Slider button">
-            <svg class="about-me-slider-arrow" width="10" height="10">
+            <svg class="about-me-slider-arrow" width="18" height="18">
               <use href="${svgPath}"></use>
             </svg>
           </button>

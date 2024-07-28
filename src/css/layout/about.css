@@ -179,8 +179,8 @@
   top: 0;
   border: 1px solid var(--borderMain);
   border-radius: 100px;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -203,7 +203,9 @@
 }
 
 .about-me-desc {
-  font: 500 16px / 1.5 'Inter Tight', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
   letter-spacing: -0.02em;
   color: var(--textMain);
 }
@@ -230,15 +232,31 @@
   }
   .about-me-desc-container {
   }
+  .about-me-ac-button {
+    width: 40px;
+    height: 40px;
+  }
+  .about-me-slider-arrow{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   .about-me-desc {
     max-width: 50%;
     align-self: flex-end;
+    padding-right: 68px;
+  }
+  .about-me-role-text {
+    margin: 0 68px 0px 694px;
+  }
+  .about-me-education-text {
+    margin: 0 68px 0px 694px;
   }
 
   .about-me-ac-container {
+
   }
   .about-me-desc-container {
   }

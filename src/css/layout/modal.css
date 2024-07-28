@@ -10,7 +10,6 @@
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-
   transition: opacity var(--transition), visibility var(--transition);
 }
 
@@ -24,20 +23,78 @@
   position: absolute;
   width: 343px;
   padding: 64px 32px;
-
   display: inline-flex;
   flex-direction: column;
-
   text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   border-radius: 20px;
   border: 1px solid rgba(250, 250, 250, 0.1);
   background: var(--Background, #1c1d20);
   transition: var(--transition);
+  overflow: hidden;
+  cursor: pointer;
 }
+
+<<<<<<< HEAD
+@media only screen and (max-width: 375px) {
+  .modal-content {
+    width: 290px;
+  }
+}
+
+=======
+>>>>>>> dev
+.modal-content::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain));
+  animation: rotate 4s linear infinite;
+}
+
+.modal-content::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: var(--backgroundMain);
+  border-radius: 20px;
+  transition: height var(--transition), width var(--transition);
+}
+
+.modal-content:hover::before {
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent));
+}
+
+.modal-content:hover::after {
+  width: calc(100% - 8px);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 @media (min-width: 768px) {
   .modal-content {
     width: 492px;
@@ -48,19 +105,17 @@
 .title-modal {
   color: var(--textMain);
   text-align: center;
-
   font-size: 20px;
   font-style: normal;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: -0.001em;
-
   margin-bottom: 16px;
 }
+
 .text-modal {
   color: var(--textAlternative);
   text-align: center;
-
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
@@ -88,14 +143,15 @@
     height: 24px;
   }
 }
+
 .modal-close {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
-
   stroke-width: 2px;
   stroke: var(--textMain);
 }
+
 @media (min-width: 768px) {
   .modal-close {
     width: 24px;

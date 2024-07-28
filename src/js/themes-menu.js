@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('scroll', function () {
   var scrollButton = document.querySelector('.top');
   if (window.scrollY > 1000) {
-    scrollButton.style.display = 'block';
+    scrollButton.style.display = 'flex';
   } else {
     scrollButton.style.display = 'none';
   }

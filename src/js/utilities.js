@@ -1,27 +1,21 @@
 // Sections animation
+
 let blocks = document.querySelectorAll('.section-animation');
 
 function checkBlocksVisibility() {
   let windowHeight = window.innerHeight;
 
-  blocks.forEach((block, index) => {
+  blocks.forEach(block => {
     let blockPosition = block.getBoundingClientRect().top;
-    if (blockPosition <= windowHeight) {
-      // block.style.opacity = '1';
-      // block.style.transform = 'translateY(0)';
-      if (index % 2 === 0) {
-        block.classList.add('animate__animated', 'animate__fadeInBottomLeft');
-      } else {
-        block.classList.add('animate__animated', 'animate__fadeInBottomRight');
-      }
+    if (blockPosition < windowHeight - 100) {
+      block.classList.add('visible');
     }
   });
 }
 
-checkBlocksVisibility();
-
 window.addEventListener('scroll', checkBlocksVisibility);
-//
+window.addEventListener('resize', checkBlocksVisibility);
+document.addEventListener('DOMContentLoaded', checkBlocksVisibility);
 
 // Smooth scroll to anchor
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

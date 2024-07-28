@@ -64,9 +64,15 @@ refs.reviewsList.addEventListener('click', onReviewsListClick);
 document.addEventListener('keydown', onKeyDown);
 
 function onKeyDown(e) {
-  if (e.keyCode === 9 && isReviewsSwiperInViewPort) {
-    e.preventDefault();
-    reviewsSwiper.slideNext();
+  if (isReviewsSwiperInViewPort) {
+    if (e.keyCode === 9) {
+      e.preventDefault();
+      if (e.shiftKey) {
+        reviewsSwiper.slidePrev();
+      } else {
+        reviewsSwiper.slideNext();
+      }
+    }
   }
 }
 

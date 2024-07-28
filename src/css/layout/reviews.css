@@ -1,5 +1,5 @@
 .reviews {
-  margin: 32px 0;
+  padding: 32px 0;
 }
 
 .reviews-wrapper {
@@ -8,6 +8,7 @@
 }
 
 .reviews-title {
+  font-size: 16px;
   font-weight: 600;
   color: var(--textTitle);
   margin-bottom: 32px;

@@ -222,9 +222,6 @@
 }
 
 .header-link-project {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 164px;
   border: 0;
   border-radius: 60px;
@@ -243,6 +240,15 @@
 .header-link-project:hover,
 .header-link-project:focus {
   background-color: var(--accentAlternative);
+}
+
+.header-btn-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
 }
 
 .blockScroll {

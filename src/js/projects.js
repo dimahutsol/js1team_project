@@ -43,14 +43,14 @@ const projSwiper = new Swiper(refs.projectWrapper, {
 
   keyboard: {
     enabled: true,
-    onlyInViewport: true, // Enable keyboard control only when Swiper is in viewport
-    pageUpDown: true, // Enable control via Page Up and Page Down keys
+    onlyInViewport: true,
+    pageUpDown: true,
   },
 
   cubeEffect: {
-    shadow: true, // Enables main slider shadow
-    shadowOffset: 20, // Main shadow offset in px
-    shadowScale: 0.94, // Main shadow scale ratio
+    shadow: true,
+    shadowOffset: 20,
+    shadowScale: 0.94,
     slideShadows: true,
   },
 
@@ -73,7 +73,7 @@ const swiperObserver = new IntersectionObserver(
   {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2,
+    threshold: 0.1,
   }
 );
 
@@ -147,8 +147,10 @@ function createProjectExample({
       <div class="projects-li-item">
         <div class="projects-white-wrapper">
           <ul class="tag-list">${newTags}</ul>
+          <div>
           <h3 class="projects-header">${title}</h3>
           <a class="project-btn" type="button" href="${links}" target="_blank">See project</a>
+          </div>
         </div>
         <div class="project-image-wrapper">
           <picture>

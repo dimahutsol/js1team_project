@@ -78,7 +78,6 @@
   z-index: 1000;
   display: none;
   border-radius: 50%;
-  display: flex;
   background-color: var(--borderMain);
   color: var(--textMain);
   padding: 15px;

@@ -67,7 +67,7 @@ const aboutMeSkillsList = [
 
 function listItemTemplate({ title, svgPath, content }) {
   return `
-      <li class="about-me-ac-list-item ac section-animation">
+      <li class="about-me-ac-list-item ac">
         <div class="ac-trigger">
           <h2 class="about-me-ac-item-title">${title}</h2>
           <button class="about-me-ac-button" type="button" aria-label="Slider button">

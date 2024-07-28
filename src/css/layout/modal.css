@@ -37,15 +37,12 @@
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 @media only screen and (max-width: 375px) {
   .modal-content {
     width: 290px;
   }
 }
 
-=======
->>>>>>> dev
 .modal-content::before {
   content: '';
   position: absolute;
@@ -106,10 +103,9 @@
   color: var(--textMain);
   text-align: center;
   font-size: 20px;
-  font-style: normal;
   font-weight: 600;
   line-height: 30px;
-  letter-spacing: -0.001em;
+  letter-spacing: -0.01em;
   margin-bottom: 16px;
 }
 
@@ -117,10 +113,9 @@
   color: var(--textAlternative);
   text-align: center;
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  letter-spacing: -0.0008em;
+  letter-spacing: -0.02em;
 }
 
 .btnCloseModal {

@@ -8,6 +8,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 997;
+  transition: max-width 0.35s ease;
 }
 
 @media only screen and (min-width: 768px) {
@@ -163,6 +164,7 @@
 
 .container-header {
   max-width: 100%;
+  transition: max-width 0.45s ease;
 }
 
 .header-mobile-menu {

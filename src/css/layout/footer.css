@@ -221,50 +221,22 @@ input[name='comment']:not(:placeholder-shown) {
   letter-spacing: -0.02em;
 }
 
-.contact-item-footer .email-footer {
-  width: 178px;
-  height: 37px;
-}
-@media (max-width: 375px) {
-  .contact-item-footer .email-footer {
-    width: 150px;
-    height: 37px;
-  }
-}
-@media (min-width: 768px) {
-  .contact-item-footer .email-footer {
-    width: 239px;
-    height: 55px;
-  }
-}
-
-.contact-item-footer .tel-footer {
-  width: 118px;
-  height: 37px;
-}
-@media (max-width: 375px) {
-  .contact-item-footer .tel-footer {
-    width: 100px;
-    height: 37px;
-  }
-}
-
-@media (min-width: 768px) {
-  .contact-item-footer .tel-footer {
-    width: 171px;
-    height: 55px;
-  }
-}
-
 .contact-item-footer a {
   display: flex;
+  padding: 10px 12px;
   justify-content: center;
   align-items: center;
   border-radius: 60px;
-  height: 100%;
-  width: 100%;
+  padding: 10px;
+
   text-decoration: none;
   color: inherit;
+}
+
+@media (min-width: 768px) {
+  .contact-item-footer a {
+    padding: 18px 32px;
+  }
 }
 
 .contact-item-footer:hover a,

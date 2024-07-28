@@ -10,7 +10,9 @@ for (let i = 0; i < slatCount; i++) {
   slat.className = 'slat';
   blinds.appendChild(slat);
 }
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', onDomLoadedAnimation);
+
+export function onDomLoadedAnimation() {
   const blinds = document.getElementById('blinds');
   const numberOfSlats = 20;
 
@@ -32,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, index * 100);
     });
   }, 500);
-});
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const heroTitle = document.querySelector('.hero-title');

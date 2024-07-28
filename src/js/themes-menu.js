@@ -1,3 +1,5 @@
+import { onDomLoadedAnimation } from './hero';
+
 document.addEventListener('DOMContentLoaded', function () {
   const themeSwitcherBtn = document.querySelector('.theme-switcher-btn');
   const themeSwitcherMenu = document.querySelector('.theme-switcher-menu');
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.className = theme;
 
       themeSwitcherMenu.style.display = 'none';
+      onDomLoadedAnimation();
     });
   });
   document.addEventListener('click', function (event) {

@@ -6,6 +6,7 @@ body {
   letter-spacing: -0.02em;
   color: var(--textMain);
   background-color: var(--backgroundMain);
+  overflow-x: hidden;
 }
 
 .visually-hidden {
@@ -22,9 +23,9 @@ body {
   overflow: hidden;
 }
 
-.section-animation {
+/* .section-animation {
   opacity: 0;
   transform: translateY(100px);
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+} */

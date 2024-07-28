@@ -15,7 +15,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  opacity: 0;
+  /* opacity: 0; */
   transform: translateY(20px);
   transition: opacity 1s ease, transform 1s ease;
   padding-bottom: 32px;
@@ -42,9 +42,10 @@
   flex: 1;
   background: linear-gradient(
     to right,
-    #ed3b44 0%,
-    #ed3b44 calc(100% - 200% * (var(--index) / var(--slat-count))),
-    #8b2326 calc(100% - 150% * (var(--index) / var(--slat-count))),
+    var(--accent) 0%,
+    var(--accent) calc(100% - 200% * (var(--index) / var(--slat-count))),
+    var(--accentAlternative)
+      calc(100% - 150% * (var(--index) / var(--slat-count))),
     #1c1c1c calc(100% - 100% * (var(--index) / var(--slat-count))),
     #0d0d0d 100%
   );

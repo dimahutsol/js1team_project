@@ -11,11 +11,11 @@
     padding-bottom: 169px;
   }
 }
+
 @media (min-width: 1440px) {
   .footer {
     margin-top: 82px;
     padding-top: 80px;
-    padding-bottom: 169px;
     padding-left: 196px;
   }
 }
@@ -27,20 +27,24 @@
   justify-content: flex-start;
   margin-bottom: 63px;
 }
+
 @media only screen and (min-width: 768px) {
   .title-footer {
     margin-bottom: 18px;
   }
 }
+
 .img-span {
   display: flex;
 }
+
 .img-footer {
   width: 44px;
   height: 44px;
   margin-right: 8px;
   margin-bottom: 4px;
 }
+
 @media only screen and (min-width: 768px) {
   .img-footer {
     width: 70px;
@@ -49,6 +53,7 @@
     margin-bottom: 7px;
   }
 }
+
 .title-text-footer {
   color: var(--textMain);
   font-size: 40px;
@@ -58,6 +63,7 @@
   letter-spacing: -0.003em;
   text-transform: uppercase;
 }
+
 @media only screen and (min-width: 768px) {
   .title-text-footer {
     max-width: 442px;
@@ -66,15 +72,18 @@
     letter-spacing: -0.0048em;
   }
 }
+
 .work-span {
   color: var(--accent);
 }
+
 .form-footer {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 20px;
 }
+
 @media only screen and (min-width: 768px) {
   .form-footer {
     display: flex;
@@ -86,6 +95,7 @@
     margin-bottom: 18px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
   .form-footer {
     margin-bottom: 36px;
@@ -96,39 +106,49 @@
   position: relative;
 }
 
-.form-footer input {
+input[name='email'],
+input[name='comment'] {
   border: none;
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  border-bottom: 1px solid var(--borderMain);
   text-overflow: ellipsis;
   width: 343px;
   padding-bottom: 20px;
-  background-color: transparent;
+  background-color: var(--backgroundMain);
   color: var(--textMain);
 }
 
-.form-footer input:hover,
-.form-footer input:focus {
-  background-color: transparent;
+input[name='email']:hover,
+input[name='email']:focus,
+input[name='email']:not(:placeholder-shown),
+input[name='comment']:hover,
+input[name='comment']:focus,
+input[name='comment']:not(:placeholder-shown) {
+  background-color: var(--backgroundMain);
   color: var(--textMain);
 }
 
 @media only screen and (max-width: 375px) {
-  .form-footer input {
-    width: 320px;
+  input[name='email'],
+  input[name='comment'] {
+    width: 270px;
   }
 }
+
 @media only screen and (min-width: 768px) {
-  .form-footer input {
+  input[name='email'],
+  input[name='comment'] {
     width: 245px;
   }
 }
+
 @media only screen and (min-width: 1440px) {
-  .form-footer input {
-    background-color: transparent;
+  input[name='email'],
+  input[name='comment'] {
+    background-color: var(--backgroundMain);
     width: 390px;
     height: 44px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+    border-bottom: 1px solid var(--borderMain);
   }
 }
 
@@ -233,18 +253,84 @@
   margin-top: 32px;
   margin-bottom: 74px;
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-.btn-footer-send:hover,
-.btn-footer-send:focus {
-  background-color: var(--accentAlternative);
+.btn-footer-send::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain));
+  animation: rotate 4s linear infinite;
 }
 
-@media only screen and (min-width: 768px) {
-  .btn-footer-send {
-    width: 150px;
-    height: 150px;
-    margin-top: 0;
-    margin-bottom: 0;
+.btn-footer-send::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: var(--backgroundMain);
+  border-radius: 50%;
+  transition: height var(--transition), width var(--transition);
+}
+
+.btn-footer-send:hover::before {
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--accent), var(--accent));
+}
+
+.btn-footer-send:hover::after {
+  width: calc(100% - 8px);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
   }
+}
+
+/* Виправлення браузерних стилів для автофілу */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--backgroundMain) inset !important;
+  -webkit-text-fill-color: var(--textMain) !important;
+  background-color: var(--backgroundMain) !important;
+}
+
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+  box-shadow: 0 0 0 30px var(--backgroundMain) inset !important;
+  -moz-text-fill-color: var(--textMain) !important;
+  background-color: var(--backgroundMain) !important;
+}
+
+input:-ms-autofill,
+input:-ms-autofill:hover,
+input:-ms-autofill:focus,
+input:-ms-autofill:active {
+  box-shadow: 0 0 0 30px var(--backgroundMain) inset !important;
+  -ms-text-fill-color: var(--textMain) !important;
+  background-color: var(--backgroundMain) !important;
 }

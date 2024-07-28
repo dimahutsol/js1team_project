@@ -4,12 +4,16 @@ let blocks = document.querySelectorAll('.section-animation');
 function checkBlocksVisibility() {
   let windowHeight = window.innerHeight;
 
-  blocks.forEach(block => {
+  blocks.forEach((block, index) => {
     let blockPosition = block.getBoundingClientRect().top;
-
-    if (blockPosition < windowHeight - 100) {
-      block.style.opacity = '1';
-      block.style.transform = 'translateY(0)';
+    if (blockPosition <= windowHeight) {
+      // block.style.opacity = '1';
+      // block.style.transform = 'translateY(0)';
+      if (index % 2 === 0) {
+        block.classList.add('animate__animated', 'animate__fadeInBottomLeft');
+      } else {
+        block.classList.add('animate__animated', 'animate__fadeInBottomRight');
+      }
     }
   });
 }

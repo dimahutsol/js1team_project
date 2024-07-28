@@ -1,6 +1,6 @@
 import Accordion from 'accordion-js';
-
 import 'accordion-js/dist/accordion.min.css';
+import svg from '../img/symbols.svg';
 
 const refs = {
   listEl: document.querySelector('.faq-list'),
@@ -35,13 +35,13 @@ const arrayFAQ = [
 ];
 
 function markupFAQ({ title, text }) {
-  return `  <li class="ac" id="list-question">
+  return `  <li class="ac section-animation" id="list-question">
         <h3 class="ac-header">
           <button type="button" class="ac-trigger">
             ${title}
             <span class="faq-span">
               <svg class="faq-icon" width="20" height="20">
-                <use href="../img/symbols.svg#arrow-down"></use>
+                <use href="${svg}#arrow-down"></use>
               </svg>
             </span>
           </button>

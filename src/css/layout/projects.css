@@ -1,326 +1,323 @@
 .projects {
-    padding-top: 32px;
-    padding-bottom: 32px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .projects-title {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--textTitle);
-    padding-bottom: 32px;
-    font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--textTitle);
+  padding-bottom: 32px;
+  font-size: 16px;
 }
 
 @keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
 
-    0%,
-    20%,
-    50%,
-    80%,
-    100% {
-        transform: translateY(0);
-    }
+  40% {
+    transform: translateY(-20px);
+  }
 
-    40% {
-        transform: translateY(-20px);
-    }
-
-    60% {
-        transform: translateY(-10px);
-    }
+  60% {
+    transform: translateY(-10px);
+  }
 }
 
 .projects-header {
-    opacity: 1;
+  opacity: 1;
 }
 
 .projects-header:hover {
-    color: var(--accent);
-    animation: bounce 1s;
+  color: var(--accent);
+  animation: bounce 1s;
 }
 
 .projects-white-wrapper {
-    padding: 32px;
-    background-color: var(--textMain);
-    border-radius: 24px 24px 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 417px;
+  padding: 32px;
+  background-color: var(--textMain);
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 417px;
 }
 
 .projects-wrapper {
-    /* overflow: hidden; */
-    width: 100%;
+  /* overflow: hidden; */
+  width: 100%;
 }
 
 .projects-swiper-pagination {
-    text-align: center;
+  text-align: center;
 }
 
 .projects-li-item {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .tag-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tag-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 10px;
-    border: 1px solid rgba(28, 29, 32, 0.2);
-    border-radius: 60px;
-    padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  border: 1px solid rgba(28, 29, 32, 0.2);
+  border-radius: 60px;
+  padding: 13px 18px;
 }
 
 .tag-text {
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    color: var(--backgroundMain);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--backgroundMain);
 }
 
 .projects-header {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 1.17;
-    letter-spacing: -0.03em;
-    color: var(--backgroundMain);
-    margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: -0.03em;
+  color: var(--backgroundMain);
+  margin-bottom: 32px;
 }
 
 .project-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
-    border-radius: 60px;
-    padding: 13px 32px;
-    background-color: var(--accent);
-    cursor: pointer;
-    transition: border var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 60px;
+  padding: 13px 32px;
+  background-color: var(--accent);
+  cursor: pointer;
+  transition: border var(--transition);
 }
 
 .project-btn:hover {
-    background-color: var(--accentAlternative);
+  background-color: var(--accentAlternative);
 }
 
 .project-image-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border-radius: 0 0 24px 24px;
-    padding: 100px 16px;
-    background-color: var(--backgroundAlternative);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0 0 24px 24px;
+  padding: 100px 16px;
+  background-color: var(--backgroundAlternative);
 }
 
 .project-image {
-    width: 100%;
+  width: 100%;
 }
 
 div.projects-navigation {
-    margin-top: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 }
 
 .projects-navigation-btn {
-    position: relative;
-    border: 1px solid rgba(250, 250, 250, 0.5);
-    border-radius: 50%;
-    padding: 14px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 50%;
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
 }
 
 .projects-navigation-btn:hover::before,
 .projects-navigation-btn:focus::before {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
 }
 
 .projects-navigation-btn:hover,
 .projects-navigation-btn:focus {
-    transform: scale(1.1);
-    border-color: var(--accent);
-    /* Slightly enlarge the button on hover */
+  transform: scale(1.1);
+  border-color: var(--accent);
+  /* Slightly enlarge the button on hover */
 }
 
 .projects-navigation-btn:active {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.05);
-    }
+  50% {
+    transform: scale(1.05);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .projects-navigation-btn.pulse {
-    animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
 }
 
 .projects-navigation-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 200%;
-    height: 200%;
-    background: var(--accent);
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0.5;
-    transition: transform 0.6s, opacity 0.6s;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.5;
+  transition: transform 0.6s, opacity 0.6s;
 }
 
 .tag-item:hover {
-    border: 1px solid var(--accent);
-    animation: pulse 1s infinite;
+  border: 1px solid var(--accent);
+  animation: pulse 1s infinite;
 }
 
 .projects-navigation-prev.swiper-button-disabled {
-    border: 1px solid var(--borderMain);
+  border: 1px solid var(--borderMain);
 }
 
 .projects-navigation-prev.swiper-button-disabled:hover {
-    border: 1px solid var(--borderMain);
+  border: 1px solid var(--borderMain);
 }
 
 .projects-navigation-next.swiper-button-disabled:hover {
-    border: 1px solid var(--borderMain);
+  border: 1px solid var(--borderMain);
 }
 
 .projects-navigation-prev.swiper-button-disabled svg {
-    stroke: var(--arrow);
+  stroke: var(--arrow);
 }
 
 .projects-navigation-next.swiper-button-disabled svg {
-    stroke: var(--arrow);
+  stroke: var(--arrow);
 }
 
 .projects-navigation-next.swiper-button-disabled {
-    border: 1px solid var(--borderMain);
+  border: 1px solid var(--borderMain);
 }
 
 .projects-navigation-icon {
-    fill: transparent;
-    stroke: var(--textMain);
+  fill: transparent;
+  stroke: var(--textMain);
 }
 
 .swiper-button-disabled {
-    fill: var(--arrow);
-    stroke: var(--arrow);
+  fill: var(--arrow);
+  stroke: var(--arrow);
 }
 
 .swiper-pagination-bullet {
-    background-color: aliceblue !important;
-    opacity: 0.50 !important;
-    width: 11px !important;
-    height: 11px !important;
+  background-color: aliceblue !important;
+  opacity: 0.5 !important;
+  width: 11px !important;
+  height: 11px !important;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: var(--accent) !important;
-    opacity: 1 !important;
+  background-color: var(--accent) !important;
+  opacity: 1 !important;
 }
 
 @media (min-width: 768px) {
+  .projects {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 
-.projects {
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
+  .tag-item {
+    padding: 18px;
+  }
 
-    .tag-item {
-        padding: 18px;
-    }
+  .projects-header {
+    font-size: 44px;
+    line-height: 1;
+  }
 
-    .projects-header {
-        font-size: 44px;
-        line-height: 1;
-    }
-
-    .projects-white-wrapper {
-        padding: 64px;
+  .projects-white-wrapper {
+    padding: 64px;
     min-height: 566px;
     padding-right: 146px;
-    }
+  }
 
-    .project-image-wrapper {
-        padding: 120px 45px;
-    }
+  .project-image-wrapper {
+    padding: 120px 45px;
+  }
 
-    .project-image {
-        width: 100%;
-    }
+  .project-image {
+    width: 100%;
+  }
 
-    .project-btn {
-        padding: 18px 50px;
-    }
+  .project-btn {
+    padding: 18px 50px;
+  }
 
-    div.projects-navigation {
-        margin-top: 64px;
-        gap: 20px;
-    }
+  div.projects-navigation {
+    margin-top: 64px;
+    gap: 20px;
+  }
 
-    .projects-navigation-btn {
-        padding: 18px;
-    }
+  .projects-navigation-btn {
+    padding: 18px;
+  }
 
-        .projects-navigation-icon {
-            width: 32px;
-            height: 32px;}
-    
+  .projects-navigation-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 @media (min-width: 1440px) {
+  .projects {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
 
-    .projects {
-            padding-top: 82px;
-            padding-bottom: 82px;
-        }
+  .projects-wrapper {
+    border-radius: 24px;
+  }
 
-    .projects-wrapper {
-        border-radius: 24px;
-    }
+  .projects-li-item {
+    flex-direction: row;
+  }
 
-    .projects-li-item {
-        flex-direction: row;
-    }
+  .projects-white-wrapper {
+    padding-right: 130px;
+    border-radius: 24px 0 0 24px;
+    min-height: 625px;
+  }
 
-    .projects-white-wrapper {
-        padding-right: 130px;
-        border-radius: 24px 0 0 24px;
-        min-height: 625px;
-    }
-
-    .project-image-wrapper {
-        border-radius: 0 24px 24px 0;
-        padding: 120px 37px;
-        width: 100%;
-    }
+  .project-image-wrapper {
+    border-radius: 0 24px 24px 0;
+    padding: 120px 37px;
+    width: 100%;
+  }
 }

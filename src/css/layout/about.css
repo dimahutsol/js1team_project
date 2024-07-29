@@ -1,8 +1,6 @@
 .about-me-section {
   padding-top: 32px;
-}
-
-.about-me-container {
+  padding-bottom: 32px;
 }
 
 .about-me-hero-desc {
@@ -10,6 +8,7 @@
   min-height: 500px;
   background-color: var(--backgroundAlternative);
   margin-bottom: 16px;
+  padding: 32px;
 }
 
 .about-me-hero-text {
@@ -19,7 +18,6 @@
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: var(--textMain);
-  padding: 32px 32px;
 }
 
 .about-me-text-functional {
@@ -33,42 +31,49 @@
 .about-me-picture-container {
   border-radius: 24px;
   min-height: 500px;
-  padding-bottom: 32px;
+  /* padding-bottom: 32px; */
 }
 
 .about-me-picture {
+  width: 100%;
+  min-height: 500px;
 }
 
-.about-photo {
+.about-me-text-photo {
+  margin-bottom: 32px;
 }
 
 @media screen and (min-width: 768px) {
   .about-me-section {
-    padding-top: 48px;
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .about-me-text-photo {
+    margin-bottom: 64px;
   }
 
   .about-me-hero-desc {
     min-height: 700px;
+    padding: 64px;
   }
   .about-me-hero-text {
-    padding: 64px;
     font-size: 38px;
     line-height: 1.05;
     letter-spacing: -0.03em;
   }
   .about-me-picture-container {
     min-height: 700px;
-    padding-bottom: 64px;
   }
   .about-me-picture {
-    width: 704px;
-    height: 700px;
+    min-height: 700px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .about-me-section {
     padding-top: 48px;
+    padding-bottom: 82px;
   }
   .about-me-hero-desc {
     margin-bottom: 0;
@@ -79,26 +84,22 @@
     flex-direction: row;
     gap: 16px;
     align-items: center;
-    padding-bottom: 96px;
+    margin-bottom: 96px;
   }
 
   .about-me-hero-desc {
-    min-width: 50%;
-    max-width: 50%;
+    width: 50%;
   }
 
   .about-me-picture-container {
-    width: 680px;
-    height: 700px;
+    width: 50%;
+    min-height: 700px;
   }
 
   .about-me-picture {
     width: 100%;
     height: auto;
   }
-}
-
-.about-me-ac-container {
 }
 
 .about-me-ac-list-item {
@@ -134,19 +135,14 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-.about-me-container .ac .ac-trigger {
-}
+
 .about-me-ac-list-item {
   margin-bottom: 20px;
 }
 .about-me-desc:first-child {
   padding-bottom: 32px;
 }
-.about-me-desc:last-child,
-.about-me-role-text:last-child,
-.about-me-education-text:last-child {
-  padding-bottom: 20px;
-}
+
 .about-me-section .ac .ac-trigger {
   padding-bottom: 32px;
 }
@@ -209,28 +205,31 @@
   color: var(--textMain);
 }
 
-.about-me-role-container,
-.about-me-education-container {
-}
-
 .about-me-role-text,
 .about-me-education-text {
   display: flex;
 }
 
+.about-me-role-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 768px) {
-  .about-me-desc {
+  .about-me-role-box {
+    margin-bottom: 32px;
   }
+
   .about-me-desc:first-child {
     padding-bottom: 16px;
   }
-  .about-me-ac-list-item {
-  }
+
   .about-me-ac-list-item {
     margin-bottom: 32px;
   }
-  .about-me-desc-container {
-  }
+
   .about-me-ac-button {
     width: 40px;
     height: 40px;
@@ -242,21 +241,13 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .about-me-desc {
-    max-width: 50%;
-    align-self: flex-end;
-    padding-right: 68px;
-  }
-  .about-me-role-text {
-    margin: 0 68px 0px 694px;
-  }
-  .about-me-education-text {
-    margin: 0 68px 0px 694px;
+  .about-me-role-box {
+    width: 50%;
+    margin-left: auto;
   }
 
-  .about-me-ac-container {
-  }
-  .about-me-desc-container {
+  .about-me-desc {
+    padding-right: 68px;
   }
 
   .about-me-desc:first-child {
@@ -306,7 +297,7 @@
   height: 28px;
   position: absolute;
   top: 50%;
-  right: 0; 
+  right: 0;
   transform: translateY(-50%);
   display: flex;
   justify-content: center;
@@ -328,7 +319,6 @@
 
 @media screen and (min-width: 768px) {
   .about-me-skills-swiper {
-    margin-bottom: 48px;
     width: 600px;
   }
 
@@ -351,9 +341,10 @@
 
 @media screen and (min-width: 1440px) {
   .about-me-skills-swiper {
-    margin-bottom: 82px;
     width: 1200px;
   }
 }
 
-
+.arrow-rotate {
+  transform: rotate(180deg);
+}

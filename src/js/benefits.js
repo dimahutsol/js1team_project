@@ -1,4 +1,4 @@
-import image from '/img/symbols.svg';
+import image from '/images/symbols.svg';
 const refs = {
   listRef: document.querySelector('.benefit-list'),
 };

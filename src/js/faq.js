@@ -1,6 +1,6 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
-import svg from '../img/symbols.svg';
+import svg from '../images/symbols.svg';
 
 const refs = {
   listEl: document.querySelector('.faq-list'),

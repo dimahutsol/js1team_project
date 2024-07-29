@@ -3,7 +3,7 @@ import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
-import image from '/img/symbols.svg';
+import image from '/images/symbols.svg';
 Swiper.use([Navigation, Keyboard, Mousewheel]);
 
 const refs = {

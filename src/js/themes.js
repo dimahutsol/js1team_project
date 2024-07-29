@@ -1,4 +1,6 @@
 import { onDomLoadedAnimation } from './hero';
+const bodyEl = document.querySelector('body');
+const THEME_STATE = 'theme-state';
 
 document.addEventListener('DOMContentLoaded', function () {
   const themeSwitcherBtn = document.querySelector('.theme-switcher-btn');
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
       const theme = this.getAttribute('data-theme');
       document.body.className = theme;
-
+      localStorage.setItem(THEME_STATE, JSON.stringify(theme));
       themeSwitcherMenu.style.display = 'none';
       onDomLoadedAnimation();
     });
@@ -40,3 +42,27 @@ window.addEventListener('scroll', function () {
     scrollButton.style.display = 'none';
   }
 });
+
+document.addEventListener('DOMContentLoaded', checkStorageonPageLoad);
+
+function checkStorageonPageLoad(e) {
+  try {
+    const theme = JSON.parse(localStorage.getItem(THEME_STATE));
+    console.log(theme);
+
+    if (theme) {
+      switch (theme) {
+        case 'theme-blue':
+          bodyEl.className = theme;
+          break;
+        case 'theme-green':
+          bodyEl.className = theme;
+          break;
+        default:
+          bodyEl.className = 'theme-red';
+      }
+    }
+  } catch {
+    return;
+  }
+}

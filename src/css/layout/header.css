@@ -260,6 +260,8 @@
 
 .blockScroll {
   overflow: hidden;
+  height: 100vh;
+  max-height: 100vh;
 }
 
 .header-tab-project {

@@ -27,7 +27,7 @@ function toggleMobileMenu(open) {
 
   if (open) {
     createMobileBlinds();
-    setTimeout(animateMobileBlinds, 200);
+    setTimeout(animateMobileBlinds, 100);
   } else {
     document
       .querySelectorAll('.mobile-slat')
@@ -75,7 +75,7 @@ function animateMobileBlinds() {
   slats.forEach((slat, i) => {
     setTimeout(
       () => slat.classList.add('show'),
-      Math.abs(i - middleIndex) * 70
+      Math.abs(i - middleIndex) * 50
     );
   });
 }

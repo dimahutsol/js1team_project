@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', checkStorageonPageLoad);
 function checkStorageonPageLoad(e) {
   try {
     const theme = JSON.parse(localStorage.getItem(THEME_STATE));
-    console.log(theme);
 
     if (theme) {
       switch (theme) {

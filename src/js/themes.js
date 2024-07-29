@@ -43,12 +43,11 @@ window.addEventListener('scroll', function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', checkStorageonPageLoad);
+document.addEventListener('DOMContentLoaded', checkStorageOnPageLoad);
 
-function checkStorageonPageLoad(e) {
+function checkStorageOnPageLoad(e) {
   try {
     const theme = JSON.parse(localStorage.getItem(THEME_STATE));
-    console.log(theme);
 
     if (theme) {
       switch (theme) {

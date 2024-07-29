@@ -121,6 +121,7 @@ input[name='comment'] {
   padding-bottom: 20px;
   background-color: var(--backgroundMain);
   color: var(--textMain);
+  outline: none;
 }
 
 input[name='email']:hover,
@@ -174,7 +175,7 @@ input[name='comment']:not(:placeholder-shown) {
 }
 
 .js-email-input.invalid + .email-message {
-  color: var(--accent);
+  color: #ed3b44;
 }
 
 .js-email-input.valid + .email-message {
@@ -278,61 +279,18 @@ input[name='comment']:not(:placeholder-shown) {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  z-index: 2;
+}
+
+.btn-footer-send:hover,
+.btn-footer-send:focus {
+  background-color: var(--accentAlternative);
 }
 
 @media only screen and (min-width: 768px) {
   .btn-footer-send {
     width: 150px;
     height: 150px;
-  }
-}
-
-.btn-footer-send::before {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  left: -50%;
-  top: -50%;
-  width: 200%;
-  height: 200%;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-  background-image: linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--borderMain), var(--borderMain)),
-    linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--borderMain), var(--borderMain));
-  animation: rotate 4s linear infinite;
-}
-
-.btn-footer-send::after {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  left: 1px;
-  top: 1px;
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  background: var(--backgroundMain);
-  border-radius: 50%;
-  transition: height var(--transition), width var(--transition);
-}
-
-.btn-footer-send:hover::before {
-  background-image: linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--accent), var(--accent)),
-    linear-gradient(var(--accent), var(--accent));
-}
-
-.btn-footer-send:hover::after {
-  width: calc(100% - 8px);
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(1turn);
   }
 }
 

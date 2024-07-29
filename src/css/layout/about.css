@@ -136,6 +136,14 @@
   overflow: hidden;
 }
 
+.about-me-section .ac .ac-trigger[aria-expanded='true'] .about-me-slider-arrow {
+  stroke: var(--accent);
+}
+
+.about-me-section .ac .ac-trigger[aria-expanded='true'] .about-me-ac-button {
+  border-color: var(--accent);
+}
+
 .about-me-ac-list-item {
   margin-bottom: 20px;
 }
@@ -308,13 +316,23 @@
 }
 
 .about-me-skills-swiper .is-first {
+  transition: all 1.5s ease;
+}
+
+.about-me-skills-swiper .is-first {
   background-color: var(--accent);
   border: none;
 }
 
 .about-me-swiper-icon {
-  fill: none;
+  fill: transparent;
   stroke: var(--arrow);
+  transition: all var(--transition);
+}
+
+.about-me-swiper-icon:hover {
+  stroke: var(--accent);
+  transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {

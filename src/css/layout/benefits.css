@@ -70,11 +70,16 @@
   max-width: 187px;
   background-color: transparent;
   color: var(--textMain);
+  transition: border var(--transition);
 }
 
 .benefit-btn-order:hover,
 .benefit-btn-order:focus {
   border: 1px solid var(--textMain);
+}
+
+.benefits-link {
+  display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -86,15 +91,12 @@
   .benefit-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    margin-bottom: 64px;
   }
 
   .benefit-list-card {
     width: 100%;
     min-height: 270px;
-  }
-  .benefit-list-card:last-child {
-    margin-bottom: 64px;
   }
   .benefit-btn-order {
   }
@@ -109,17 +111,6 @@
   .benefits-section .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-  }
-
-  .benefits-list-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 16px;
-  }
-
-  .benefit-list {
-    display: contents;
   }
 
   .benefit-list-card {

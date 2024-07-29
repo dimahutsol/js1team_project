@@ -3,13 +3,15 @@ import 'accordion-js/dist/accordion.min.css';
 import Swiper from 'swiper';
 import { Navigation, Keyboard, Mousewheel } from 'swiper/modules';
 import 'swiper/css';
-import image from '/img/symbols.svg';
+import image from '/images/symbols.svg';
 Swiper.use([Navigation, Keyboard, Mousewheel]);
 
 const refs = {
   listAcRef: document.querySelector('.about-me-ac-list'),
   listSkillsRef: document.querySelector('.about-me-skills-list'),
 };
+
+let isSkillsCarouseInViewPort = false;
 
 const aboutMeList = [
   {
@@ -122,7 +124,7 @@ document.querySelectorAll('.ac-trigger').forEach(trigger => {
 
 function listSkillItemTemplate(nameSkill) {
   return `
-    <li class="about-me-skills-item swiper-slide">
+    <li class="about-me-skills-item swiper-slide block-animation">
       <p>${nameSkill}</p>
     </li>
   `;
@@ -178,10 +180,35 @@ function updateHighlight() {
   firstVisibleSlide.classList.add('is-first');
 }
 
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isSkillsCarouseInViewPort = true;
+      } else {
+        isSkillsCarouseInViewPort = false;
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  }
+);
+
+observer.observe(refs.listSkillsRef);
+
 document.addEventListener('keydown', event => {
-  if (event.key === 'Tab') {
-    event.preventDefault();
-    skillsCarousel.slideNext(600);
+  if (isSkillsCarouseInViewPort) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        skillsCarousel.slidePrev(600);
+      } else {
+        skillsCarousel.slideNext(600);
+      }
+    }
   }
 });
 

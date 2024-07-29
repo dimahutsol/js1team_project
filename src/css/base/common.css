@@ -161,7 +161,7 @@ body {
 
 .border-animation {
   position: relative;
-  overflow: hidden; /* Переконуєтесь, що анімація не виходить за межі елемента */
+  overflow: hidden;
 }
 
 .border-animation::before {
@@ -186,7 +186,7 @@ body {
 .border-animation::after {
   content: '';
   position: absolute;
-  z-index: -1; /* Під `::before`, щоб контент був видимий поверх анімації */
+  z-index: -1;
   left: 1px;
   top: 1px;
   width: calc(100% - 2px);

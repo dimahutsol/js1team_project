@@ -11,6 +11,8 @@ const refs = {
   listSkillsRef: document.querySelector('.about-me-skills-list'),
 };
 
+let isSkillsCarouseInViewPort = false;
+
 const aboutMeList = [
   {
     title: 'About me',
@@ -178,10 +180,35 @@ function updateHighlight() {
   firstVisibleSlide.classList.add('is-first');
 }
 
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        isSkillsCarouseInViewPort = true;
+      } else {
+        isSkillsCarouseInViewPort = false;
+      }
+    });
+  },
+  {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  }
+);
+
+observer.observe(refs.listSkillsRef);
+
 document.addEventListener('keydown', event => {
-  if (event.key === 'Tab') {
-    event.preventDefault();
-    skillsCarousel.slideNext(600);
+  if (isSkillsCarouseInViewPort) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      if (event.shiftKey) {
+        skillsCarousel.slidePrev(600);
+      } else {
+        skillsCarousel.slideNext(600);
+      }
+    }
   }
 });
 

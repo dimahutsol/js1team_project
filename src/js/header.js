@@ -12,6 +12,35 @@ const selectors = {
   mobileBlinds: '#mobile-blinds',
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+  const menuBox = document.querySelector('.header-tab-menu-box');
+  const menu = document.querySelector('.header-tab-list');
+
+  menuBox.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (menu.classList.contains('is-active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!menuBox.contains(e.target) && menu.classList.contains('is-active')) {
+      closeMenu();
+    }
+  });
+
+  function openMenu() {
+    menu.classList.add('is-active');
+    menu.style.animation = 'scaleIn 0.3s forwards';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-active');
+    menu.style.animation = 'scaleOut 0.3s forwards';
+  }
+});
 const elements = Object.fromEntries(
   Object.entries(selectors).map(([key, selector]) => [
     key,

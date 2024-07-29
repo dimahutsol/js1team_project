@@ -134,7 +134,7 @@ input[name='comment']:not(:placeholder-shown) {
   color: var(--textMain);
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 374px) {
   input[name='email'],
   input[name='comment'] {
     width: 270px;

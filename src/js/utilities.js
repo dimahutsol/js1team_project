@@ -1,5 +1,4 @@
 // Sections animation
-
 let blocks = document.querySelectorAll('.section-animation');
 
 function checkBlocksVisibility() {

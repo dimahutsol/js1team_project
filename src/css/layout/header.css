@@ -164,7 +164,7 @@
 
 .container-header {
   max-width: 100%;
-  transition: max-width 2.45s ease;
+  transition: max-width 1.45s ease;
 }
 
 .header-mobile-menu {
@@ -208,6 +208,10 @@
 
 .header-modal-menu-item {
   text-align: center;
+  border-radius: 60px;
+  width: 90px;
+  background-color: var(--backgroundMain);
+  height: 30px;
 }
 
 .header-modal-menu-item:not(:last-child) {
@@ -215,8 +219,13 @@
 }
 
 .header-modal-link {
-  text-decoration: underline;
   font-weight: 500;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
 }
 
 .header-link-project {
@@ -305,7 +314,7 @@
   flex: 1;
   background: linear-gradient(
     to right,
-    var(--accent) 0%,
+    var(--accent) 50%,
     var(--accent) 50%,
     var(--accentAlternative) 75%,
     #1c1c1c 90%,

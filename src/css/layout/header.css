@@ -345,3 +345,18 @@
     opacity: 1;
   }
 }
+
+.header-tab-list.is-active {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-tab-menu-box:hover .header-tab-list,
+  .header-tab-list.is-active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}

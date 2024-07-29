@@ -9,15 +9,16 @@
   border: none;
   cursor: pointer;
   border-radius: 50%;
-  transition: background-color var(--transition);
 }
 
-.theme-switcher-btn:hover {
-  background-color: var(--borderAlternative);
+.theme-switcher-btn:hover .theme-switcher-icon {
+  fill: var(--accent);
+  transform: scale(1.2);
 }
 
 .theme-switcher-icon {
   fill: var(--textMain);
+  transition: fill var(--transition), transform var(--transition);
 }
 
 .theme-switcher-menu {

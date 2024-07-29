@@ -32,6 +32,14 @@
   content: '' !important;
 }
 
+.faq .ac .ac-trigger[aria-expanded='true'] .faq-icon {
+  stroke: var(--accent);
+}
+
+.faq .ac .ac-trigger[aria-expanded='true'] .faq-span {
+  border-color: var(--accent);
+}
+
 .faq-span {
   display: flex;
   margin-left: 20px;
@@ -39,6 +47,7 @@
   border: 1px solid var(--borderMain);
   border-radius: 50%;
   padding: 10px;
+  transition: border-color var(--transition);
 }
 .faq .ac {
   background-color: transparent !important;
@@ -54,8 +63,7 @@
 .faq .ac .faq-icon {
   fill: transparent;
   stroke: var(--textMain);
-
-  transition: transform var(--transition);
+  transition: transform var(--transition), stroke var(--transition);
 }
 
 .faq .ac.is-active .faq-icon {

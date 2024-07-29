@@ -122,7 +122,7 @@ document.querySelectorAll('.ac-trigger').forEach(trigger => {
 
 function listSkillItemTemplate(nameSkill) {
   return `
-    <li class="about-me-skills-item swiper-slide">
+    <li class="about-me-skills-item swiper-slide button-animation">
       <p>${nameSkill}</p>
     </li>
   `;

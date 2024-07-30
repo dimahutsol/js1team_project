@@ -31,16 +31,21 @@
 .about-me-picture-container {
   border-radius: 24px;
   min-height: 500px;
-  /* padding-bottom: 32px; */
 }
 
 .about-me-picture {
   width: 100%;
-  min-height: 500px;
+  min-height: 350px;
 }
 
 .about-me-text-photo {
   margin-bottom: 32px;
+}
+
+@media (min-width: 375px) {
+  .about-me-picture {
+    min-height: 500px;
+  }
 }
 
 @media screen and (min-width: 768px) {

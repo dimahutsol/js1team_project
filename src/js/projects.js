@@ -96,7 +96,7 @@ const projectArray = [
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
-    links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
+    links: 'https://github.com/dimahutsol/js1team_project',
     imgMob_1x: mobimage1_1x,
     imgMob_2x: mobimage1_2x,
     imgTab_1x: tabimage1_1x,
@@ -107,7 +107,7 @@ const projectArray = [
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
-    links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
+    links: 'https://github.com/dimahutsol/js1team_project',
     imgMob_1x: mobimage2_1x,
     imgMob_2x: mobimage2_2x,
     imgTab_1x: tabimage2_1x,
@@ -118,7 +118,7 @@ const projectArray = [
   {
     title: 'Programming Across Borders: Ideas, Technologies, Innovations',
     tags: ['react', 'js', 'node js', 'git'],
-    links: 'https://github.com/dimahutsol/js1team_project/tree/dev',
+    links: 'https://github.com/dimahutsol/js1team_project',
     imgMob_1x: mobimage3_1x,
     imgMob_2x: mobimage3_2x,
     imgTab_1x: tabimage3_1x,

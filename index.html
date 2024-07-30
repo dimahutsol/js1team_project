@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/js1team_project/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. I have an understanding of different programming languages and technologies, always ready to improve my skills. I always follow the latest trends and look for unconventional, creative solutions to problems. I have a high level of analytical skills and am able to effectively solve even the most difficult tasks encountered on the way."
+    />
+    <title>Team One Project!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    
+    <script type="module" crossorigin src="/js1team_project/commonHelpers.js"></script>
+    <link rel="modulepreload" crossorigin href="/js1team_project/assets/vendor-44f200b2.js">
+    <link rel="stylesheet" href="/js1team_project/assets/vendor-5a1d55cb.css">
+    <link rel="stylesheet" href="/js1team_project/assets/index-c9cf796f.css">
+  </head>
+  <body class="theme-red">
+    <section class="header-hero">
+      <header id="scroll-header" class="header container">
+  <nav class="header-nav">
+    <div class="header-logo">
+      <a
+        class="header-logo-link"
+        href="./index.html"
+        aria-label="Go to the main page"
+      >
+        <img
+          class="header-photo-logo"
+          srcset="data:image/webp;base64,UklGRnYEAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLIAAAABcBRJktw0hGXggbJQBsIykRjIDGQGgjAQGsJC0H333xExAThspWMdH16jL4aLfRhfG35F5vhq+pnUjK9v0iGLUSDtgHGUSNtJHEVG2mpGmc2Gj0LzikoIwEepDoSWATaK/RQ1pVfThRpWNXX8e7mqqVQTXzW/oqaYGsOgJQDX4gCohACQlfgKrY4WmylUMG3BqIGGfaOCMBxN7fvahJPOdzHjQo/3DI6LrfRRn1bZFcNhVlA4IJ4DAAAwEgCdASpQAFAAPm0ylUgkIqIhJTQLyIANiWMAyPW4yYDNksfqU/CG68P26Y9nDeXegA1wMT4qTstCIFjUoMS4SQQIe+4eK82phCgVR5jV5G/W7gQTgXEmxU1jto+25Q7C2hwOWB2MUsp0lq1XgM6e8YDGvfzVwUypOO31YjrGOQZKZgbbYAXuXt4g6FrgYRUqH3thhppYTN8AAP76vEVTQmQPmI4A8aQMZ3wx0mHv9ajTOelu+oY4NCpreDmQayAFPIlg6oQJVcw0tEeKOesCTPBDLK+B15ho5fO/QoZOR6NVvVZzvWx3bCYFLDB4UIx8q0eU+wTmfgNuBlXCjlNa51X/aSBOFFA66+l7l3H6TwY7UaqTYzf2Hj3WzkRgjSmwmGiWphf/PwP17ZoKEsSLkYWgXMyF6N884oEw5YpIZe73WjryNohlcIYmEu7crAb0iLT1BFMjs5mnFjTtXXtLbH5/xMAnkjTDc4xkyAeDRFMGk9KR5YadcNBGlrfZqeL/hoMZzabV02sNmfqWus7daxgeZotHVFb113lHXZFjUbIEZIzukBpnVhxcGBZFEwo8gJxiv2FLy0Scs7zlP/p124lW+Fpy/VoRD7Tl/qB492aRF/I8uUPu58sd8WAvH7S4Z0fgDZCcYD6W/+bX+0VQspW78I6GRnlCO4pZlHlp7yqYudLj1xcvIG7dewd3ziJIbAA0vZf30V4/oWMQmp6D25gWLterB2qeL4B2itdkcjO+3WB0R5o1VyBXFc7L7wapiA/AegZcdRHNfZZNXTxWBN/tHsT4lIlvkbdnqR/BwhcaU1g3Diq7qHiHmgocUmcchJka1D9qnZZW/bvs/sZ6LvWVnrgz3p4847i4AItXB23mitVGpFlffQYGgQv05PqjgTaueOJWnJYR2j/FgqXaKAxlJXodOjwfZI0wwE+04JaDrxeICEM6HrghIQrsc3i6reqi0DS6vXpPOU0wQAeyarYmw71j+HQgx3pVlG/LTeh8RMKQ4jX3bOJfUQiSXzzL/ZrQBtfCxKQjerdBLrA4GKeQhOtPON/fDEfl1cVNnt1Y1KADd3rdqD/OzLY8eG+nVbA1yInkIFr0uvdi53k1YzpCB/zefjCh3pe0uzWI9HjLJNvZvQ/J22TM9wEDRALY2E0hnz6zFX+4a9920nFRUfZLC4dC50ASw5HcoJFsNGem2KTJgit0z+sComOJ3a6fQH7/KtvLajNupLAAAA== 1x, data:image/webp;base64,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 2x"
+          src="data:image/webp;base64,UklGRnYEAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLIAAAABcBRJktw0hGXggbJQBsIykRjIDGQGgjAQGsJC0H333xExAThspWMdH16jL4aLfRhfG35F5vhq+pnUjK9v0iGLUSDtgHGUSNtJHEVG2mpGmc2Gj0LzikoIwEepDoSWATaK/RQ1pVfThRpWNXX8e7mqqVQTXzW/oqaYGsOgJQDX4gCohACQlfgKrY4WmylUMG3BqIGGfaOCMBxN7fvahJPOdzHjQo/3DI6LrfRRn1bZFcNhVlA4IJ4DAAAwEgCdASpQAFAAPm0ylUgkIqIhJTQLyIANiWMAyPW4yYDNksfqU/CG68P26Y9nDeXegA1wMT4qTstCIFjUoMS4SQQIe+4eK82phCgVR5jV5G/W7gQTgXEmxU1jto+25Q7C2hwOWB2MUsp0lq1XgM6e8YDGvfzVwUypOO31YjrGOQZKZgbbYAXuXt4g6FrgYRUqH3thhppYTN8AAP76vEVTQmQPmI4A8aQMZ3wx0mHv9ajTOelu+oY4NCpreDmQayAFPIlg6oQJVcw0tEeKOesCTPBDLK+B15ho5fO/QoZOR6NVvVZzvWx3bCYFLDB4UIx8q0eU+wTmfgNuBlXCjlNa51X/aSBOFFA66+l7l3H6TwY7UaqTYzf2Hj3WzkRgjSmwmGiWphf/PwP17ZoKEsSLkYWgXMyF6N884oEw5YpIZe73WjryNohlcIYmEu7crAb0iLT1BFMjs5mnFjTtXXtLbH5/xMAnkjTDc4xkyAeDRFMGk9KR5YadcNBGlrfZqeL/hoMZzabV02sNmfqWus7daxgeZotHVFb113lHXZFjUbIEZIzukBpnVhxcGBZFEwo8gJxiv2FLy0Scs7zlP/p124lW+Fpy/VoRD7Tl/qB492aRF/I8uUPu58sd8WAvH7S4Z0fgDZCcYD6W/+bX+0VQspW78I6GRnlCO4pZlHlp7yqYudLj1xcvIG7dewd3ziJIbAA0vZf30V4/oWMQmp6D25gWLterB2qeL4B2itdkcjO+3WB0R5o1VyBXFc7L7wapiA/AegZcdRHNfZZNXTxWBN/tHsT4lIlvkbdnqR/BwhcaU1g3Diq7qHiHmgocUmcchJka1D9qnZZW/bvs/sZ6LvWVnrgz3p4847i4AItXB23mitVGpFlffQYGgQv05PqjgTaueOJWnJYR2j/FgqXaKAxlJXodOjwfZI0wwE+04JaDrxeICEM6HrghIQrsc3i6reqi0DS6vXpPOU0wQAeyarYmw71j+HQgx3pVlG/LTeh8RMKQ4jX3bOJfUQiSXzzL/ZrQBtfCxKQjerdBLrA4GKeQhOtPON/fDEfl1cVNnt1Y1KADd3rdqD/OzLY8eG+nVbA1yInkIFr0uvdi53k1YzpCB/zefjCh3pe0uzWI9HjLJNvZvQ/J22TM9wEDRALY2E0hnz6zFX+4a9920nFRUfZLC4dC50ASw5HcoJFsNGem2KTJgit0z+sComOJ3a6fQH7/KtvLajNupLAAAA=="
+          alt="logo-author"
+          width="80"
+          height="80"
+          loading="lazy"
+        />
+
+        <svg class="header-author-logo" width="84" height="19" fill="#fafafa">
+          <use href="/js1team_project/assets/symbols-0621d778.svg#jefferson"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="header-tab-menu-box">
+      <a href="#" class="header-tab-menu">Menu</a>
+
+      <ul class="header-tab-list">
+        <li class="header-tab-item">
+          <a href="#scroll-about_me" class="header-tab-link">About me</a>
+        </li>
+        <li class="header-tab-item">
+          <a href="#scroll-benefits" class="header-tab-link">Benefits</a>
+        </li>
+        <li class="header-tab-item">
+          <a href="#scroll-porjects" class="header-tab-link">Projects</a>
+        </li>
+        <li class="header-tab-item">
+          <a href="#scroll-faq" class="header-tab-link">FAQ</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="header-tab-project">
+      <a class="header-tab-project-link" href="#work_together" target="_blank"
+        >Order the project</a
+      >
+    </div>
+
+    <button class="header-nav-menu" aria-label="Open navigation menu">
+      <svg class="header-svg-menu" width="28" height="28" stroke="#fafafa">
+        <use href="/js1team_project/assets/symbols-0621d778.svg#burger"></use>
+      </svg>
+    </button>
+  </nav>
+
+  <div class="header-mobile-menu">
+    <div class="mobile-blinds" id="mobile-blinds"></div>
+    <button class="header-btn-close-menu">
+      <svg
+        class="header-btn-svg-close-menu"
+        width="28"
+        height="28"
+        stroke="#fafafa"
+      >
+        <use href="/js1team_project/assets/symbols-0621d778.svg#x-mob"></use>
+      </svg>
+    </button>
+
+    <ul class="header-modal-menu-list">
+      <li class="header-modal-menu-item">
+        <a href="#scroll-about_me" class="header-modal-link">About me</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#scroll-benefits" class="header-modal-link">Benefits</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#scroll-porjects" class="header-modal-link">Projects</a>
+      </li>
+      <li class="header-modal-menu-item">
+        <a href="#scroll-faq" class="header-modal-link">FAQ</a>
+      </li>
+    </ul>
+
+    <div class="header-link-project">
+      <a class="header-btn-project" href="#work_together">Order the project</a>
+    </div>
+  </div>
+</header>
+
+      <section class="hero">
+  <div class="blinds" id="blinds"></div>
+  <div class="container">
+    <div class="hero-social-box">
+      <h1 class="hero-title">
+        Hello.<br />
+        I'm Fullstack developer Lloyd Jefferson.
+      </h1>
+
+      <ul class="hero-social-list">
+        <li class="hero-social-item">
+          <a
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            class="hero-social-link block-animation"
+            >IG</a
+          >
+        </li>
+        <li class="hero-social-item">
+          <a
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            class="hero-social-link block-animation"
+            >FB
+          </a>
+        </li>
+        <li class="hero-social-item">
+          <a
+            href="https://www.youtube.com/c/GoIT"
+            target="_blank"
+            class="hero-social-link block-animation"
+            >YT</a
+          >
+        </li>
+        <li class="hero-social-item">
+          <a
+            href="https://github.com/dimahutsol/js1team_project"
+            target="_blank"
+            class="hero-social-link block-animation"
+            >GH</a
+          >
+        </li>
+        <li class="hero-social-item email-link">
+          <a
+            href="mailto:lloydjefferson@gmail.com"
+            class="hero-social-link block-animation"
+            >lloydjefferson@gmail.com</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+    </section>
+    <main>
+      <section class="about-me-section" id="scroll-about_me">
+  <div class="container about-me-container">
+    <h2 class="visually-hidden">about me section</h2>
+
+    <div class="about-me-text-photo">
+      <div class="about-me-hero-desc section-animation">
+        <p class="about-me-hero-text">
+          I WORK WITH PEOPLE ALL OVER THE WORLD TO CREATE IMPRESSIVE AND
+          <span class="about-me-text-functional">FUNCTIONAL</span>
+          <span class="about-me-text-website">WEBSITES</span> THAT REFLECT EACH
+          CLIENT'S UNIQUE PERSONALITY.
+        </p>
+      </div>
+      <div class="about-me-picture-container section-animation">
+        <picture class="about-me-picture">
+          <source
+            srcset="/js1team_project/assets/aboutMe_desk@1x-fcc18e68.webp 1x, /js1team_project/assets/aboutMe_desk@2x-c5e048c5.webp 2x"
+            media="(min-width: 1440px)"
+            type="image/webp"
+          />
+          <source
+            srcset="/js1team_project/assets/aboutMe_tab@1x-2068a86a.webp 1x, /js1team_project/assets/aboutMe_tab@2x-4567daf6.webp 2x"
+            media="(min-width: 768px)"
+            type="image/webp"
+          />
+          <source
+            srcset="/js1team_project/assets/aboutMe_mob@1x-1791ea65.webp 1x, /js1team_project/assets/aboutMe_mob@2x-d27f9b55.webp 2x"
+            media="(min-width: 375px)"
+            type="image/webp"
+          />
+          <img
+            src="/js1team_project/assets/aboutMe_desk@1x-fcc18e68.webp"
+            alt="Photo developer"
+            width="680"
+            height="700"
+            class="about-me-picture"
+            loading="lazy"
+          />
+        </picture>
+      </div>
+    </div>
+
+    <div class="about-me-ac-container">
+      <ul class="about-me-ac-list section-animation"></ul>
+    </div>
+
+    <div class="about-me-skills section-animation">
+      <div class="swiper about-me-skills-swiper">
+        <ul class="about-me-skills-list swiper-wrapper"></ul>
+      </div>
+      <div class="about-me-swiper-button-next">
+        <svg class="about-me-swiper-icon" width="28" height="28">
+          <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-right"></use>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="benefits-section" id="scroll-benefits">
+  <div class="container benefit-container">
+    <div class="benefits-space">
+      <h2 class="benefits-space-title section-animation">
+        Benefits of working with me
+      </h2>
+    </div>
+
+    <div class="benefits-list-container">
+      <ul class="benefit-list"></ul>
+      <a href="#work_together" class="benefits-link">
+        <div class="benefit-btn-order section-animation block-animation">
+          Order the project
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+      <section class="projects section-animation" id="scroll-porjects">
+  <div class="container">
+    <h2 class="projects-title">Projects</h2>
+    <div class="projects-wrapper project-swiper">
+      <ul class="project-list project-list-js swiper-wrapper"></ul>
+      <div class="projects-swiper-pagination"></div>
+      <div class="projects-navigation">
+        <div
+          class="projects-navigation-btn projects-navigation-prev button-animation"
+        >
+          <svg class="projects-navigation-icon" width="24" height="24">
+            <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-left"></use>
+          </svg>
+        </div>
+        <div
+          class="projects-navigation-btn projects-navigation-next button-animation"
+        >
+          <svg class="projects-navigation-icon" width="24" height="24">
+            <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section class="faq section-animation" id="scroll-faq">
+  <div class="container">
+    <h2 class="faq-title">FAQ</h2>
+
+    <ul class="accordion-container faq-list"></ul>
+  </div>
+</section>
+
+      <section class="covers section-animation crcl1">
+  <div class="crcl2"></div>
+  <div class="crcl3"></div>
+  <div class="crcl4"></div>
+  <div class="crcl5"></div>
+  <div class="crcl6"></div>
+  <div class="crcl7"></div>
+  <div class="crcl8"></div>
+  <div class="crcl9"></div>
+  <div class="crcl10"></div>
+  <div class="marquee container">
+    <h2 class="covers-title">Covers</h2>
+    <!-- #region first line -->
+    <ul class="marquee__inner">
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/3projectScreen_@1x-d71c6435.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/6projectScreen_@1x-a189303b.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/7projectScreen_@1x-e06cf374.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+    </ul>
+    <!-- #endregion firstline -->
+    <!-- #region secondline -->
+    <ul class="marquee__inner">
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/3projectScreen_@1x-d71c6435.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/6projectScreen_@1x-a189303b.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/7projectScreen_@1x-e06cf374.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card2">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+    </ul>
+    <!-- #endregion secondline -->
+    <!-- #region thirdline -->
+    <ul class="marquee__inner">
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp 1x, /js1team_project/assets/8projectScreen_@2x-f364c245.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/8projectScreen_@1x-797bf8a9.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp 1x, /js1team_project/assets/1projectScreen_@2x-b2aebdb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/1projectScreen_@1x-a2b6b2cd.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp 1x, /js1team_project/assets/2projectScreen_@2x-edd61349.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/2projectScreen_@1x-dc06c9a3.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/3projectScreen_@1x-d71c6435.webp 1x, /js1team_project/assets/3projectScreen_@2x-0a4fe698.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/3projectScreen_@1x-d71c6435.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp 1x, /js1team_project/assets/4projectScreen_@2x-05ab1cb6.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/4projectScreen_@1x-5072fd7a.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp 1x, /js1team_project/assets/5projectScreen_@2x-3cde3008.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/5projectScreen_@1x-75f9e5f8.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/6projectScreen_@1x-a189303b.webp 1x, /js1team_project/assets/6projectScreen_@2x-940666c4.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/6projectScreen_@1x-a189303b.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+      <li class="marquee__card1">
+        <div class="marquee-wrapper">
+          <picture>
+            <source media="(min-width: 1440px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(min-width: 768px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=544
+            type=image/webp> <source media="(max-width: 767px)"
+            srcset="/js1team_project/assets/7projectScreen_@1x-e06cf374.webp 1x, /js1team_project/assets/7projectScreen_@2x-1d65e4d5.webp 2x" width=282
+            type=image/webp> <img class=marquee-photo
+            src=/js1team_project/assets/7projectScreen_@1x-e06cf374.webp alt=Project width=282
+            height=162 loading=lazy>
+          </picture>
+        </div>
+      </li>
+    </ul>
+    <!-- #endregion thirdline -->
+  </div>
+</section>
+
+      <section class="reviews section-animation">
+  <div class="container">
+    <h2 class="reviews-title">Reviews</h2>
+    <div class="reviews-wrapper">
+      <ul class="reviews-cards swiper-wrapper"></ul>
+      <div class="reviews-navigation">
+        <div
+          class="reviews-navigation-btn reviews-navigation-prev button-animation"
+        >
+          <svg class="reviews-navigation-icon" width="24" height="24">
+            <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-left"></use>
+          </svg>
+        </div>
+        <div
+          class="reviews-navigation-btn reviews-navigation-next button-animation"
+        >
+          <svg class="reviews-navigation-icon" width="24" height="24">
+            <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-right"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </main>
+    <section id="work_together" class="footer section-animation">
+  <div class="container">
+    <div class="title-footer">
+      <div class="img-span">
+        <img
+          class="img-footer"
+          srcset="data:image/webp;base64,UklGRnYEAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLIAAAABcBRJktw0hGXggbJQBsIykRjIDGQGgjAQGsJC0H333xExAThspWMdH16jL4aLfRhfG35F5vhq+pnUjK9v0iGLUSDtgHGUSNtJHEVG2mpGmc2Gj0LzikoIwEepDoSWATaK/RQ1pVfThRpWNXX8e7mqqVQTXzW/oqaYGsOgJQDX4gCohACQlfgKrY4WmylUMG3BqIGGfaOCMBxN7fvahJPOdzHjQo/3DI6LrfRRn1bZFcNhVlA4IJ4DAAAwEgCdASpQAFAAPm0ylUgkIqIhJTQLyIANiWMAyPW4yYDNksfqU/CG68P26Y9nDeXegA1wMT4qTstCIFjUoMS4SQQIe+4eK82phCgVR5jV5G/W7gQTgXEmxU1jto+25Q7C2hwOWB2MUsp0lq1XgM6e8YDGvfzVwUypOO31YjrGOQZKZgbbYAXuXt4g6FrgYRUqH3thhppYTN8AAP76vEVTQmQPmI4A8aQMZ3wx0mHv9ajTOelu+oY4NCpreDmQayAFPIlg6oQJVcw0tEeKOesCTPBDLK+B15ho5fO/QoZOR6NVvVZzvWx3bCYFLDB4UIx8q0eU+wTmfgNuBlXCjlNa51X/aSBOFFA66+l7l3H6TwY7UaqTYzf2Hj3WzkRgjSmwmGiWphf/PwP17ZoKEsSLkYWgXMyF6N884oEw5YpIZe73WjryNohlcIYmEu7crAb0iLT1BFMjs5mnFjTtXXtLbH5/xMAnkjTDc4xkyAeDRFMGk9KR5YadcNBGlrfZqeL/hoMZzabV02sNmfqWus7daxgeZotHVFb113lHXZFjUbIEZIzukBpnVhxcGBZFEwo8gJxiv2FLy0Scs7zlP/p124lW+Fpy/VoRD7Tl/qB492aRF/I8uUPu58sd8WAvH7S4Z0fgDZCcYD6W/+bX+0VQspW78I6GRnlCO4pZlHlp7yqYudLj1xcvIG7dewd3ziJIbAA0vZf30V4/oWMQmp6D25gWLterB2qeL4B2itdkcjO+3WB0R5o1VyBXFc7L7wapiA/AegZcdRHNfZZNXTxWBN/tHsT4lIlvkbdnqR/BwhcaU1g3Diq7qHiHmgocUmcchJka1D9qnZZW/bvs/sZ6LvWVnrgz3p4847i4AItXB23mitVGpFlffQYGgQv05PqjgTaueOJWnJYR2j/FgqXaKAxlJXodOjwfZI0wwE+04JaDrxeICEM6HrghIQrsc3i6reqi0DS6vXpPOU0wQAeyarYmw71j+HQgx3pVlG/LTeh8RMKQ4jX3bOJfUQiSXzzL/ZrQBtfCxKQjerdBLrA4GKeQhOtPON/fDEfl1cVNnt1Y1KADd3rdqD/OzLY8eG+nVbA1yInkIFr0uvdi53k1YzpCB/zefjCh3pe0uzWI9HjLJNvZvQ/J22TM9wEDRALY2E0hnz6zFX+4a9920nFRUfZLC4dC50ASw5HcoJFsNGem2KTJgit0z+sComOJ3a6fQH7/KtvLajNupLAAAA== 1x, data:image/webp;base64,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 2x"
+          src="data:image/webp;base64,UklGRnYEAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSLIAAAABcBRJktw0hGXggbJQBsIykRjIDGQGgjAQGsJC0H333xExAThspWMdH16jL4aLfRhfG35F5vhq+pnUjK9v0iGLUSDtgHGUSNtJHEVG2mpGmc2Gj0LzikoIwEepDoSWATaK/RQ1pVfThRpWNXX8e7mqqVQTXzW/oqaYGsOgJQDX4gCohACQlfgKrY4WmylUMG3BqIGGfaOCMBxN7fvahJPOdzHjQo/3DI6LrfRRn1bZFcNhVlA4IJ4DAAAwEgCdASpQAFAAPm0ylUgkIqIhJTQLyIANiWMAyPW4yYDNksfqU/CG68P26Y9nDeXegA1wMT4qTstCIFjUoMS4SQQIe+4eK82phCgVR5jV5G/W7gQTgXEmxU1jto+25Q7C2hwOWB2MUsp0lq1XgM6e8YDGvfzVwUypOO31YjrGOQZKZgbbYAXuXt4g6FrgYRUqH3thhppYTN8AAP76vEVTQmQPmI4A8aQMZ3wx0mHv9ajTOelu+oY4NCpreDmQayAFPIlg6oQJVcw0tEeKOesCTPBDLK+B15ho5fO/QoZOR6NVvVZzvWx3bCYFLDB4UIx8q0eU+wTmfgNuBlXCjlNa51X/aSBOFFA66+l7l3H6TwY7UaqTYzf2Hj3WzkRgjSmwmGiWphf/PwP17ZoKEsSLkYWgXMyF6N884oEw5YpIZe73WjryNohlcIYmEu7crAb0iLT1BFMjs5mnFjTtXXtLbH5/xMAnkjTDc4xkyAeDRFMGk9KR5YadcNBGlrfZqeL/hoMZzabV02sNmfqWus7daxgeZotHVFb113lHXZFjUbIEZIzukBpnVhxcGBZFEwo8gJxiv2FLy0Scs7zlP/p124lW+Fpy/VoRD7Tl/qB492aRF/I8uUPu58sd8WAvH7S4Z0fgDZCcYD6W/+bX+0VQspW78I6GRnlCO4pZlHlp7yqYudLj1xcvIG7dewd3ziJIbAA0vZf30V4/oWMQmp6D25gWLterB2qeL4B2itdkcjO+3WB0R5o1VyBXFc7L7wapiA/AegZcdRHNfZZNXTxWBN/tHsT4lIlvkbdnqR/BwhcaU1g3Diq7qHiHmgocUmcchJka1D9qnZZW/bvs/sZ6LvWVnrgz3p4847i4AItXB23mitVGpFlffQYGgQv05PqjgTaueOJWnJYR2j/FgqXaKAxlJXodOjwfZI0wwE+04JaDrxeICEM6HrghIQrsc3i6reqi0DS6vXpPOU0wQAeyarYmw71j+HQgx3pVlG/LTeh8RMKQ4jX3bOJfUQiSXzzL/ZrQBtfCxKQjerdBLrA4GKeQhOtPON/fDEfl1cVNnt1Y1KADd3rdqD/OzLY8eG+nVbA1yInkIFr0uvdi53k1YzpCB/zefjCh3pe0uzWI9HjLJNvZvQ/J22TM9wEDRALY2E0hnz6zFX+4a9920nFRUfZLC4dC50ASw5HcoJFsNGem2KTJgit0z+sComOJ3a6fQH7/KtvLajNupLAAAA=="
+          alt="Jefferson"
+          width="44"
+          height="44"
+          loading="lazy"
+        />
+        <h2 class="title-text-footer">
+          Let’s <span class="work-span">work</span>
+        </h2>
+      </div>
+      <h2 class="title-text-footer">together</h2>
+    </div>
+
+    <form class="form-footer js-form-footer">
+      <div class="input-container">
+        <input
+          type="email"
+          name="email"
+          class="js-email-input"
+          placeholder="clients@gmail.com"
+          required
+          title="Invalid email, try again"
+        />
+        <span class="email-message js-email-message"></span>
+      </div>
+
+      <input
+        type="text"
+        name="comment"
+        placeholder="comments"
+        required
+        maxlength="255"
+        title="Message should not exceed 255 characters"
+      />
+      <button class="btn-footer-send js-btn-footer" type="submit">Send</button>
+    </form>
+    <address class="contacts-footer">
+      <ul class="contacts-list-footer">
+        <li class="contact-item-footer">
+          <a
+            href="mailto:lloydjefferson@gmail.com"
+            class="email-footer block-animation"
+            target="_blank"
+          >
+            example@example.com
+          </a>
+        </li>
+        <li class="contact-item-footer">
+          <a
+            href="tel:+3801111111111"
+            class="tel-footer block-animation"
+            target="_blank"
+          >
+            +380 11 1111 11 11
+          </a>
+        </li>
+      </ul>
+    </address>
+  </div>
+</section>
+
+    <div class="backdrop">
+  <div class="modal-content">
+    <button class="btnCloseModal">
+      <svg class="modal-close">
+        <use href="/js1team_project/assets/symbols-0621d778.svg#x-mob"></use>
+      </svg>
+    </button>
+    <h2 class="title-modal"></h2>
+    <p class="text-modal"></p>
+  </div>
+</div>
+
+    <div class="theme-switcher-btn">
+  <svg class="theme-switcher-icon" width="24" height="24">
+    <use href="/js1team_project/assets/symbols-0621d778.svg#theme"></use>
+  </svg>
+</div>
+<div class="theme-switcher-menu">
+  <button class="theme-btn theme-bg-red" data-theme="theme-red"></button>
+  <button class="theme-btn theme-bg-blue" data-theme="theme-blue"></button>
+  <button class="theme-btn theme-bg-green" data-theme="theme-green"></button>
+</div>
+
+<a class="top" href="#scroll-header">
+  <svg class="top-icon" width="24" height="24">
+    <use href="/js1team_project/assets/symbols-0621d778.svg#arrow-up"></use>
+  </svg>
+</a>
+
+    
+  </body>
+</html>

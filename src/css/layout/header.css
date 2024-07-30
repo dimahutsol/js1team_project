@@ -28,7 +28,7 @@
 }
 
 .header-logo-link {
-  height: 0;
+  display: flex;
 }
 
 .header-photo-logo {
